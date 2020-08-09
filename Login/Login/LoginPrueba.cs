@@ -13,6 +13,7 @@ namespace Login
     public partial class LoginPrueba : Form
        
     {
+        //Definicion de variables (comentario jessica)
         String usuario = "admin";
         String contrasena = "4862";
         public LoginPrueba()
@@ -64,6 +65,11 @@ namespace Login
         }
 
         private void lblUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginPrueba_Load(object sender, EventArgs e)
         {
 
         }
