@@ -14,7 +14,11 @@ namespace Login
        
     {   
         //Definicion e inicializacion de variables [Comentario modificado]
+<<<<<<< HEAD
         //--->>[probando comentario]<<---
+=======
+        /* algo nuevo */
+>>>>>>> b1d85ba877251116553f72e09e590e707c74db2b
         String usuario = "admin";
         String contrasena = "4862";
         public LoginPrueba()
