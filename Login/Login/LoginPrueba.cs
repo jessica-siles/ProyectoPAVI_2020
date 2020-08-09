@@ -13,7 +13,7 @@ namespace Login
     public partial class LoginPrueba : Form
        
     {   
-        //Variables
+        //Definicion e inicializacion de variables [Comentario modificado]
         String usuario = "admin";
         String contrasena = "4862";
         public LoginPrueba()
