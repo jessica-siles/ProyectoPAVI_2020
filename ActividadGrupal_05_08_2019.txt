@@ -1,3 +1,4 @@
+agregando texto de prueba
 Con el material visto en clases:
 -Crear cuentas de usuario github.
 -Crear un repositorio y agregar colaboradores (los del grupo, en caso de ser individual simular con 2 usuarios).
