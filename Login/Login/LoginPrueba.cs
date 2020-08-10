@@ -25,7 +25,7 @@ namespace Login
         {
 
         }
-        //Ingreso de datos para iniciar el sistema
+        //evento bonton aceptar
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if(this.lblUsuario.Text == "")
