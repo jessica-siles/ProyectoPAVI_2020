@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Importacion de espacios de nombres
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,12 +21,12 @@ namespace Login
         {
             InitializeComponent();
         }
-
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
+        //Ingreso de datos para iniciar el sistema
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if(this.lblUsuario.Text == "")
@@ -53,22 +54,22 @@ namespace Login
             return;
             
         }
-
+        //Salir del sistema
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        //Cambiar contrasena
         private void lblContrasena_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        //Cambiar nombre de usuario
         private void lblUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        //Iniciar sesion de prueba
         private void LoginPrueba_Load(object sender, EventArgs e)
         {
 
