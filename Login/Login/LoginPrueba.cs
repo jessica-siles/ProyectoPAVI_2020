@@ -58,7 +58,7 @@ namespace Login
         {
             Close();
         }
-        //Cambiar contrasena
+        //     Cambiar contrasena
         private void lblContrasena_TextChanged(object sender, EventArgs e)
         {
 

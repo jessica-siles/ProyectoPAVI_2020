@@ -1,2 +1,0 @@
-prueba git
-agregar texto desde consola
