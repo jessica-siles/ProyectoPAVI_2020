@@ -1,4 +1,4 @@
-﻿namespace ProyectoGrupalGestionDeUsuarios
+﻿namespace ProyectoGrupalGestionDeUsuarios.GUILayer
 {
     partial class frmLogin
     {
@@ -147,7 +147,7 @@
             this.Name = "frmLoginPrueba";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.LoginPrueba_Load);
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
