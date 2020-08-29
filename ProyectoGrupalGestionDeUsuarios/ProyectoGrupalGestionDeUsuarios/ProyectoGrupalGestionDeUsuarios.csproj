@@ -52,10 +52,19 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\frmLoginPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmLoginPrueba.designer.cs">
+      <DependentUpon>frmLoginPrueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmLoginPrueba.resx">
+      <DependentUpon>frmLoginPrueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +92,10 @@
     <Folder Include="BusinessLayer\" />
     <Folder Include="DataAccessLayer\" />
     <Folder Include="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\fondoLoginultimo.jfif" />
+    <Content Include="Resource\login.jfif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
