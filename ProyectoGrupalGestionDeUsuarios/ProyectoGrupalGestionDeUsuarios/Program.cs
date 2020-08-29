@@ -16,7 +16,7 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLoginPrueba());
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
-    public partial class frmLoginPrueba : Form
+    public partial class frmLogin : Form
        
     {
         String usuario = "admin";
         String contrasena = "4862";
-        public frmLoginPrueba()
+        public frmLogin()
         {
             InitializeComponent();
         }
