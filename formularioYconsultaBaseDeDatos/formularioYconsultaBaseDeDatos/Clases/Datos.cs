@@ -12,7 +12,7 @@ namespace formularioYconsultaBaseDeDatos.Clases
     {
         private SqlConnection conexion = new SqlConnection();
         private SqlCommand comando = new SqlCommand();
-        private string cadenaConexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=bd_test;User ID=sa;password=pcN4conexion";
+        private string cadenaConexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=BugsTracker;User ID=sa;password=pcN4conexion";
 
         private void conectar()
         {
@@ -32,6 +32,16 @@ namespace formularioYconsultaBaseDeDatos.Clases
             DataTable tabla = new DataTable();
             this.conectar();
             this.comando.CommandText = consultaSQL;
+            tabla.Load(this.comando.ExecuteReader());
+            this.desconectar();
+            return tabla;
+        }
+
+        public DataTable consultarTabla(string nombreTabla)
+        {
+            DataTable tabla = new DataTable();
+            this.conectar();
+            this.comando.CommandText = "Select * from " + nombreTabla;
             tabla.Load(this.comando.ExecuteReader());
             this.desconectar();
             return tabla;

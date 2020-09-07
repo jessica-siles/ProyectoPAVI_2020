@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using formularioYconsultaBaseDeDatos.Formularios;
 
 namespace formularioYconsultaBaseDeDatos
 {
@@ -16,7 +17,7 @@ namespace formularioYconsultaBaseDeDatos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenuPrincipal());
+            Application.Run(new frmConsultasBugs());
         }
     }
 }

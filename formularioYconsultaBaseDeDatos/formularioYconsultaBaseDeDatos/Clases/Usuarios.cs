@@ -39,7 +39,7 @@ namespace formularioYconsultaBaseDeDatos.Clases
 
         public int validarUsuario(string nombre, string clave)
         {
-            string consultaSQL = "SELECT * FROM dbo.Usuarios WHERE nom_usuario='" + nombre + "'AND password='" + clave + "'";
+            string consultaSQL = "SELECT * FROM dbo.Usuarios WHERE usuario='" + nombre + "'AND password='" + clave + "'";
             DataTable tabla = new DataTable();
 
             Datos oDato = new Datos();

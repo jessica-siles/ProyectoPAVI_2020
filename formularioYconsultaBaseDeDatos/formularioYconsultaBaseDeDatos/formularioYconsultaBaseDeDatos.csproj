@@ -46,8 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Bugs.cs" />
     <Compile Include="Clases\Datos.cs" />
     <Compile Include="Clases\Usuarios.cs" />
+    <Compile Include="Formularios\frmConsultasBugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsultasBugs.Designer.cs">
+      <DependentUpon>frmConsultasBugs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmDetalleBugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDetalleBugs.Designer.cs">
+      <DependentUpon>frmDetalleBugs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +75,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmConsultasBugs.resx">
+      <DependentUpon>frmConsultasBugs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDetalleBugs.resx">
+      <DependentUpon>frmDetalleBugs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,6 +110,36 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="imagenes\buscar1.png" />
+    <Content Include="imagenes\buscar2.png" />
+    <Content Include="imagenes\buscar3.png" />
+    <Content Include="imagenes\cancelar1.png" />
+    <Content Include="imagenes\cancelar2.png" />
+    <Content Include="imagenes\Cancelar3.png" />
+    <Content Include="imagenes\cancelar4.png" />
+    <Content Include="imagenes\candado.png" />
+    <Content Include="imagenes\Excel1.ico" />
+    <Content Include="imagenes\excel3.ico" />
+    <Content Include="imagenes\excel4.bmp" />
+    <Content Include="imagenes\grabar1.png" />
+    <Content Include="imagenes\grabar2.png" />
+    <Content Include="imagenes\grabar3.png" />
+    <Content Include="imagenes\grabar4.png" />
+    <Content Include="imagenes\i-info.jpg" />
+    <Content Include="imagenes\i-info2.jpg" />
+    <Content Include="imagenes\icons8-actualizar-48.png" />
+    <Content Include="imagenes\nuevo1.png" />
+    <Content Include="imagenes\nuevo2.png" />
+    <Content Include="imagenes\pregunta.jpg" />
+    <Content Include="imagenes\preview1.png" />
+    <Content Include="imagenes\preview2.png" />
+    <Content Include="imagenes\print1.png" />
+    <Content Include="imagenes\print2.png" />
+    <Content Include="imagenes\print3.png" />
+    <Content Include="imagenes\print4.png" />
+    <Content Include="imagenes\puerta2.bmp" />
+    <Content Include="imagenes\salir1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

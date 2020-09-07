@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using formularioYconsultaBaseDeDatos.Clases;
+using formularioYconsultaBaseDeDatos.Formularios;
 
 namespace formularioYconsultaBaseDeDatos
 {
@@ -31,9 +32,21 @@ namespace formularioYconsultaBaseDeDatos
             if (this.usuarioActual.Id_usuario == 0)
                 this.Close();
             else
-                this.Text = this.Text + " - Usuario ---> :D " + this.usuarioActual.Nom_usuario;
+                this.Text = this.Text + " - Usuario: " + this.usuarioActual.Nom_usuario;
 
             formularioLogin.Dispose();
+
+        }
+
+        private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultasBugs formularioConsultasBugs;
+            formularioConsultasBugs = new frmConsultasBugs();
+            formularioConsultasBugs.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
     }
