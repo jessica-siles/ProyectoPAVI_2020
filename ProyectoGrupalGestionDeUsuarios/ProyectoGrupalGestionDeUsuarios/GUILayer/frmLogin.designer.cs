@@ -48,7 +48,7 @@
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown;
             this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnAceptar.Location = new System.Drawing.Point(192, 127);
+            this.btnAceptar.Location = new System.Drawing.Point(179, 142);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(84, 37);
             this.btnAceptar.TabIndex = 2;
@@ -65,7 +65,7 @@
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Brown;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSalir.Location = new System.Drawing.Point(305, 127);
+            this.btnSalir.Location = new System.Drawing.Point(305, 142);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(84, 37);
             this.btnSalir.TabIndex = 3;
@@ -78,7 +78,7 @@
             this.txtUsuario.AutoSize = true;
             this.txtUsuario.BackColor = System.Drawing.Color.Transparent;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(188, 48);
+            this.txtUsuario.Location = new System.Drawing.Point(175, 19);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(68, 21);
             this.txtUsuario.TabIndex = 2;
@@ -90,7 +90,7 @@
             this.txtContrasena.AutoSize = true;
             this.txtContrasena.BackColor = System.Drawing.Color.Transparent;
             this.txtContrasena.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.Location = new System.Drawing.Point(162, 79);
+            this.txtContrasena.Location = new System.Drawing.Point(175, 71);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(94, 21);
             this.txtContrasena.TabIndex = 3;
@@ -99,20 +99,20 @@
             // lblUsuario
             // 
             this.lblUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(262, 40);
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(179, 43);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(127, 25);
+            this.lblUsuario.Size = new System.Drawing.Size(208, 27);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.TextChanged += new System.EventHandler(this.lblUsuario_TextChanged);
             // 
             // lblContrasena
             // 
             this.lblContrasena.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblContrasena.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrasena.Location = new System.Drawing.Point(262, 79);
+            this.lblContrasena.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContrasena.Location = new System.Drawing.Point(179, 95);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(127, 25);
+            this.lblContrasena.Size = new System.Drawing.Size(208, 27);
             this.lblContrasena.TabIndex = 1;
             this.lblContrasena.UseSystemPasswordChar = true;
             this.lblContrasena.TextChanged += new System.EventHandler(this.lblContrasena_TextChanged);
@@ -127,7 +127,7 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // frmLoginPrueba
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,7 +144,7 @@
             this.Controls.Add(this.btnAceptar);
             this.ForeColor = System.Drawing.Color.GhostWhite;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "frmLoginPrueba";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);

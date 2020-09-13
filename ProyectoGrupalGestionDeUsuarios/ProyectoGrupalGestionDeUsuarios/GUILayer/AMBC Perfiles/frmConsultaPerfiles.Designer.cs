@@ -35,6 +35,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBoxConsulta = new System.Windows.Forms.GroupBox();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
             this.groupBoxConsulta.SuspendLayout();
             this.panelBotones.SuspendLayout();
@@ -43,10 +46,14 @@
             // dgvConsulta
             // 
             this.dgvConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsulta.Location = new System.Drawing.Point(14, 29);
+            this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombre,
+            this.estado,
+            this.descripcion});
+            this.dgvConsulta.Location = new System.Drawing.Point(14, 30);
             this.dgvConsulta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvConsulta.Name = "dgvConsulta";
-            this.dgvConsulta.Size = new System.Drawing.Size(834, 312);
+            this.dgvConsulta.Size = new System.Drawing.Size(826, 312);
             this.dgvConsulta.TabIndex = 0;
             // 
             // btnEliminar
@@ -113,6 +120,24 @@
             this.panelBotones.Size = new System.Drawing.Size(837, 80);
             this.panelBotones.TabIndex = 1;
             // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 260;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.Width = 260;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Width = 260;
+            // 
             // frmConsultaPerfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -143,5 +168,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBoxConsulta;
         private System.Windows.Forms.Panel panelBotones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
     }
 }

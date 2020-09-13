@@ -12,7 +12,7 @@ namespace ProyectoGrupalGestionDeUsuarios
 
         private DBHelper()
         {
-            string_conexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=BugsTracker;User ID=sa;Password=pcN4conexion";
+            string_conexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=BugsTracker_Ext;User ID=sa;Password=pcN4conexion";
             //string_conexion = "Data Source = DESKTOP - MGL5JN4; Initial Catalog = BugsTracker; User ID = sa"
         }
 
