@@ -15,6 +15,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
     public partial class frmConsultaPerfiles : Form
     {
         private readonly PerfilService perfilService;
+        
+        Perfil operfil = new Perfil();
 
         public frmConsultaPerfiles()
         {
@@ -34,7 +36,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         {
             frmAgregarNuevoPerfil ModificarPerfil;
             ModificarPerfil = new frmAgregarNuevoPerfil();
+            MessageBox.Show(Convert.ToString(operfil.IdPerfil), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             ModificarPerfil.ShowDialog();
+            
         }
 
         private void frmConsultaPerfiles_Load(object sender, EventArgs e)
@@ -45,7 +49,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         private void InitializeDataGridView()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            dgvConsulta.ColumnCount = 3;
+            dgvConsulta.ColumnCount = 4;
             dgvConsulta.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
@@ -67,8 +71,11 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
             dgvConsulta.Columns[1].Name = "Estado";
             dgvConsulta.Columns[1].DataPropertyName = "Estado";            
 
-            dgvConsulta.Columns[2].Name = "descripcion";
+            dgvConsulta.Columns[2].Name = "Descripcion";
             dgvConsulta.Columns[2].DataPropertyName = "Descripcion";
+
+            dgvConsulta.Columns[3].Name = "id";
+            dgvConsulta.Columns[3].DataPropertyName = "IdPerfil";
 
             // Cambia el tamaño de la altura de los encabezados de columna.
             dgvConsulta.AutoResizeColumnHeadersHeight();
@@ -81,6 +88,19 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         private void dgvConsulta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvConsulta_SelectionChanged(object sender, EventArgs e)
+        {
+
+            operfil.IdPerfil = Convert.ToInt32(dgvConsulta.CurrentRow.Cells[3].Value);
+            
+            
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show(Convert.ToString(operfil.IdPerfil), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

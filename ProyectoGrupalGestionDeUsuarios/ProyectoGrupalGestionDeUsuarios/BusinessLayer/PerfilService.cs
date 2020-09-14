@@ -48,7 +48,15 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
             }
         }
 
+        public void eliminarPerfil(string perfil)
+        {
 
+            
+
+
+
+        }
+        
 
 
     }

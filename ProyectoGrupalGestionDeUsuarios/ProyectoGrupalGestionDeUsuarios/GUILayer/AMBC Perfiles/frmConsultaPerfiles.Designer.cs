@@ -33,14 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaPerfiles));
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBoxConsulta = new System.Windows.Forms.GroupBox();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
             this.groupBoxConsulta.SuspendLayout();
             this.panelBotones.SuspendLayout();
@@ -57,7 +58,8 @@
             this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
             this.estado,
-            this.descripcion});
+            this.descripcion,
+            this.id_perfil});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,7 +68,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsulta.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvConsulta.Location = new System.Drawing.Point(14, 30);
+            this.dgvConsulta.Location = new System.Drawing.Point(7, 26);
             this.dgvConsulta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvConsulta.MultiSelect = false;
             this.dgvConsulta.Name = "dgvConsulta";
@@ -74,30 +76,10 @@
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             this.dgvConsulta.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvConsulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConsulta.Size = new System.Drawing.Size(826, 312);
+            this.dgvConsulta.Size = new System.Drawing.Size(838, 312);
             this.dgvConsulta.TabIndex = 0;
             this.dgvConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsulta_CellContentClick);
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 260;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Width = 260;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 260;
+            this.dgvConsulta.SelectionChanged += new System.EventHandler(this.dgvConsulta_SelectionChanged);
             // 
             // btnEliminar
             // 
@@ -111,6 +93,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -163,6 +146,34 @@
             this.panelBotones.Size = new System.Drawing.Size(837, 80);
             this.panelBotones.TabIndex = 1;
             // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 260;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Width = 260;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 260;
+            // 
+            // id_perfil
+            // 
+            this.id_perfil.HeaderText = "id";
+            this.id_perfil.Name = "id_perfil";
+            this.id_perfil.ReadOnly = true;
+            this.id_perfil.Visible = false;
+            // 
             // frmConsultaPerfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -197,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_perfil;
     }
 }

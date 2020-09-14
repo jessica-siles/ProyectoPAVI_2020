@@ -57,6 +57,15 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             DBHelper.GetDBHelper().EjecutarSQL(SQLactualizar);
 
         }
+        public string BuscarPorNombre(string nombre)
+        {
+            string consultaPorNombre = "SELECT id_perfil FROM Perfiles WHERE nombre='" + nombre + "'";
+            var id = DBHelper.GetDBHelper().ConsultaSQL(consultaPorNombre);
+            
+            string id_per = id.Rows[0]["id_perfil"].ToString();
+            return id_per;
+        }
+
 
     }
 }
