@@ -68,10 +68,12 @@
             this.dgvConsulta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvConsulta.Location = new System.Drawing.Point(14, 30);
             this.dgvConsulta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvConsulta.MultiSelect = false;
             this.dgvConsulta.Name = "dgvConsulta";
             this.dgvConsulta.ReadOnly = true;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             this.dgvConsulta.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvConsulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsulta.Size = new System.Drawing.Size(826, 312);
             this.dgvConsulta.TabIndex = 0;
             this.dgvConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsulta_CellContentClick);
