@@ -172,6 +172,7 @@
             this.idperfil.HeaderText = "id";
             this.idperfil.Name = "idperfil";
             this.idperfil.ReadOnly = true;
+            this.idperfil.Visible = false;
             // 
             // frmConsultaPerfiles
             // 
