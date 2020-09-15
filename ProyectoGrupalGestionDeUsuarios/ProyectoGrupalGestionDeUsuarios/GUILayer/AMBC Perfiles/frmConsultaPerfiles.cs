@@ -17,15 +17,16 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         private readonly PerfilService perfilService;
         
         Perfil operfil = new Perfil();
+        
 
         public frmConsultaPerfiles()
         {
-            InitializeComponent();
-            InitializeDataGridView();
+           InitializeComponent();
+            
             perfilService = new PerfilService();            
             
-            dgvConsulta.DataSource = perfilService.obtenerPerfiles();           
-        }               
+           
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -43,6 +44,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
 
         private void frmConsultaPerfiles_Load(object sender, EventArgs e)
         {
+           
+            InitializeDataGridView();
+            dgvConsulta.DataSource = perfilService.obtenerPerfiles();
 
         }
 
@@ -94,13 +98,25 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         {
 
             operfil.IdPerfil = Convert.ToInt32(dgvConsulta.CurrentRow.Cells[3].Value);
-            
-            
+            operfil.Nombre = Convert.ToString(dgvConsulta.CurrentRow.Cells[0].Value);
+
+
+
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show(Convert.ToString(operfil.IdPerfil), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if(MessageBox.Show("Seguro que desea eliminar "+ operfil.Nombre + "", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes);
+            {
+                MessageBox.Show(Convert.ToString(operfil.IdPerfil), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                perfilService.eliminarPerfil(operfil.IdPerfil);
+                
+            }
+            
         }
+
+       
+
     }
+       
 }

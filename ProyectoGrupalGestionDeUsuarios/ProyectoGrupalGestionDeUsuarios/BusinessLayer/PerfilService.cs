@@ -48,10 +48,10 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
             }
         }
 
-        public void eliminarPerfil(string perfil)
+        public void eliminarPerfil(int perfil)
         {
 
-            
+            oPerfilDao.EliminarPorId(perfil);
 
 
 

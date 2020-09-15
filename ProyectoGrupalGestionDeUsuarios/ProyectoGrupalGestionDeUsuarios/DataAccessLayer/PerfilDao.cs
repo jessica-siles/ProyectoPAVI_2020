@@ -65,6 +65,11 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             string id_per = id.Rows[0]["id_perfil"].ToString();
             return id_per;
         }
+        public void EliminarPorId(int idAEliminar)
+        {
+            string buscarEliminar = "UPDATE Perfiles SET borrado = 1 WHERE id_perfil = "+idAEliminar+"";
+            DBHelper.GetDBHelper().EjecutarSQL(buscarEliminar);
+        }
 
 
     }
