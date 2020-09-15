@@ -95,16 +95,38 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         {
             objetoPerfil.IdPerfil = Convert.ToInt32(dgvConsulta.CurrentRow.Cells[3].Value);
             objetoPerfil.Nombre = Convert.ToString(dgvConsulta.CurrentRow.Cells[0].Value);
+            if (Convert.ToString(dgvConsulta.CurrentRow.Cells[1].Value) == "Inactivo")
+            {
+                btnEliminar.Enabled = false;
+                return;
+                
+            }
+            if (Convert.ToString(dgvConsulta.CurrentRow.Cells[1].Value) == "Activo")
+            {
+                btnEliminar.Enabled = true;
+                return;
+                
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Seguro que desea eliminar " + objetoPerfil.Nombre + "", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes) ;
+
+            DialogResult dialogoResultante = MessageBox.Show("Seguro que desea eliminar " + objetoPerfil.Nombre + "", "Aviso", MessageBoxButtons.YesNo);
+
+
+            if (dialogoResultante == DialogResult.Yes)
             {
                 //agregado de recargado de grilla
                 perfilService.eliminarPerfil(objetoPerfil.IdPerfil);
                 dgvConsulta.DataSource = perfilService.obtenerPerfiles();
+                
 
+            }
+            else if (dialogoResultante == DialogResult.No)
+            {
+                //nothing
             }
         }
     }
