@@ -62,7 +62,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
                         txtNombre.Enabled = true;
-                        txtDescripcion.Enabled = true;
+                        txtDescripcion.Enabled = true;                        
                         break;
                     }
             }
@@ -150,6 +150,10 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
                 txtNombre.Text = obPerfil.Nombre;
                 txtDescripcion.Text = obPerfil.Descripcion;
                 //cboPerfil.Text = oUsuarioSelected.Perfil.Nombre;
+                if (obPerfil.Estado is "Activo")
+                    cboEstado.SelectedIndex = 0;
+                else
+                    cboEstado.SelectedIndex = 1;
             }
         }
 

@@ -48,7 +48,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         }
 
         private bool ExistePerfil()
-        {
+        {           
             return servicioPerfiles.ObtenerPerfil(txtNombre.Text) != null;
         }
 
@@ -58,7 +58,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
             {
                 if (ValidarCampos())
                 {
-                    var oPerfil = new Perfil();
+                    var oPerfil = new Perfil();                    
                     oPerfil.Nombre = txtNombre.Text;
                     oPerfil.Descripcion = txtDescripcion.Text;
                     servicioPerfiles.insertarPerfil(txtNombre.Text, txtDescripcion.Text);

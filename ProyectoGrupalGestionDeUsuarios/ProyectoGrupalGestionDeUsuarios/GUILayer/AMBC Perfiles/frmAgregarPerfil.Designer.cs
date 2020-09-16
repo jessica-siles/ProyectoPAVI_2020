@@ -125,6 +125,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
+            this.MaximizeBox = false;
             this.Name = "frmAgregarPerfil";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

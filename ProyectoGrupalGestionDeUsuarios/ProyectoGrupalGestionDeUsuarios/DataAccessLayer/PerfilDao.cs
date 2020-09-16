@@ -78,11 +78,11 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             String strSql = string.Concat(" SELECT id_perfil, ",
                                           "        nombre, ",
                                           "        borrado, ",
-                                          "        descripcion ",                                                 
-                                          "  FROM Perfiles",                                          
-                                          "  WHERE borrado = 0");
+                                          "        descripcion ",
+                                          "  FROM Perfiles");                                
+                                          //"  WHERE borrado = 0");
 
-            strSql += " AND nombre=" + "'" + nombrePerfil + "'";
+            strSql += " WHERE nombre=" + "'" + nombrePerfil + "'";
 
 
             //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()

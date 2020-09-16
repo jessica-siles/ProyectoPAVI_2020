@@ -30,7 +30,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Entities
             }
             else
             {
-                Estado = "Inactivo";
+                Estado = "No Activo";
             }
         }
         public void mostrarEstado(bool m)

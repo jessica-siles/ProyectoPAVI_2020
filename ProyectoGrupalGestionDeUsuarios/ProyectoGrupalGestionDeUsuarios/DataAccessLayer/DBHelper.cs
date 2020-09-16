@@ -12,8 +12,8 @@ namespace ProyectoGrupalGestionDeUsuarios
 
         private DBHelper()
         {
-            //string_conexion = @"Data Source=DESKTOP-IJEL4J8\SQLEXPRESS;Initial Catalog=Bugs_Extendido;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string_conexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=BugsTracker_Ext;User ID=sa;Password=pcN4conexion";
+            string_conexion = @"Data Source=DESKTOP-IJEL4J8\SQLEXPRESS;Initial Catalog=Bugs_Extendido;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //string_conexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=BugsTracker_Ext;User ID=sa;Password=pcN4conexion";
         }
 
         public static DBHelper GetDBHelper()
