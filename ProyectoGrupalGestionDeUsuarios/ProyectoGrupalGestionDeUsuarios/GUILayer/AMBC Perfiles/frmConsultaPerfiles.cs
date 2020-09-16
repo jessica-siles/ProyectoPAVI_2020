@@ -95,7 +95,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         {
             objetoPerfil.IdPerfil = Convert.ToInt32(dgvConsulta.CurrentRow.Cells[3].Value);
             objetoPerfil.Nombre = Convert.ToString(dgvConsulta.CurrentRow.Cells[0].Value);
-            if (Convert.ToString(dgvConsulta.CurrentRow.Cells[1].Value) == "Inactivo")
+
+            if (Convert.ToString(dgvConsulta.CurrentRow.Cells[1].Value) == "No Activo")
             {
                 btnEliminar.Enabled = false;
                 return;
