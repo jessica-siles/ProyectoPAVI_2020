@@ -46,13 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\FormularioService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="DataAccessLayer\FormularioDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="Entities\Formulario.cs" />
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUILayer\ABM Formularios\frmFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABM Formularios\frmFormulario.Designer.cs">
+      <DependentUpon>frmFormulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\AMBC Perfiles\frmConsultaPerfiles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\ABM Formularios\frmFormulario.resx">
+      <DependentUpon>frmFormulario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\AMBC Perfiles\frmModificarPerfil.resx">
       <DependentUpon>frmModificarPerfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,13 +114,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,7 +131,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resource\agregarImg2.png" />
     <Content Include="Resource\fondoLoginultimo.jfif" />
+    <None Include="Resource\FondoPerf.jpg" />
     <Content Include="Resource\login.jfif" />
     <Content Include="Resource\otroFondo.jpg" />
   </ItemGroup>
