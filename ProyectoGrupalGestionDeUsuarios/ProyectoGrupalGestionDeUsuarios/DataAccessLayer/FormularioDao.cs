@@ -15,28 +15,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         {           
             return DBHelper.GetDBHelper().ConsultaSQL("SELECT * FROM Formularios");            
         }
-
-        //public IList<Formulario> RecuperarFormularios()
-        //{
-        //    List<Formulario> listadoFormularios = new List<Formulario>();            
-
-        //    var strSql = "SELECT * FROM Formularios";
-
-        //    var resultadoConsulta = DBHelper.GetDBHelper().ConsultaSQL(strSql);
-
-        //    foreach (DataRow row in resultadoConsulta.Rows)
-        //    {
-        //        listadoFormularios.Add(MapearFormulario(row));
-        //    }
-
-        //    return listadoFormularios;
-        //}
         
-        //public DataTable recuperarFormularioPorId(int id)
-        //{
-        //    string consultaSQL = "SELECT * FROM Formularios WHERE id_formulario =" + id;
-        //    return oDatos.Consultar(consultaSQL);
-        //}
         public Formulario recuperarFormularioPorID(int id)
         {
             string consultaSQL = "SELECT * FROM Formularios WHERE id_formulario =" + id;

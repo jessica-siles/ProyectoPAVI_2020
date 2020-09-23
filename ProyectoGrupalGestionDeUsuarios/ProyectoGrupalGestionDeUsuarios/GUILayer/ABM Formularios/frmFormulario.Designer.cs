@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormulario));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -56,21 +56,21 @@
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(261, 23);
+            this.txtID.Location = new System.Drawing.Point(231, 23);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 0;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(261, 58);
+            this.txtNombre.Location = new System.Drawing.Point(231, 58);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // txtDescripción
             // 
-            this.txtDescripción.Location = new System.Drawing.Point(261, 132);
+            this.txtDescripción.Location = new System.Drawing.Point(231, 132);
             this.txtDescripción.Multiline = true;
             this.txtDescripción.Name = "txtDescripción";
             this.txtDescripción.Size = new System.Drawing.Size(400, 100);
@@ -82,7 +82,7 @@
             this.lblID.BackColor = System.Drawing.Color.Transparent;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(208, 25);
+            this.lblID.Location = new System.Drawing.Point(178, 25);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(29, 18);
             this.lblID.TabIndex = 4;
@@ -94,7 +94,7 @@
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(164, 60);
+            this.lblNombre.Location = new System.Drawing.Point(134, 60);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(73, 18);
             this.lblNombre.TabIndex = 5;
@@ -106,7 +106,7 @@
             this.lblEstado.BackColor = System.Drawing.Color.Transparent;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.White;
-            this.lblEstado.Location = new System.Drawing.Point(171, 95);
+            this.lblEstado.Location = new System.Drawing.Point(141, 95);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(66, 18);
             this.lblEstado.TabIndex = 6;
@@ -118,7 +118,7 @@
             this.lblDescripcion.BackColor = System.Drawing.Color.Transparent;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.White;
-            this.lblDescripcion.Location = new System.Drawing.Point(134, 134);
+            this.lblDescripcion.Location = new System.Drawing.Point(104, 134);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(103, 18);
             this.lblDescripcion.TabIndex = 7;
@@ -127,7 +127,7 @@
             // cboBorrado
             // 
             this.cboBorrado.FormattingEnabled = true;
-            this.cboBorrado.Location = new System.Drawing.Point(261, 95);
+            this.cboBorrado.Location = new System.Drawing.Point(231, 95);
             this.cboBorrado.Name = "cboBorrado";
             this.cboBorrado.Size = new System.Drawing.Size(120, 21);
             this.cboBorrado.TabIndex = 8;
@@ -157,8 +157,8 @@
             this.grdFormularios.Location = new System.Drawing.Point(6, 23);
             this.grdFormularios.Name = "grdFormularios";
             this.grdFormularios.ReadOnly = true;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.grdFormularios.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.grdFormularios.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grdFormularios.Size = new System.Drawing.Size(690, 150);
             this.grdFormularios.TabIndex = 0;
             this.grdFormularios.SelectionChanged += new System.EventHandler(this.grdFormularios_SelectionChanged);

@@ -41,8 +41,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
             {
                 grilla.Rows.Add(tabla.Rows[i]["id_formulario"],
                                 tabla.Rows[i]["nombre"],
-                                tabla.Rows[i]["borrado"]);
-            }
+                                tabla.Rows[i]["borrado"]);              
+            }            
         }
 
         private void HabilitarFrm(bool x)
@@ -163,9 +163,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
                                     MessageBoxDefaultButton.Button2)
                     == DialogResult.Yes)
                 {
-                    //oFormulario.Borrado = 1;
-                    //formularioService.actualizarFormulario(oFormulario);               
-                    formularioService.eliminarFormulario(oFormulario.IdFormulario);
+                    //formularioService.eliminarFormulario(oFormulario.IdFormulario);
+                    oFormulario.Borrado = 1;
+                    formularioService.actualizarFormulario(oFormulario);             
                     esEliminado = true;
                     CargarGrilla(grdFormularios, formularioService.obtenerFormularios());
                 }
