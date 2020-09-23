@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoGrupalGestionDeUsuarios.GUILayer;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles;
+using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
+using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
 using ProyectoGrupalGestionDeUsuarios.Entities;
 
 
@@ -61,6 +63,27 @@ namespace ProyectoGrupalGestionDeUsuarios
             ConsultarPerfiles.ShowDialog();
             
 
+        }
+
+        private void registrarNuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAltaUsuario altausuario;
+            altausuario = new frmAltaUsuario();
+            altausuario.ShowDialog();
+        }
+
+        private void consultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarUsuario consultausuario;
+            consultausuario = new frmConsultarUsuario();
+            consultausuario.ShowDialog();
+        }
+
+        private void formulariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFormulario formulario;
+            formulario = new frmFormulario();
+            formulario.ShowDialog();
         }
     }
 }

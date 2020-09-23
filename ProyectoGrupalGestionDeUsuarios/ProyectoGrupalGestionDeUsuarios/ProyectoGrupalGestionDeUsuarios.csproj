@@ -49,6 +49,7 @@
     <Compile Include="BusinessLayer\FormularioService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
+    <Compile Include="DataAccessLayer\DataManager.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\FormularioDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
@@ -80,6 +81,24 @@
     <Compile Include="GUILayer\AMBC Perfiles\frmAgregarPerfil.Designer.cs">
       <DependentUpon>frmAgregarPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmAltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmAltaUsuario.Designer.cs">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmConsultarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmConsultarUsuario.Designer.cs">
+      <DependentUpon>frmConsultarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmModificarUsuario.Designer.cs">
+      <DependentUpon>frmModificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +125,15 @@
     <EmbeddedResource Include="GUILayer\AMBC Perfiles\frmAgregarPerfil.resx">
       <DependentUpon>frmAgregarPerfil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Usuarios\frmAltaUsuario.resx">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Usuarios\frmConsultarUsuario.resx">
+      <DependentUpon>frmConsultarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Usuarios\frmModificarUsuario.resx">
+      <DependentUpon>frmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,8 +142,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,9 +164,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resource\agregarImg2.png" />
     <Content Include="Resource\fondoLoginultimo.jfif" />
-    <None Include="Resource\FondoPerf.jpg" />
     <Content Include="Resource\login.jfif" />
     <Content Include="Resource\otroFondo.jpg" />
   </ItemGroup>

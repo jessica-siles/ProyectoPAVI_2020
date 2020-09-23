@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
 
 namespace ProyectoGrupalGestionDeUsuarios.GUILayer
 {
@@ -106,6 +107,12 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                 btnAceptar.Focus();
                 e.Handled = true;
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAltaUsuario altaUsuario = new frmAltaUsuario();
+            altaUsuario.ShowDialog();
         }
     }
 

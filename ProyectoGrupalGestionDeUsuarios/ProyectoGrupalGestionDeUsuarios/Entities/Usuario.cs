@@ -12,8 +12,9 @@ namespace ProyectoGrupalGestionDeUsuarios.Entities
         public string NombreUsuario { get; set; }
         public string Email { get; set; }
         public string Estado { get; set; }
-
+        public int perfil { get; set; }
         public string Password { get; set; }
+
 
         public Perfil Perfil { get; set; }
 

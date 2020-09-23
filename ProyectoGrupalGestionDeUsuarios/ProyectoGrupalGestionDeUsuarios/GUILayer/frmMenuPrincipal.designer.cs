@@ -33,21 +33,26 @@
             this.btnPerfil = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarNuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.MediumOrchid;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter, ((byte)(0)));
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnPerfil});
+            this.btnPerfil,
+            this.usuariosToolStripMenuItem,
+            this.formulariosToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(884, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -57,28 +62,69 @@
             this.btnPerfil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioToolStripMenuItem,
             this.consultarPerfilesToolStripMenuItem});
-            this.btnPerfil.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPerfil.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.btnPerfil.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfil.ForeColor = System.Drawing.Color.Black;
             this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(88, 29);
+            this.btnPerfil.Size = new System.Drawing.Size(103, 36);
             this.btnPerfil.Text = "Perfiles";
             // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.usuarioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.usuarioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuarioToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(312, 36);
             this.usuarioToolStripMenuItem.Text = "Agregar Nuevo Perfil";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // consultarPerfilesToolStripMenuItem
             // 
             this.consultarPerfilesToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.consultarPerfilesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultarPerfilesToolStripMenuItem.Name = "consultarPerfilesToolStripMenuItem";
-            this.consultarPerfilesToolStripMenuItem.Size = new System.Drawing.Size(272, 30);
+            this.consultarPerfilesToolStripMenuItem.Size = new System.Drawing.Size(312, 36);
             this.consultarPerfilesToolStripMenuItem.Text = "Consultar Perfiles";
             this.consultarPerfilesToolStripMenuItem.Click += new System.EventHandler(this.consultarPerfilesToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarNuevoUsuarioToolStripMenuItem,
+            this.consultarUsuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(117, 36);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // registrarNuevoUsuarioToolStripMenuItem
+            // 
+            this.registrarNuevoUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.registrarNuevoUsuarioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registrarNuevoUsuarioToolStripMenuItem.Name = "registrarNuevoUsuarioToolStripMenuItem";
+            this.registrarNuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
+            this.registrarNuevoUsuarioToolStripMenuItem.Text = "Registrar Nuevo Usuario";
+            this.registrarNuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.registrarNuevoUsuarioToolStripMenuItem_Click);
+            // 
+            // consultarUsuariosToolStripMenuItem
+            // 
+            this.consultarUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.consultarUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultarUsuariosToolStripMenuItem.Name = "consultarUsuariosToolStripMenuItem";
+            this.consultarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
+            this.consultarUsuariosToolStripMenuItem.Text = "Consultar Usuarios";
+            this.consultarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.consultarUsuariosToolStripMenuItem_Click);
+            // 
+            // formulariosToolStripMenuItem
+            // 
+            this.formulariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formulariosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.formulariosToolStripMenuItem.Name = "formulariosToolStripMenuItem";
+            this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(152, 36);
+            this.formulariosToolStripMenuItem.Text = "Formularios";
+            this.formulariosToolStripMenuItem.Click += new System.EventHandler(this.formulariosToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -90,7 +136,7 @@
             this.ClientSize = new System.Drawing.Size(884, 653);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Violet;
+            this.ForeColor = System.Drawing.Color.DarkViolet;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -112,6 +158,10 @@
         private System.Windows.Forms.ToolStripMenuItem btnPerfil;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarPerfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarNuevoUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formulariosToolStripMenuItem;
     }
 }
 

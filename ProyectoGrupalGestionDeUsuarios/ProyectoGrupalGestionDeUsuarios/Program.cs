@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoGrupalGestionDeUsuarios.GUILayer;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles;
+using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
 
 namespace ProyectoGrupalGestionDeUsuarios
@@ -19,10 +20,9 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmMenuPrincipal());
+            Application.Run(new frmMenuPrincipal());
             //Application.Run(new frmAgregarPerfil());            
             //Application.Run(new frmConsultaPerfiles());
-            Application.Run(new frmFormulario());
         }
     }
 }

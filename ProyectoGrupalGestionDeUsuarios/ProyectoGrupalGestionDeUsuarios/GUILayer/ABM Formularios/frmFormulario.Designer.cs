@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormulario));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -157,8 +157,8 @@
             this.grdFormularios.Location = new System.Drawing.Point(6, 23);
             this.grdFormularios.Name = "grdFormularios";
             this.grdFormularios.ReadOnly = true;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.grdFormularios.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.grdFormularios.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdFormularios.Size = new System.Drawing.Size(690, 150);
             this.grdFormularios.TabIndex = 0;
             this.grdFormularios.SelectionChanged += new System.EventHandler(this.grdFormularios_SelectionChanged);
@@ -274,6 +274,7 @@
             this.Controls.Add(this.txtID);
             this.MaximizeBox = false;
             this.Name = "frmFormulario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formularios";
             this.Load += new System.EventHandler(this.frmFormulario_Load);
             this.gbxFormulario.ResumeLayout(false);
