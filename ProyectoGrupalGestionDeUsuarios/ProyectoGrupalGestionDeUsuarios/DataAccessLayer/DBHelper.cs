@@ -13,7 +13,13 @@ namespace ProyectoGrupalGestionDeUsuarios
         private DBHelper()
         {
             //string_conexion = @"Data Source=DESKTOP-IJEL4J8\SQLEXPRESS;Initial Catalog=Bugs_Extendido;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string_conexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=BugsTracker_Ext;User ID=sa;Password=pcN4conexion";
+            //string_conexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=BugsTracker_Ext;User ID=sa;Password=pcN4conexion";
+
+            //base al servidor oficial
+            string_conexion = "workstation id=ProyectoUsuarios.mssql.somee.com;packet size=4096;user id=jessica_ardi_SQLLogin_1;pwd=ssklwm8k3k;data source=ProyectoUsuarios.mssql.somee.com;persist security info=False;initial catalog=ProyectoUsuarios";
+
+            //base al servidor de pruebas
+            //string_conexion = "workstation id=ProyectoUsuariosPruebas.mssql.somee.com;packet size=4096;user id=jessi_siles_SQLLogin_1;pwd=z2mxqfv1vc;data source=ProyectoUsuariosPruebas.mssql.somee.com;persist security info=False;initial catalog=ProyectoUsuariosPruebas";
         }
 
         public static DBHelper GetDBHelper()
