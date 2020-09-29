@@ -36,8 +36,8 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarNuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historicoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,6 +119,14 @@
             this.consultarUsuariosToolStripMenuItem.Text = "Consultar Usuarios";
             this.consultarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.consultarUsuariosToolStripMenuItem_Click);
             // 
+            // historicoDeUsuariosToolStripMenuItem
+            // 
+            this.historicoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.historicoDeUsuariosToolStripMenuItem.Name = "historicoDeUsuariosToolStripMenuItem";
+            this.historicoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
+            this.historicoDeUsuariosToolStripMenuItem.Text = "Historico De Usuarios";
+            this.historicoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.historicoDeUsuariosToolStripMenuItem_Click);
+            // 
             // formulariosToolStripMenuItem
             // 
             this.formulariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,13 +135,6 @@
             this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(152, 36);
             this.formulariosToolStripMenuItem.Text = "Formularios";
             this.formulariosToolStripMenuItem.Click += new System.EventHandler(this.formulariosToolStripMenuItem_Click);
-            // 
-            // historicoDeUsuariosToolStripMenuItem
-            // 
-            this.historicoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.historicoDeUsuariosToolStripMenuItem.Name = "historicoDeUsuariosToolStripMenuItem";
-            this.historicoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
-            this.historicoDeUsuariosToolStripMenuItem.Text = "Historico De Usuarios";
             // 
             // frmMenuPrincipal
             // 

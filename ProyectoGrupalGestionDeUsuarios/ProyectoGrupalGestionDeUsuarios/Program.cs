@@ -7,6 +7,7 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
+using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
@@ -23,6 +24,7 @@ namespace ProyectoGrupalGestionDeUsuarios
             Application.Run(new frmMenuPrincipal());
             //Application.Run(new frmAgregarPerfil());            
             //Application.Run(new frmConsultaPerfiles());
+            //Application.Run(new frmHistoricoUsuario());
         }
     }
 }

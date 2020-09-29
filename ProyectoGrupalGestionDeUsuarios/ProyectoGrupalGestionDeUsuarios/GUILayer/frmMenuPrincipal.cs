@@ -11,6 +11,7 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
+using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.Entities;
 
 
@@ -84,6 +85,12 @@ namespace ProyectoGrupalGestionDeUsuarios
             frmFormulario formulario;
             formulario = new frmFormulario();
             formulario.ShowDialog();
+        }
+
+        private void historicoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHistoricoUsuario usersHistory = new frmHistoricoUsuario();
+            usersHistory.ShowDialog();
         }
     }
 }
