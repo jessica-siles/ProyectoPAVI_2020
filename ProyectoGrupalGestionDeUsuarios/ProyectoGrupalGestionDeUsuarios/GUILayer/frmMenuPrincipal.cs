@@ -35,7 +35,7 @@ namespace ProyectoGrupalGestionDeUsuarios
             formularioLogin.ShowDialog();
 
             this.Text = this.Text + " - Usuario: " + formularioLogin.UsuarioLogueado;
-           
+
         }
 
         private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
