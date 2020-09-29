@@ -37,6 +37,7 @@
             this.registrarNuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historicoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,7 +93,8 @@
             this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarNuevoUsuarioToolStripMenuItem,
-            this.consultarUsuariosToolStripMenuItem});
+            this.consultarUsuariosToolStripMenuItem,
+            this.historicoDeUsuariosToolStripMenuItem});
             this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
@@ -125,6 +127,13 @@
             this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(152, 36);
             this.formulariosToolStripMenuItem.Text = "Formularios";
             this.formulariosToolStripMenuItem.Click += new System.EventHandler(this.formulariosToolStripMenuItem_Click);
+            // 
+            // historicoDeUsuariosToolStripMenuItem
+            // 
+            this.historicoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.historicoDeUsuariosToolStripMenuItem.Name = "historicoDeUsuariosToolStripMenuItem";
+            this.historicoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
+            this.historicoDeUsuariosToolStripMenuItem.Text = "Historico De Usuarios";
             // 
             // frmMenuPrincipal
             // 
@@ -162,6 +171,7 @@
         private System.Windows.Forms.ToolStripMenuItem registrarNuevoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formulariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historicoDeUsuariosToolStripMenuItem;
     }
 }
 

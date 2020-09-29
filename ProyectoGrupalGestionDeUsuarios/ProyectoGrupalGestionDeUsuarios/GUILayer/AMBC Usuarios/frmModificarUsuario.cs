@@ -30,6 +30,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
              
             
             cargarTextos(var);
+            txtUsuario.Enabled = false;
 
 
         }
@@ -69,7 +70,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             
 
         }
-
+        
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -84,20 +85,34 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
 
             if (servicioUsuario.validarCampos(txtUsuario, txtPass, txtEmail, cboPerfil) == true && servicioUsuario.bus(txtUsuario,var) == true && servicioUsuario.busAdmin(cboPerfil,var))
             {
-                
-                
+                DateTime fecha_actual = DateTime.Today;
+                string fecha = fecha_actual.ToString("yyyy-MM-dd 00:00:00");
+                string titulo = "Modificacion de Usuario";
+                string descripcion = "Modificacion de los campos de Usuario";
 
-               
+
+
                 usuarioEntities.NombreUsuario = txtUsuario.Text;
+
                 usuarioEntities.Password = txtPass.Text;
                 usuarioEntities.Email = txtEmail.Text;
                 usuarioEntities.Estado = estado;
                 usuarioEntities.perfil = int.Parse(cboPerfil.SelectedValue.ToString());
 
-                UsuarioDao.ConectarUsuario(UsuarioDao.modificarUsuario(var, usuarioEntities.perfil, txtUsuario.Text, txtPass.Text, txtEmail.Text, estado));
+                if (UsuarioDao.UsuarioModificarConHistorial(var,usuarioEntities, fecha, titulo, descripcion))
+                {
+
+                    MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    this.Close();
+                }
                 
-                MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!" , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                Close();
+                else
+                {
+                    MessageBox.Show("Usuario " + txtUsuario.Text + " No pudo ser Registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                }
+                
                 
 
             }

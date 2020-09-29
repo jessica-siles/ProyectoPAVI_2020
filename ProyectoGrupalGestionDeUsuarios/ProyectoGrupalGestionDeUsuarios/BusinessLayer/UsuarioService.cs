@@ -24,6 +24,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
             return oUsuarioDao.GetAll();
         }
 
+
         //public Usuario ValidarUsuario(string usuario, string password)
         //{
         //    var usr = oUsuarioDao.GetUser(usuario);

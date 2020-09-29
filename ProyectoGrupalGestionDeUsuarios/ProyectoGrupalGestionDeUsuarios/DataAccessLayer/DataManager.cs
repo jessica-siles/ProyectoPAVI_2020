@@ -21,9 +21,8 @@ public class DataManager
 
         //base al servidor de pruebas
         dbConnection.ConnectionString = "workstation id=ProyectoUsuariosPruebas.mssql.somee.com;packet size=4096;user id=jessi_siles_SQLLogin_1;pwd=z2mxqfv1vc;data source=ProyectoUsuariosPruebas.mssql.somee.com;persist security info=False;initial catalog=ProyectoUsuariosPruebas";
+    }
     
-}
-
     public void BeginTransaction()
     {
 
@@ -230,5 +229,6 @@ public class DataManager
             throw (ex);
         }
     }
+
 
 }

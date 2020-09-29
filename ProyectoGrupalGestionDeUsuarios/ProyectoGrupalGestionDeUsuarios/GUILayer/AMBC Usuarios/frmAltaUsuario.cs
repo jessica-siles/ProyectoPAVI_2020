@@ -118,6 +118,14 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             else
                 estado = "N";
 
+            
+            DateTime fecha_actual = DateTime.Today;
+            string fecha = fecha_actual.ToString("yyyy-MM-dd 00:00:00");
+            string titulo = "Registro de Usuario";
+            string descripcion = "Primer alta de Usuario";
+
+            
+
             if (servicioUsuario.validarCampos(txtUsuario, txtPass, txtEmail, cboPerfil) && buscaAdmin(cboPerfil) && busUsuario(txtUsuario))
             {
                 usuarioEntities.NombreUsuario = txtUsuario.Text;
@@ -127,10 +135,21 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                 usuarioEntities.Estado = estado;
                 
                 usuarioEntities.perfil = int.Parse(cboPerfil.SelectedValue.ToString());
-               
-                UsuarioDao.ConectarUsuario(UsuarioDao.insertarUsuario(txtUsuario.Text, txtPass.Text, txtEmail.Text, estado, usuarioEntities.perfil));
+
                 
-                MessageBox.Show("Usuario "+ txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (UsuarioDao.UsuarioConHistorial(usuarioEntities, fecha, titulo, descripcion))
+                {
+                  
+                    MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    
+                    this.Close();
+                }
+                
+                else
+                {
+                    MessageBox.Show("Usuario " + txtUsuario.Text + " No pudo ser Registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                }
                 limpiarCampos();
                 
 
