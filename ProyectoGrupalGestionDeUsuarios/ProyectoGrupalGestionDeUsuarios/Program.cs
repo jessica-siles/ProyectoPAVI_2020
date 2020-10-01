@@ -25,6 +25,7 @@ namespace ProyectoGrupalGestionDeUsuarios
             //Application.Run(new frmAgregarPerfil());            
             //Application.Run(new frmConsultaPerfiles());
             //Application.Run(new frmHistoricoUsuario());
+            //Application.Run(new frmFormulario());
         }
     }
 }

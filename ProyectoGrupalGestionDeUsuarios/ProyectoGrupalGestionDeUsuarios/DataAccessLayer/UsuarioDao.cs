@@ -78,6 +78,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             string lastId = "SELECT IDENT_CURRENT('Usuarios')";
             return lastId;
         }
+
         public string insertarUsuario(string usuario, string pass, string email, string estado, int perfil)
         {
             string insertarUsuario = "INSERT INTO USUARIOS (id_perfil,usuario,password,email,estado,borrado) VALUES (" + perfil + ",'" + usuario + "','" + pass + "','" + email + "','" + estado + "',0)";
@@ -85,11 +86,13 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             return insertarUsuario;
             
         }
+
         public string modificarUsuario(int id_usuario,int id_perfil,string usuario, string pass, string email,string estado)
         {
             string modificar = "UPDATE Usuarios SET borrado = 0,id_perfil = "+ id_perfil +", usuario = '"+ usuario +"', password = '"+ pass +"',email = '"+ email +"', estado = '"+ estado +"' WHERE id_usuario = " + id_usuario;
             return modificar;
         }
+
         public void actualizarusuario(string SQLactualizar)
         {
             DBHelper.GetDBHelper().EjecutarSQL(SQLactualizar);
@@ -101,31 +104,37 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             string consultarperfil = "SELECT * FROM Perfiles";
             return consultarperfil;
         }
+
         public string consultaUsuarios()
         {
             string consultaUusuarios = "SELECT id_usuario,usuario,password,email,nombre,estado FROM Usuarios INNER JOIN Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil WHERE Usuarios.borrado = 0";
             return consultaUusuarios;
         }
+
         public string buscarPorNombreUsuario(string nombre)
         {
             string nombreUsuario = "SELECT id_usuario,usuario,password,email,nombre,estado FROM Usuarios INNER JOIN Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil WHERE Usuarios.usuario = '"+ nombre +"'";
             return nombreUsuario;
         }
+
         public DataTable Consultar(string consultarParametro)
         {
             DataTable consulta = DataManager.GetInstance().ConsultaSQL(consultarParametro);
             return consulta;
         }
+
         public void EliminarPorId(int idAEliminar)
         {
             string buscarEliminar = "UPDATE Usuarios SET borrado = 1 WHERE id_usuario = " + idAEliminar + "";
             actualizarusuario(buscarEliminar);
         }
+
         public string BuscarPorId(int buscar)
         {
             string buscarId = "SELECT id_usuario,usuario,password,email,nombre,estado FROM Usuarios INNER JOIN Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil WHERE Usuarios.id_usuario = " + buscar + "";
             return buscarId;
         }
+
         public string buscarAdministrador()
         {
             string administrador = "SELECT nombre, id_usuario FROM Usuarios INNER JOIN Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil WHERE Perfiles.nombre = 'administrador'";
