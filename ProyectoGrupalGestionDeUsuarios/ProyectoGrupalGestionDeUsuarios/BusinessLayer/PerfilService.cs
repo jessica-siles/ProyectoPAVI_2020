@@ -65,9 +65,6 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
         {
 
             oPerfilDao.EliminarPorId(perfil);
-
-
-
         }
 
 

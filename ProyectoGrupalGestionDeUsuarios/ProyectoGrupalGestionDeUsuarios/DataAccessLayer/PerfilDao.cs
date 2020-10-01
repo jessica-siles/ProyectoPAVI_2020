@@ -16,7 +16,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         {
             List<Perfil> listadoPerfiles = new List<Perfil>();
 
-            String strSql = string.Concat("SELECT id_perfil, nombre, borrado, descripcion FROM Perfiles");
+            String strSql = string.Concat("SELECT id_perfil, nombre, borrado, descripcion FROM Perfiles WHERE borrado=0");
 
             var resultadoConsulta = DBHelper.GetDBHelper().ConsultaSQL(strSql);
 
