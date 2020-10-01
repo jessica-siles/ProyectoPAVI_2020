@@ -17,6 +17,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
         Usuario usuarioEntities = new Usuario();
         UsuarioDao UsuarioDao = new UsuarioDao();
         UsuarioService servicioUsuario = new UsuarioService();
+        HistorialUsuario historial = new HistorialUsuario();
 
 
 
@@ -121,8 +122,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             
             DateTime fecha_actual = DateTime.Today;
             string fecha = fecha_actual.ToString("yyyy-MM-dd 00:00:00");
-            string titulo = "Registro de Usuario";
-            string descripcion = "Primer alta de Usuario";
+            historial.Fecha = fecha;
+            historial.Titulo = "Registro de Usuario";
+            historial.Descripcion = "Primer alta de Usuario";
 
             
 
@@ -137,7 +139,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                 usuarioEntities.perfil = int.Parse(cboPerfil.SelectedValue.ToString());
 
                 
-                if (UsuarioDao.UsuarioConHistorial(usuarioEntities, fecha, titulo, descripcion))
+                if (UsuarioDao.UsuarioConHistorial(usuarioEntities, historial))
                 {
                   
                     MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

@@ -22,6 +22,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
     public class UsuarioDao
     {
         
+
         public IList<Usuario> GetAll()
         {
             List<Usuario> listadoBugs = new List<Usuario>();
@@ -101,7 +102,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
         public string consultarPerfiles()
         {
-            string consultarperfil = "SELECT * FROM Perfiles";
+            string consultarperfil = "SELECT * FROM Perfiles where borrado = 0";
             return consultarperfil;
         }
 
@@ -122,11 +123,17 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             DataTable consulta = DataManager.GetInstance().ConsultaSQL(consultarParametro);
             return consulta;
         }
+//<<<<<<< HEAD
 
-        public void EliminarPorId(int idAEliminar)
+//        public void EliminarPorId(int idAEliminar)
+
+        public string EliminarPorId(int idAEliminar)
+
         {
             string buscarEliminar = "UPDATE Usuarios SET borrado = 1 WHERE id_usuario = " + idAEliminar + "";
-            actualizarusuario(buscarEliminar);
+            //actualizarusuario(buscarEliminar);
+            return buscarEliminar;
+            
         }
 
         public string BuscarPorId(int buscar)
@@ -159,16 +166,16 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             + "id_perfil,usuario,password,email,estado,borrado from Usuarios where id_usuario =" + id_usuario;
             return historico;
         }
-
         
-    
+
+
         public DataTable prueba()
         {
             DataTable pru = Consultar(identCurrent());
             return pru;
         }
 
-        public bool UsuarioConHistorial(Usuario user, string fecha, string titulo, string descripcion)
+        public bool UsuarioConHistorial(Usuario user, HistorialUsuario historial)
         {
             DataManager dm = new DataManager();
             try
@@ -190,9 +197,9 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 //+ "id_perfil,usuario,password,email,estado,borrado from Usuarios where id_usuario =" + Id;
 
                
-                MessageBox.Show(insertarHistorico(fecha, titulo, descripcion, Id), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, Id), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //se envia el newId por parametro para realizar la busqueda en el insert into select
-                dm.EjecutarSQL(insertarHistorico(fecha, titulo, descripcion, Id));
+                dm.EjecutarSQL(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, Id));
 
                 dm.Commit();
                 return true;
@@ -209,7 +216,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             }
 
         }
-        public bool UsuarioModificarConHistorial(int id_usuario, Usuario user, string fecha, string titulo, string descripcion)
+        public bool UsuarioModificarConHistorial(int id_usuario, Usuario user, HistorialUsuario historial)
         {
             DataManager dm = new DataManager();
             try
@@ -223,9 +230,41 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 MessageBox.Show(modificarUsuario(id_usuario, user.perfil, user.NombreUsuario, user.Password, user.Email, user.Estado), "muestro la sentencia UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 //sentencia insert
-                dm.EjecutarSQL(insertarHistorico(fecha, titulo, descripcion, id_usuario));
+                dm.EjecutarSQL(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, id_usuario));
 
-                MessageBox.Show(insertarHistorico(fecha, titulo, descripcion, id_usuario), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, id_usuario), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dm.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                return false;
+            }
+            finally
+            {
+                // Cierra la conexión 
+                dm.Close();
+            }
+
+        }
+
+        public bool eliminacionAgregadoHisotrial(HistorialUsuario historial, int idUser)
+        {
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+
+                //Ejecuto el insert de usuario
+                dm.EjecutarSQL(EliminarPorId(idUser));
+                MessageBox.Show(EliminarPorId(idUser), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, idUser), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //se envia el newId por parametro para realizar la busqueda en el insert into select
+                dm.EjecutarSQL(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, idUser));
 
                 dm.Commit();
                 return true;

@@ -188,9 +188,9 @@
             this.btnAgregar.BackColor = System.Drawing.Color.White;
             this.btnAgregar.ForeColor = System.Drawing.Color.Black;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(41, 439);
+            this.btnAgregar.Location = new System.Drawing.Point(51, 439);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(70, 60);
+            this.btnAgregar.Size = new System.Drawing.Size(60, 50);
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -199,9 +199,9 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.White;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(135, 439);
+            this.btnEditar.Location = new System.Drawing.Point(128, 439);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(70, 60);
+            this.btnEditar.Size = new System.Drawing.Size(60, 50);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -210,9 +210,9 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.White;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(231, 439);
+            this.btnEliminar.Location = new System.Drawing.Point(207, 439);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 60);
+            this.btnEliminar.Size = new System.Drawing.Size(60, 50);
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -221,9 +221,9 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.White;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(356, 439);
+            this.btnGuardar.Location = new System.Drawing.Point(371, 439);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(70, 60);
+            this.btnGuardar.Size = new System.Drawing.Size(60, 50);
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -234,7 +234,7 @@
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.Location = new System.Drawing.Point(448, 439);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(70, 60);
+            this.btnCancelar.Size = new System.Drawing.Size(60, 50);
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -243,9 +243,9 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(671, 439);
+            this.btnSalir.Location = new System.Drawing.Point(681, 439);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(70, 60);
+            this.btnSalir.Size = new System.Drawing.Size(60, 50);
             this.btnSalir.TabIndex = 15;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);

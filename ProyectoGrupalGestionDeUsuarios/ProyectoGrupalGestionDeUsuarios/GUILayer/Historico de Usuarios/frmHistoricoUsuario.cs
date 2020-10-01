@@ -39,6 +39,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios
                                              historialUsuarios.Rows[i]["id_perfil"],
                                              historialUsuarios.Rows[i]["usuario"],
                                              historialUsuarios.Rows[i]["password"],
+                                             historialUsuarios.Rows[i]["email"],
                                              historialUsuarios.Rows[i]["estado"],
                                              historialUsuarios.Rows[i]["borrado"]);
             }

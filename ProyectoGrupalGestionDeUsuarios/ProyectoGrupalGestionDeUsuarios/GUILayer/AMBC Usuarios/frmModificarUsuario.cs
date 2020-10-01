@@ -18,6 +18,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
         Usuario usuarioEntities = new Usuario();
         UsuarioDao UsuarioDao = new UsuarioDao();
         UsuarioService servicioUsuario = new UsuarioService();
+        HistorialUsuario historial = new HistorialUsuario();
 
         public frmModificarUsuario(int var)
         {
@@ -74,6 +75,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             bool check = chkBoxEstado.Checked;
             string estado = "";
             if (check)
@@ -87,8 +89,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             {
                 DateTime fecha_actual = DateTime.Today;
                 string fecha = fecha_actual.ToString("yyyy-MM-dd 00:00:00");
-                string titulo = "Modificacion de Usuario";
-                string descripcion = "Modificacion de los campos de Usuario";
+                historial.Fecha = fecha;
+                historial.Titulo = "Modificacion de Usuario";
+                
 
 
 
@@ -99,21 +102,49 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                 usuarioEntities.Estado = estado;
                 usuarioEntities.perfil = int.Parse(cboPerfil.SelectedValue.ToString());
 
-                if (UsuarioDao.UsuarioModificarConHistorial(var,usuarioEntities, fecha, titulo, descripcion))
+                int contar = servicioUsuario.ValidarModificaciones(usuarioEntities, var, cboPerfil.Text);
+               
+                if (contar != 0)
                 {
+                    
+                    MessageBox.Show("SE REALIZARON CAMBIOS!" + Convert.ToInt32(contar), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                   
+                    string descripcion = "Se Modifico el:" + servicioUsuario.Descripcion();
+                    historial.Descripcion = descripcion;
+                    MessageBox.Show(historial.Descripcion, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    if (UsuarioDao.UsuarioModificarConHistorial(var, usuarioEntities, historial))
+                    {
 
-                    MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                    this.Close();
+                        this.Close();
+                    }
                 }
-                
-                else
-                {
-                    MessageBox.Show("Usuario " + txtUsuario.Text + " No pudo ser Registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    this.Close();
+
+                    else
+                { 
+                    MessageBox.Show("NO SE ENCONTRARON CAMBIOS", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+
+                //if (UsuarioDao.UsuarioModificarConHistorial(var,usuarioEntities, fecha, titulo, descripcion))
+                //{
+
+                //    MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //    this.Close();
+                //}
                 
+                //else
+                //{
+                //    MessageBox.Show("Usuario " + txtUsuario.Text + " No pudo ser Registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    this.Close();
+                //}
                 
+
+
+
+
+
 
             }
         }

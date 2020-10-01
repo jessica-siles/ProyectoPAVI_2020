@@ -55,6 +55,7 @@
             this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -128,6 +129,7 @@
             this.id_perfil,
             this.usuario,
             this.pass,
+            this.email,
             this.estado,
             this.borrado});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -228,6 +230,12 @@
             this.pass.Name = "pass";
             this.pass.ReadOnly = true;
             // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
             // estado
             // 
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Indigo;
@@ -281,6 +289,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_perfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn pass;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
     }
