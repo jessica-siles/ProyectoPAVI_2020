@@ -36,7 +36,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
 
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
-            string estado = "Activo";
+            string estado = "";
 
             grilla.Rows.Clear();
             for (int i = 0; i < tabla.Rows.Count; i++)
@@ -45,6 +45,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
                 {
                     estado = "Inactivo";
                 }
+                else
+                    estado = "Activo";
                 grilla.Rows.Add(tabla.Rows[i]["id_formulario"],
                                 tabla.Rows[i]["nombre"],
                                 estado);
