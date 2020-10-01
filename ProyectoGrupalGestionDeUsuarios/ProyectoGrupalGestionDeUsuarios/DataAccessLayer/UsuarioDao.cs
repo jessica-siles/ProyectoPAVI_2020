@@ -203,7 +203,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             }
 
         }
-        public bool UsuarioModificarConHistorial(int id_usuario, Usuario user, string fecha, string titulo, string descripcion)
+        public bool UsuarioModificarConHistorial(int id_usuario, Usuario user, HistorialUsuario historial)
         {
             DataManager dm = new DataManager();
             try
@@ -217,9 +217,9 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 MessageBox.Show(modificarUsuario(id_usuario, user.perfil, user.NombreUsuario, user.Password, user.Email, user.Estado), "muestro la sentencia UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 //sentencia insert
-                dm.EjecutarSQL(insertarHistorico(fecha, titulo, descripcion, id_usuario));
+                dm.EjecutarSQL(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, id_usuario));
 
-                MessageBox.Show(insertarHistorico(fecha, titulo, descripcion, id_usuario), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, id_usuario), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 dm.Commit();
                 return true;

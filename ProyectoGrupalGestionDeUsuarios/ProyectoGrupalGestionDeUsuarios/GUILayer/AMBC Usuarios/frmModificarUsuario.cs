@@ -89,7 +89,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             {
                 DateTime fecha_actual = DateTime.Today;
                 string fecha = fecha_actual.ToString("yyyy-MM-dd 00:00:00");
-                string titulo = "Modificacion de Usuario";
+                historial.Fecha = fecha;
+                historial.Titulo = "Modificacion de Usuario";
                 
 
 
@@ -111,7 +112,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                     string descripcion = "Se Modifico el:" + servicioUsuario.Descripcion();
                     historial.Descripcion = descripcion;
                     MessageBox.Show(historial.Descripcion, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    if (UsuarioDao.UsuarioModificarConHistorial(var, usuarioEntities, fecha, titulo, historial.Descripcion))
+                    if (UsuarioDao.UsuarioModificarConHistorial(var, usuarioEntities, historial))
                     {
 
                         MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

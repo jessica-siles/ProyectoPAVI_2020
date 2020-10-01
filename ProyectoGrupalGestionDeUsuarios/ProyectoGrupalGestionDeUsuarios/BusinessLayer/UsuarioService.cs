@@ -121,7 +121,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
 
         public bool validarCampos(TextBox usuario, TextBox Pass, TextBox Email, ComboBox perfil)
         {
-            bool validar = true;
+            
             if ((usuario.Text == ""))
             {
                 MessageBox.Show("Se debe ingresar un usuario.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
