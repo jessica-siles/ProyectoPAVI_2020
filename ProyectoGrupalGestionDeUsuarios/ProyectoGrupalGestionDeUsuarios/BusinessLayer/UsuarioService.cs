@@ -14,6 +14,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
     {
         Usuario usuario = new Usuario();
         private UsuarioDao oUsuarioDao;
+        Usuario valCamposUsuario = new Usuario();
 
         public UsuarioService()
         {
@@ -160,6 +161,83 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
 
         }
 
-        
+        public int ValidarModificaciones(Usuario usuario, int ID, string perfilSelec)
+        {
+            
+            int contador = 0;
+            DataTable validar = oUsuarioDao.Consultar(oUsuarioDao.BuscarPorId(ID));
+            
+            
+            if (validar.Rows[0][2].ToString() != usuario.Password)
+            {
+               
+                
+                
+                contador += 1;
+                valCamposUsuario.Password = "S";
+            }
+            
+            if (validar.Rows[0][3].ToString() != usuario.Email)
+            {
+
+                
+                contador += 1;
+                valCamposUsuario.Email = "S";
+            }
+            
+            if (validar.Rows[0][5].ToString() != usuario.Estado)
+            {
+                
+
+                
+                contador += 1;
+                valCamposUsuario.Estado = "S";
+            }
+
+            if (validar.Rows[0][4].ToString() != perfilSelec.ToString())
+            {
+                
+                contador += 1;
+                valCamposUsuario.perfil = 1;
+            }
+            else
+            { 
+                //nothing
+
+            }
+
+
+            return contador;
+            
+
+        }
+        public string Descripcion()
+        {
+            string desc = "";
+            
+            if (valCamposUsuario.Password == "S")
+            {
+                desc += " Password,";
+            }
+            if (valCamposUsuario.Email == "S")
+            {
+                desc += " Email,";
+            }
+            if (valCamposUsuario.Estado == "S")
+            {
+                desc += " Estado,";
+            }
+            if (valCamposUsuario.perfil == 1)
+            {
+                desc += " Perfil,";
+            }
+            else
+            {
+                //nothing
+
+            }
+
+            return desc;
+        }
     }
 }

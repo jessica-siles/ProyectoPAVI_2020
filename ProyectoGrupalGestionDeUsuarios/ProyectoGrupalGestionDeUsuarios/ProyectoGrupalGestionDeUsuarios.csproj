@@ -56,6 +56,7 @@
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="DataAccessLayer\usuariosHistorialDao.cs" />
     <Compile Include="Entities\Formulario.cs" />
+    <Compile Include="Entities\HistorialUsuario.cs" />
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="GUILayer\ABM Formularios\frmFormulario.cs">

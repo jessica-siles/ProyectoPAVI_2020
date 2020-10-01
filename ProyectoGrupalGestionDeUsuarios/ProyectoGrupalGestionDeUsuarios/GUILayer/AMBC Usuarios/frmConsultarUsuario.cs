@@ -17,7 +17,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
         Usuario usuarioEntities = new Usuario();
         DataManager DataMan = new DataManager();
         UsuarioDao UsuarioDao = new UsuarioDao();
-
+        HistorialUsuario historial = new HistorialUsuario();
         public frmConsultarUsuario()
         {
             InitializeComponent();
@@ -61,12 +61,25 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             
 
             DialogResult dialogoResultante = MessageBox.Show("Seguro que desea eliminar " + usuarioEntities.NombreUsuario + "", "Aviso", MessageBoxButtons.YesNo);
-
+            historial.Titulo = "Eliminacion de Usuario";
+            DateTime fecha_actual = DateTime.Today;
+            string fecha = fecha_actual.ToString("yyyy-MM-dd 00:00:00");
+            historial.Fecha = fecha;
 
             if (dialogoResultante == DialogResult.Yes)
             {
                 //agregado de recargado de grilla
-                UsuarioDao.EliminarPorId(usuarioEntities.IdUsuario);
+                //UsuarioDao.EliminarPorId(usuarioEntities.IdUsuario);
+                historial.Descripcion = "Eliminacion del usuario con id = " + Convert.ToString(usuarioEntities.IdUsuario);
+                if (UsuarioDao.eliminacionAgregadoHisotrial(historial, usuarioEntities.IdUsuario))
+                {
+                    MessageBox.Show("Usuario " + usuarioEntities.NombreUsuario + "eliminado con exito", "Aviso");
+                    
+                }
+                else
+                { 
+                    MessageBox.Show("El usuario no pudo ser eliminado" + usuarioEntities.NombreUsuario + "", "Aviso");
+                }
                 cargarGrilla(UsuarioDao.consultaUsuarios());
 
 
@@ -99,8 +112,6 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             }
             else
             {
-
-
                 if (cargarGrilla(UsuarioDao.buscarPorNombreUsuario(txtBuscar.Text)) >= 1)
                     cargarGrilla(UsuarioDao.buscarPorNombreUsuario(txtBuscar.Text));
                 else
