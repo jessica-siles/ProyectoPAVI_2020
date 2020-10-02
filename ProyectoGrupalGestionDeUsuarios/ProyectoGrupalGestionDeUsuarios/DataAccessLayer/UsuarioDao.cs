@@ -185,10 +185,10 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
                 //Ejecuto el insert de usuario
                 dm.EjecutarSQL(insertarUsuario(user.NombreUsuario, user.Password, user.Email, user.Estado, user.perfil));
-                MessageBox.Show(insertarUsuario(user.NombreUsuario, user.Password, user.Email, user.Estado, user.perfil), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(insertarUsuario(user.NombreUsuario, user.Password, user.Email, user.Estado, user.perfil), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 var newId = dm.ConsultaSQLScalar(identCurrent());
-                MessageBox.Show(Convert.ToString(newId), "muestro el identity", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(Convert.ToString(newId), "muestro el identity", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //Guarda en newId el identity generado
 
@@ -197,7 +197,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 //+ "id_perfil,usuario,password,email,estado,borrado from Usuarios where id_usuario =" + Id;
 
                
-                MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, Id), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, Id), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //se envia el newId por parametro para realizar la busqueda en el insert into select
                 dm.EjecutarSQL(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, Id));
 
@@ -227,12 +227,12 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 //sentencia Update
                 dm.EjecutarSQL(modificarUsuario(id_usuario,user.perfil, user.NombreUsuario, user.Password, user.Email, user.Estado));
 
-                MessageBox.Show(modificarUsuario(id_usuario, user.perfil, user.NombreUsuario, user.Password, user.Email, user.Estado), "muestro la sentencia UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(modificarUsuario(id_usuario, user.perfil, user.NombreUsuario, user.Password, user.Email, user.Estado), "muestro la sentencia UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 //sentencia insert
                 dm.EjecutarSQL(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, id_usuario));
 
-                MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, id_usuario), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, id_usuario), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 dm.Commit();
                 return true;
@@ -260,9 +260,9 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
                 //Ejecuto el insert de usuario
                 dm.EjecutarSQL(EliminarPorId(idUser));
-                MessageBox.Show(EliminarPorId(idUser), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(EliminarPorId(idUser), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, idUser), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, idUser), "muestro la sentencia insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //se envia el newId por parametro para realizar la busqueda en el insert into select
                 dm.EjecutarSQL(insertarHistorico(historial.Fecha, historial.Titulo, historial.Descripcion, idUser));
 

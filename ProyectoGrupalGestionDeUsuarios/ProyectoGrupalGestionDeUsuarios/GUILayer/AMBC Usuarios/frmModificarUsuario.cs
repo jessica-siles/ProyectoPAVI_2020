@@ -107,15 +107,13 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                 if (contar != 0)
                 {
                     
-                    MessageBox.Show("SE REALIZARON CAMBIOS!" + Convert.ToInt32(contar), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                   
                     string descripcion = "Se Modifico el:" + servicioUsuario.Descripcion();
                     historial.Descripcion = descripcion;
-                    MessageBox.Show(historial.Descripcion, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //MessageBox.Show(historial.Descripcion, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     if (UsuarioDao.UsuarioModificarConHistorial(var, usuarioEntities, historial))
                     {
 
-                        MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(historial.Descripcion + " Usuario " + txtUsuario.Text + " Modificado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         this.Close();
                     }
@@ -123,22 +121,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
 
                     else
                 { 
-                    MessageBox.Show("NO SE ENCONTRARON CAMBIOS", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("NO SE REALIZARON CAMBIOS", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
-                //if (UsuarioDao.UsuarioModificarConHistorial(var,usuarioEntities, fecha, titulo, descripcion))
-                //{
-
-                //    MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                //    this.Close();
-                //}
-                
-                //else
-                //{
-                //    MessageBox.Show("Usuario " + txtUsuario.Text + " No pudo ser Registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                //    this.Close();
-                //}
                 
 
 
