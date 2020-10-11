@@ -66,7 +66,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
                 }
             }
             else
-                MessageBox.Show("Nombre de usuario encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Nombre de perfil encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

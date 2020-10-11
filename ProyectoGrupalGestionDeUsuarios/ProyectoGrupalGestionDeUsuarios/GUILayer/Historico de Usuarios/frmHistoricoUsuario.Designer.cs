@@ -158,7 +158,7 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.id_historico_usuario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id_historico_usuario.HeaderText = "id_historico";
+            this.id_historico_usuario.HeaderText = "Id";
             this.id_historico_usuario.Name = "id_historico_usuario";
             this.id_historico_usuario.ReadOnly = true;
             // 
@@ -167,7 +167,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.fecha.DefaultCellStyle = dataGridViewCellStyle3;
-            this.fecha.HeaderText = "fecha";
+            this.fecha.HeaderText = "Fecha";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             // 
@@ -176,7 +176,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.titulo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.titulo.HeaderText = "titulo";
+            this.titulo.HeaderText = "Título";
             this.titulo.Name = "titulo";
             this.titulo.ReadOnly = true;
             this.titulo.Width = 200;
@@ -186,7 +186,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.descripcion.DefaultCellStyle = dataGridViewCellStyle5;
-            this.descripcion.HeaderText = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             this.descripcion.Width = 200;
@@ -196,7 +196,7 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.id_usuario.DefaultCellStyle = dataGridViewCellStyle6;
-            this.id_usuario.HeaderText = "id_usuario";
+            this.id_usuario.HeaderText = "Id_Usuario";
             this.id_usuario.Name = "id_usuario";
             this.id_usuario.ReadOnly = true;
             // 
@@ -205,7 +205,7 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.id_perfil.DefaultCellStyle = dataGridViewCellStyle7;
-            this.id_perfil.HeaderText = "id_Perfil";
+            this.id_perfil.HeaderText = "Perfil";
             this.id_perfil.Name = "id_perfil";
             this.id_perfil.ReadOnly = true;
             // 
@@ -226,7 +226,7 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.pass.DefaultCellStyle = dataGridViewCellStyle9;
-            this.pass.HeaderText = "password";
+            this.pass.HeaderText = "Password";
             this.pass.Name = "pass";
             this.pass.ReadOnly = true;
             // 
@@ -250,7 +250,7 @@
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             this.borrado.DefaultCellStyle = dataGridViewCellStyle11;
-            this.borrado.HeaderText = "borrado";
+            this.borrado.HeaderText = "Borrado";
             this.borrado.Name = "borrado";
             this.borrado.ReadOnly = true;
             // 
