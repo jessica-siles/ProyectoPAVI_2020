@@ -48,16 +48,19 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\FormularioService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
+    <Compile Include="BusinessLayer\PermisoService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\FormularioDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
+    <Compile Include="DataAccessLayer\PermisosDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="DataAccessLayer\usuariosHistorialDao.cs" />
     <Compile Include="Entities\Formulario.cs" />
     <Compile Include="Entities\HistorialUsuario.cs" />
     <Compile Include="Entities\Perfil.cs" />
+    <Compile Include="Entities\Permiso.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="GUILayer\ABM Formularios\frmFormulario.cs">
       <SubType>Form</SubType>
@@ -82,6 +85,12 @@
     </Compile>
     <Compile Include="GUILayer\AMBC Perfiles\frmAgregarPerfil.Designer.cs">
       <DependentUpon>frmAgregarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Permisos\frmAltaPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Permisos\frmAltaPermisos.Designer.cs">
+      <DependentUpon>frmAltaPermisos.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\AMBC Usuarios\frmAltaUsuario.cs">
       <SubType>Form</SubType>
@@ -132,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\AMBC Perfiles\frmAgregarPerfil.resx">
       <DependentUpon>frmAgregarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Permisos\frmAltaPermisos.resx">
+      <DependentUpon>frmAltaPermisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\AMBC Usuarios\frmAltaUsuario.resx">
       <DependentUpon>frmAltaUsuario.cs</DependentUpon>
