@@ -239,5 +239,10 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
 
             return desc;
         }
+
+        public void actualizarPerfilDeUsuarios(int idPerfil)
+        {
+            oUsuarioDao.actualizarPerfiles(idPerfil);
+        }
     }
 }

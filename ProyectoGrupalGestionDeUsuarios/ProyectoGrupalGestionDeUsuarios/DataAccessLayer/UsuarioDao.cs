@@ -97,7 +97,6 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         public void actualizarusuario(string SQLactualizar)
         {
             DBHelper.GetDBHelper().EjecutarSQL(SQLactualizar);
-
         }
 
         public string consultarPerfiles()
@@ -108,7 +107,10 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
         public string consultaUsuarios()
         {
-            string consultaUusuarios = "SELECT id_usuario,usuario,password,email,nombre,estado FROM Usuarios INNER JOIN Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil WHERE Usuarios.borrado = 0";
+            string consultaUusuarios = "SELECT id_usuario,usuario,password,email,nombre,estado " +
+                                       "FROM Usuarios INNER JOIN Perfiles " +
+                                       "ON Usuarios.id_perfil = Perfiles.id_perfil " +
+                                       "WHERE Usuarios.borrado = 0";
             return consultaUusuarios;
         }
 
@@ -280,6 +282,12 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 dm.Close();
             }
 
+        }
+
+        public void actualizarPerfiles(int idPerfil)
+        {
+            string updateSQL = "UPDATE Usuarios SET id_perfil=14 WHERE id_perfil="+idPerfil;
+            DBHelper.GetDBHelper().EjecutarSQL(updateSQL);
         }
     }
 

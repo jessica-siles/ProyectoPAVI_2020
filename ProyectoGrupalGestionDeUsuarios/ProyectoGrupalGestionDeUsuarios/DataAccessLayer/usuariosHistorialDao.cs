@@ -11,11 +11,20 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
     public class usuariosHistorialDao
     {
 
+        //public string cargarGrilla()
+        //{
+        //    string historico = "select * from usuariosHistorico";
+        //    return historico;
+        //}
+
         public string cargarGrilla()
         {
-            string historico = "select * from usuariosHistorico";
+            string historico = "SELECT h.* , p.nombre " +
+                               "FROM usuariosHistorico h INNER JOIN Perfiles p " +
+                               "ON h.id_perfil=p.id_perfil";
             return historico;
         }
+
         public DataTable grilla(string consulta)
         {
             DataTable grillaHistorico = DataManager.GetInstance().ConsultaSQL(consulta);

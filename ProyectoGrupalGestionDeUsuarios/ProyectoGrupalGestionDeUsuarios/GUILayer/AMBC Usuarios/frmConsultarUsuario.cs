@@ -34,18 +34,25 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
 
         }
         private int cargarGrilla(string SQLconsulta)
-        {
+        {           
             DataTable usuarios = UsuarioDao.Consultar(SQLconsulta);
             dgvConsultaUsuarios.Rows.Clear();
             int cantFilas = usuarios.Rows.Count;
-            
+            string estado = "";
+
             for (int i = 0; i < usuarios.Rows.Count; i++)
-            {
+            {                
+                if (usuarios.Rows[i]["estado"] is "S")
+                    estado = "Activo";
+                else
+                    estado = "Inactivo";
+
                 dgvConsultaUsuarios.Rows.Add(usuarios.Rows[i]["usuario"],
                                              usuarios.Rows[i]["password"],
                                              usuarios.Rows[i]["email"],
-                                             usuarios.Rows[i]["nombre"],
-                                             usuarios.Rows[i]["estado"],
+                                             usuarios.Rows[i]["nombre"], //perfil
+                                             //usuarios.Rows[i]["estado"],
+                                             estado,
                                              usuarios.Rows[i]["id_usuario"]);
             }
             return cantFilas;

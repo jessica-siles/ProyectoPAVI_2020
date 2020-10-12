@@ -13,6 +13,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
     class PerfilService
     {
         private PerfilDao oPerfilDao;
+        private UsuarioService oUsuarioService;
 
         public PerfilService()
         {
@@ -37,6 +38,10 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
 
         internal bool ActualizarPerfil(Perfil oPerfilSeleccionado)
         {
+            oUsuarioService = new UsuarioService();
+            if (oPerfilSeleccionado.Borrado is 1)
+                oUsuarioService.actualizarPerfilDeUsuarios(oPerfilSeleccionado.IdPerfil);
+
             return oPerfilDao.Update(oPerfilSeleccionado);
         }
 

@@ -22,9 +22,11 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAltaPermisos());
+            Application.Run(new frmMenuPrincipal());
+            //Application.Run(new frmAltaPermisos());
             //Application.Run(new frmAgregarPerfil());            
             //Application.Run(new frmConsultaPerfiles());
+            //Application.Run(new frmConsultarUsuario());
             //Application.Run(new frmHistoricoUsuario());
             //Application.Run(new frmFormulario());
         }

@@ -28,19 +28,27 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios
             DataTable historialUsuarios = historial.grilla(consulta);
             dgvConsultaHistorial.Rows.Clear();
             int cantFilas = historialUsuarios.Rows.Count;
+            string estado = "";
 
             for (int i = 0; i < historialUsuarios.Rows.Count; i++)
             {
+                if (historialUsuarios.Rows[i]["estado"] is "S")
+                    estado = "Activo";
+                else
+                    estado = "Inactivo";
+
                 dgvConsultaHistorial.Rows.Add(historialUsuarios.Rows[i]["id_historico_usuario"],
                                              historialUsuarios.Rows[i]["fecha_historico"],
                                              historialUsuarios.Rows[i]["titulo"],
                                              historialUsuarios.Rows[i]["descripcion"],
-                                             historialUsuarios.Rows[i]["id_usuario"],
-                                             historialUsuarios.Rows[i]["id_perfil"],
                                              historialUsuarios.Rows[i]["usuario"],
-                                             historialUsuarios.Rows[i]["password"],
+                                             historialUsuarios.Rows[i]["nombre"],
+                                             historialUsuarios.Rows[i]["id_usuario"],
+                                             //historialUsuarios.Rows[i]["id_perfil"],
                                              historialUsuarios.Rows[i]["email"],
-                                             historialUsuarios.Rows[i]["estado"],
+                                             //historialUsuarios.Rows[i]["password"],                                            
+                                             //historialUsuarios.Rows[i]["estado"],
+                                             estado,
                                              historialUsuarios.Rows[i]["borrado"]);
             }
             return cantFilas;
