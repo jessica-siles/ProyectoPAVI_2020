@@ -19,6 +19,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
         string mensaje = "";
         PermisoService permisoService = new PermisoService();
         Permiso permiso = new Permiso();
+        Permiso insertarPermiso = new Permiso();
         PermisosDao permisoDao = new PermisosDao();
         
         public frmAltaPermisos()
@@ -66,7 +67,6 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
             }
             else
             { 
-                mensaje = "sistem y null";
                 permiso.Id_perfil = int.Parse(cboPerfil.SelectedValue.ToString());
                 cargarTablasDeForms(dgvFormAsignados , permisoDao.buscarPorPerfilForms(permiso.Id_perfil));
                 cargarTablasDeForms(dgvFormSinAsignar, permisoDao.MostrarNoRepetidos(permiso.Id_perfil));
@@ -74,6 +74,67 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
             }
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dgvFormSinAsignar.Rows.Count.ToString());
+            if (dgvFormSinAsignar.Rows.Count != 0)
+            {
+                dgvFormAsignados.Rows.Add(dgvFormSinAsignar.CurrentRow.Cells[0].Value, dgvFormSinAsignar.CurrentRow.Cells[1].Value, dgvFormSinAsignar.CurrentRow.Cells[2].Value);
+                dgvFormSinAsignar.Rows.Remove(dgvFormSinAsignar.CurrentRow);
+            }
+
+            else
+                return;
+
+        }
+
+        private void recorrerGrilla()
+        {
+            foreach (DataGridViewRow row in dgvFormAsignados.Rows)
+            {
+                
+                insertarPermiso.Id_Formulario = Convert.ToInt32(row.Cells["numForm"].Value);
+                MessageBox.Show(insertarPermiso.Id_Formulario.ToString());
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            recorrerGrilla();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            if (dgvFormAsignados.Rows.Count != 0)
+            {
+                dgvFormSinAsignar.Rows.Add(dgvFormAsignados.CurrentRow.Cells[0].Value, dgvFormAsignados.CurrentRow.Cells[1].Value, dgvFormAsignados.CurrentRow.Cells[2].Value);
+                dgvFormAsignados.Rows.Remove(dgvFormAsignados.CurrentRow);
+            }
+
+            else
+                return;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //private void buscarRepetidos(DataTable asig, DataTable SINasig) 
         //{
         //    DataTable asignados = asig;
@@ -99,7 +160,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
         //            }
         //        }
         //    }
-            
+
         //}
 
 

@@ -35,6 +35,12 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             return mostrarNOrepetidos;
 
         }
+        public DataTable botonAgregar(int PermisoPerfil, int id_form)
+        {
+            string quitarNoAsignados = "SELECT * FROM Formularios WHERE id_formulario NOT IN (SELECT id_formulario FROM permisos WHERE id_perfil = "+ PermisoPerfil +" AND borrado = 0) AND id_formulario != " + id_form + " AND borrado = 0";
+            DataTable quitNoAsig = userdao.Consultar(quitarNoAsignados);
+            return quitNoAsig;
+        }
 
     }
 }
