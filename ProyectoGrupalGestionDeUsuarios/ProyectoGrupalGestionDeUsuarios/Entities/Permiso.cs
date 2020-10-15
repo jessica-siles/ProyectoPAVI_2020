@@ -11,6 +11,5 @@ namespace ProyectoGrupalGestionDeUsuarios.Entities
         public int Id_perfil { set; get; }
         public int Id_Formulario { get; set; }
         public int Borrado { get; set; }
-
     }
 }

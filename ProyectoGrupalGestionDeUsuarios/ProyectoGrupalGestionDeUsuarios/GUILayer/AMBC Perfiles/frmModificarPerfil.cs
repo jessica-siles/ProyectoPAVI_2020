@@ -29,9 +29,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
             cboEstado.Items.Add("Activo"); 
             cboEstado.Items.Add("No Activo");
             cboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-
         }
-
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -106,19 +104,12 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
                             {
                                 MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-
                         }
-
                         break;
                     }
             }
         }
-    
-
-
-
-
-
+        
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -179,12 +170,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
 
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-
-           
             //cboEstado.DisplayMember = "activo";
             //cboEstado.ValueMember = "0";
-            
         }
     }
 }

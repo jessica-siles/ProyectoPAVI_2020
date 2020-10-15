@@ -15,32 +15,28 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 {
     public partial class frmAltaPermisos : Form
     {
-        
-        string mensaje = "";
+
+
         PermisoService permisoService = new PermisoService();
         Permiso permiso = new Permiso();
         Permiso insertarPermiso = new Permiso();
         PermisosDao permisoDao = new PermisosDao();
-        
+        List<int> Modificar = new List<int>();
+        List<int> list = new List<int>();
+
         public frmAltaPermisos()
         {
-            
             InitializeComponent();
-           
-
         }
 
         private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        
 
         private void frmAltaPermisos_Load(object sender, EventArgs e)
         {
-            
             permisoService.cargarComb(cboPerfil);
-
         }
 
         private void cargarTablasDeForms(DataGridView tabla, DataTable consulta)
@@ -54,9 +50,6 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
                                cargarTabla.Rows[i]["nombre"],
                                cargarTabla.Rows[i]["descripcion"]);
             }
-
-
-            
         }
 
         private void cboPerfil_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,9 +59,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
                 return;
             }
             else
-            { 
+            {
                 permiso.Id_perfil = int.Parse(cboPerfil.SelectedValue.ToString());
-                cargarTablasDeForms(dgvFormAsignados , permisoDao.buscarPorPerfilForms(permiso.Id_perfil));
+                cargarTablasDeForms(dgvFormAsignados, permisoDao.buscarPorPerfilForms(permiso.Id_perfil));
                 cargarTablasDeForms(dgvFormSinAsignar, permisoDao.MostrarNoRepetidos(permiso.Id_perfil));
                 return;
             }
@@ -77,7 +70,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dgvFormSinAsignar.Rows.Count.ToString());
+
             if (dgvFormSinAsignar.Rows.Count != 0)
             {
                 dgvFormAsignados.Rows.Add(dgvFormSinAsignar.CurrentRow.Cells[0].Value, dgvFormSinAsignar.CurrentRow.Cells[1].Value, dgvFormSinAsignar.CurrentRow.Cells[2].Value);
@@ -91,17 +84,49 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 
         private void recorrerGrilla()
         {
+
+            list.Clear();
+            Modificar.Clear();
+
+
             foreach (DataGridViewRow row in dgvFormAsignados.Rows)
             {
-                
+
                 insertarPermiso.Id_Formulario = Convert.ToInt32(row.Cells["numForm"].Value);
-                MessageBox.Show(insertarPermiso.Id_Formulario.ToString());
+                DataTable insertar = permisoDao.buscarFormAsignado(permiso.Id_perfil, insertarPermiso.Id_Formulario);
+                if (insertar.Rows.Count == 0 && dgvFormAsignados.Rows.Count > 0)
+                {
+                    list.Add(insertarPermiso.Id_Formulario);
+                }
+                if (insertar.Rows.Count == 1 && dgvFormAsignados.Rows.Count > 0)
+                {
+                    Modificar.Add(insertarPermiso.Id_Formulario);
+                }
+                else
+                {
+
+                }
+            }
+
+
+
+        }
+        private void buscarUpdate(List<int> Numforms)
+        {
+
+            for (int i = 0; i < Numforms.Count(); i++)
+            {
+                MessageBox.Show(Convert.ToString(Numforms[i]));
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             recorrerGrilla();
+            //llamada a la transaccion de insertar forms (hacer!!)
+            permisoDao.agregarInsertDeForms(list, permiso.Id_perfil);
+            //llamada a transaccion update (hacer!!)
+            permisoDao.modificarFormsUpdate(Modificar, permiso.Id_perfil);
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -119,21 +144,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 
             else
                 return;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }        
 
         //private void buscarRepetidos(DataTable asig, DataTable SINasig) 
         //{
