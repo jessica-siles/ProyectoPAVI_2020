@@ -12,6 +12,7 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
+using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Entities;
 
 
@@ -91,6 +92,12 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             frmHistoricoUsuario usersHistory = new frmHistoricoUsuario();
             usersHistory.ShowDialog();
+        }
+
+        private void PermisostoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAltaPermisos Permiso = new frmAltaPermisos();
+            Permiso.ShowDialog();
         }
     }
 }

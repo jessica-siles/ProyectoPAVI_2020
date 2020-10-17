@@ -38,6 +38,7 @@
             this.consultarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historicoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PermisostoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPerfil,
             this.usuariosToolStripMenuItem,
-            this.formulariosToolStripMenuItem});
+            this.formulariosToolStripMenuItem,
+            this.PermisostoolStripMenuItem1});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -136,6 +138,15 @@
             this.formulariosToolStripMenuItem.Text = "Formularios";
             this.formulariosToolStripMenuItem.Click += new System.EventHandler(this.formulariosToolStripMenuItem_Click);
             // 
+            // PermisostoolStripMenuItem1
+            // 
+            this.PermisostoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PermisostoolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
+            this.PermisostoolStripMenuItem1.Name = "PermisostoolStripMenuItem1";
+            this.PermisostoolStripMenuItem1.Size = new System.Drawing.Size(121, 36);
+            this.PermisostoolStripMenuItem1.Text = "Permisos";
+            this.PermisostoolStripMenuItem1.Click += new System.EventHandler(this.PermisostoolStripMenuItem1_Click);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -173,6 +184,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultarUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formulariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historicoDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PermisostoolStripMenuItem1;
     }
 }
 
