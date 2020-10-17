@@ -89,5 +89,20 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 DBHelper.GetDBHelper().EjecutarSQL(modificarPermisos);
             }
         }
+
+        public void quitarPermisos(List<int> update, int perfil, int borrado)
+        {
+            //agregar transaccion con for de varios forms con el id seleccionado, asignandole
+            //el borrado = 0
+            for (int i = 0; i < update.Count; i++)
+            {
+                //string modificarPermisos = "DELETE FROM Permisos " +
+                //                           "WHERE id_formulario=" + update[i] + "AND id_perfil=" + perfil;
+                string quitarPermisos = "UPDATE Permisos SET borrado=" + borrado +
+                                           "WHERE id_formulario=" + update[i] + " AND id_perfil=" + perfil;
+
+                DBHelper.GetDBHelper().EjecutarSQL(quitarPermisos);
+            }
+        }
     }
 }
