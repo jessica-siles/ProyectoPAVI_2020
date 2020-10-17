@@ -79,7 +79,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
             
         }
 
-        private void recorrerGrilla()
+        private void recorrerGrillas()
         {
             list.Clear();
             Modificar.Clear();
@@ -99,21 +99,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
                 if (FormulariosAsignados.Rows.Count > 0 && dgvFormAsignados.Rows.Count > 0)
                 {                    
                     Modificar.Add(InsertarPermiso.Id_Formulario);
-                }
-
-                //if (flag) //Si boton quitar fue presionado
-                //{
-                //    foreach (DataGridViewRow renglon in dgvFormSinAsignar.Rows)
-                //    {
-                //        InsertarPermiso.Id_Formulario = Convert.ToInt32(renglon.Cells["numF"].Value);
-                //        DataTable FormNoAsignados = PermisoDao.buscarFormAsignado(Permiso.Id_perfil, InsertarPermiso.Id_Formulario);
-
-                //        if (FormNoAsignados.Rows.Count == 1 && dgvFormSinAsignar.Rows.Count > 0)
-                //        {
-                //            Quitar.Add(InsertarPermiso.Id_Formulario);                           
-                //        }                        
-                //    }                    
-                //}
+                }                
             }
 
             if (flagDEL) //Si boton quitar fue presionado
@@ -141,7 +127,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            recorrerGrilla();
+            recorrerGrillas();
             //llamada a la transaccion de insertar forms (hacer!!)
             PermisoDao.agregarInsertDeForms(list, Permiso.Id_perfil);
             //llamada a transaccion update (hacer!!)  
