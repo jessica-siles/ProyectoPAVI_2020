@@ -109,14 +109,13 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        {                       
+        {
+            recorrerGrilla();
             //llamada a la transaccion de insertar forms (hacer!!)
             PermisoDao.agregarInsertDeForms(list, Permiso.Id_perfil);
-            //llamada a transaccion update (hacer!!)
-            if (flag)
-                borrado = 1;
+            //llamada a transaccion update (hacer!!)            
+            //PermisoDao.modificarFormsUpdate(Modificar, Permiso.Id_perfil,borrado);
             PermisoDao.modificarFormsUpdate(Modificar, Permiso.Id_perfil,borrado);
-            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -137,7 +136,6 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
             }            
             else
                 return;
-            flag = true;
         }        
 
         //private void buscarRepetidos(DataTable asig, DataTable SINasig) 
