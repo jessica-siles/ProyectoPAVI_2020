@@ -15,24 +15,19 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 {
     public partial class frmAltaPermisos : Form
     {
-
-
         PermisoService permisoService = new PermisoService();
-        Permiso permiso = new Permiso();
-        Permiso insertarPermiso = new Permiso();
-        PermisosDao permisoDao = new PermisosDao();
+        Permiso Permiso = new Permiso();
+        Permiso InsertarPermiso = new Permiso();
+        PermisosDao PermisoDao = new PermisosDao();
         List<int> Modificar = new List<int>();
         List<int> list = new List<int>();
+        bool flag = false;
+        int borrado = 0;
 
         public frmAltaPermisos()
         {
-            InitializeComponent();
-        }
-
-        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+            InitializeComponent();            
+        }      
 
         private void frmAltaPermisos_Load(object sender, EventArgs e)
         {
@@ -60,12 +55,11 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
             }
             else
             {
-                permiso.Id_perfil = int.Parse(cboPerfil.SelectedValue.ToString());
-                cargarTablasDeForms(dgvFormAsignados, permisoDao.buscarPorPerfilForms(permiso.Id_perfil));
-                cargarTablasDeForms(dgvFormSinAsignar, permisoDao.MostrarNoRepetidos(permiso.Id_perfil));
+                Permiso.Id_perfil = int.Parse(cboPerfil.SelectedValue.ToString());
+                cargarTablasDeForms(dgvFormAsignados, PermisoDao.buscarPorPerfilForms(Permiso.Id_perfil));
+                cargarTablasDeForms(dgvFormSinAsignar, PermisoDao.MostrarNoRepetidos(Permiso.Id_perfil));
                 return;
             }
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -73,60 +67,56 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 
             if (dgvFormSinAsignar.Rows.Count != 0)
             {
-                dgvFormAsignados.Rows.Add(dgvFormSinAsignar.CurrentRow.Cells[0].Value, dgvFormSinAsignar.CurrentRow.Cells[1].Value, dgvFormSinAsignar.CurrentRow.Cells[2].Value);
+                dgvFormAsignados.Rows.Add(dgvFormSinAsignar.CurrentRow.Cells[0].Value, 
+                                          dgvFormSinAsignar.CurrentRow.Cells[1].Value, 
+                                          dgvFormSinAsignar.CurrentRow.Cells[2].Value);
                 dgvFormSinAsignar.Rows.Remove(dgvFormSinAsignar.CurrentRow);
             }
-
             else
                 return;
-
+            
         }
 
         private void recorrerGrilla()
         {
-
             list.Clear();
             Modificar.Clear();
-
 
             foreach (DataGridViewRow row in dgvFormAsignados.Rows)
             {
 
-                insertarPermiso.Id_Formulario = Convert.ToInt32(row.Cells["numForm"].Value);
-                DataTable insertar = permisoDao.buscarFormAsignado(permiso.Id_perfil, insertarPermiso.Id_Formulario);
-                if (insertar.Rows.Count == 0 && dgvFormAsignados.Rows.Count > 0)
-                {
-                    list.Add(insertarPermiso.Id_Formulario);
-                }
-                if (insertar.Rows.Count == 1 && dgvFormAsignados.Rows.Count > 0)
-                {
-                    Modificar.Add(insertarPermiso.Id_Formulario);
-                }
-                else
-                {
+                InsertarPermiso.Id_Formulario = Convert.ToInt32(row.Cells["numForm"].Value);
+                DataTable FormulariosAsignados = PermisoDao.buscarFormAsignado(Permiso.Id_perfil, InsertarPermiso.Id_Formulario);
 
+                if (FormulariosAsignados.Rows.Count == 0 && dgvFormAsignados.Rows.Count > 0)
+                {
+                    list.Add(InsertarPermiso.Id_Formulario);
+                }
+
+                if (FormulariosAsignados.Rows.Count > 0 && dgvFormAsignados.Rows.Count > 0)
+                {                    
+                    Modificar.Add(InsertarPermiso.Id_Formulario);
                 }
             }
+        }       
 
-
-
-        }
         private void buscarUpdate(List<int> Numforms)
         {
-
             for (int i = 0; i < Numforms.Count(); i++)
             {
                 MessageBox.Show(Convert.ToString(Numforms[i]));
             }
         }
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            recorrerGrilla();
-            //llamada a la transaccion de insertar forms (hacer!!)
-            permisoDao.agregarInsertDeForms(list, permiso.Id_perfil);
-            //llamada a transaccion update (hacer!!)
-            permisoDao.modificarFormsUpdate(Modificar, permiso.Id_perfil);
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {                       
+            //llamada a la transaccion de insertar forms (hacer!!)
+            PermisoDao.agregarInsertDeForms(list, Permiso.Id_perfil);
+            //llamada a transaccion update (hacer!!)
+            if (flag)
+                borrado = 1;
+            PermisoDao.modificarFormsUpdate(Modificar, Permiso.Id_perfil,borrado);
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -136,14 +126,18 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            
             if (dgvFormAsignados.Rows.Count != 0)
             {
-                dgvFormSinAsignar.Rows.Add(dgvFormAsignados.CurrentRow.Cells[0].Value, dgvFormAsignados.CurrentRow.Cells[1].Value, dgvFormAsignados.CurrentRow.Cells[2].Value);
-                dgvFormAsignados.Rows.Remove(dgvFormAsignados.CurrentRow);
-            }
+                dgvFormSinAsignar.Rows.Add(dgvFormAsignados.CurrentRow.Cells[0].Value, 
+                dgvFormAsignados.CurrentRow.Cells[1].Value,
+                dgvFormAsignados.CurrentRow.Cells[2].Value);
 
+                dgvFormAsignados.Rows.Remove(dgvFormAsignados.CurrentRow);                
+            }            
             else
                 return;
+            flag = true;
         }        
 
         //private void buscarRepetidos(DataTable asig, DataTable SINasig) 

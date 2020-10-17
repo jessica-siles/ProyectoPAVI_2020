@@ -74,6 +74,7 @@ public class DataManager
     ///          El error de conexión se produce:
     ///              a) durante la apertura de la conexión
     ///              b) durante la ejecución del comando.
+    ///              
     public DataTable ConsultaSQL(string strSql)
     {
         SqlCommand cmd = new SqlCommand();

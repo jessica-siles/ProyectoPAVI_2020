@@ -41,6 +41,9 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBoxConsulta = new System.Windows.Forms.GroupBox();
             this.dgvFormAsignados = new System.Windows.Forms.DataGridView();
+            this.numForm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
@@ -48,12 +51,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvFormSinAsignar = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numForm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBotones.SuspendLayout();
             this.groupBoxConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFormAsignados)).BeginInit();
@@ -152,6 +152,27 @@
             this.dgvFormAsignados.Size = new System.Drawing.Size(502, 312);
             this.dgvFormAsignados.TabIndex = 0;
             // 
+            // numForm
+            // 
+            this.numForm.HeaderText = "Nº";
+            this.numForm.Name = "numForm";
+            this.numForm.ReadOnly = true;
+            this.numForm.Width = 40;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 200;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 215;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.DarkViolet;
@@ -239,7 +260,7 @@
             this.dgvFormSinAsignar.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvFormSinAsignar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFormSinAsignar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.numF,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -261,12 +282,12 @@
             this.dgvFormSinAsignar.Size = new System.Drawing.Size(502, 312);
             this.dgvFormSinAsignar.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn1
+            // numF
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nº";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 40;
+            this.numF.HeaderText = "Nº";
+            this.numF.Name = "numF";
+            this.numF.ReadOnly = true;
+            this.numF.Width = 40;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -281,27 +302,6 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 215;
-            // 
-            // numForm
-            // 
-            this.numForm.HeaderText = "Nº";
-            this.numForm.Name = "numForm";
-            this.numForm.ReadOnly = true;
-            this.numForm.Width = 40;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 200;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 215;
             // 
             // frmAltaPermisos
             // 
@@ -347,11 +347,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvFormSinAsignar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn numForm;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
