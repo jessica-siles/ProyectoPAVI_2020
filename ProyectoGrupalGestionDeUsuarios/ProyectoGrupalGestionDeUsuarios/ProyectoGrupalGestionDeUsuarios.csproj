@@ -92,6 +92,12 @@
     <Compile Include="GUILayer\AMBC Permisos\frmAltaPermisos.Designer.cs">
       <DependentUpon>frmAltaPermisos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\AMBC Permisos\frmConsltarPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Permisos\frmConsltarPermisos.designer.cs">
+      <DependentUpon>frmConsltarPermisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\AMBC Usuarios\frmAltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\AMBC Permisos\frmAltaPermisos.resx">
       <DependentUpon>frmAltaPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Permisos\frmConsltarPermisos.resx">
+      <DependentUpon>frmConsltarPermisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\AMBC Usuarios\frmAltaUsuario.resx">
       <DependentUpon>frmAltaUsuario.cs</DependentUpon>
