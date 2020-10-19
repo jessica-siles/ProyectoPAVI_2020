@@ -64,45 +64,106 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             return resultado;
         }
 
-        public void agregarInsertDeForms(List<int> insertar, int perfil)
+        //public void agregarInsertDeForms(List<int> insertar, int perfil)
+        //{
+        //    //hacer transaccion con for de varios forms con el id asignado
+        //    for (int i = 0; i < insertar.Count; i++)
+        //    {
+        //        string insertarPermisos = "INSERT INTO Permisos (id_formulario , id_perfil, borrado)" +
+        //                                  "VALUES (" + insertar[i] + "," + perfil + ","+ 0 +")";
+        //        //DBHelper.GetDBHelper().EjecutarSQL(insertarPermisos);
+        //    }
+        //}
+
+        //public void modificarFormsUpdate(List<int> update, int perfil, int borrado)
+        //{
+        //    //agregar transaccion con for de varios forms con el id seleccionado, asignandole
+        //    //el borrado = 0
+        //    for (int i = 0; i < update.Count ; i++)
+        //    {
+        //        //string modificarPermisos = "DELETE FROM Permisos " +
+        //        //                           "WHERE id_formulario=" + update[i] + "AND id_perfil=" + perfil;
+        //        string modificarPermisos = "UPDATE Permisos SET borrado="+borrado+
+        //                                   "WHERE id_formulario="+update[i]+" AND id_perfil="+perfil;
+
+        //        //DBHelper.GetDBHelper().EjecutarSQL(modificarPermisos);
+        //    }
+        //}
+
+        //public void quitarPermisos(List<int> update, int perfil, int borrado)
+        //{
+        //    //agregar transaccion con for de varios forms con el id seleccionado, asignandole
+        //    //el borrado = 0
+        //    for (int i = 0; i < update.Count; i++)
+        //    {
+        //        //string modificarPermisos = "DELETE FROM Permisos " +
+        //        //                           "WHERE id_formulario=" + update[i] + "AND id_perfil=" + perfil;
+        //        string quitarPermisos = "UPDATE Permisos SET borrado=" + borrado +
+        //                                   "WHERE id_formulario=" + update[i] + " AND id_perfil=" + perfil;
+
+        //        //DBHelper.GetDBHelper().EjecutarSQL(quitarPermisos);
+        //    }
+        //}
+
+        public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar)
         {
-            //hacer transaccion con for de varios forms con el id asignado
-            for (int i = 0; i < insertar.Count; i++)
+            DataManager dm = new DataManager();
+            try
             {
-                string insertarPermisos = "INSERT INTO Permisos (id_formulario , id_perfil, borrado)" +
-                                          "VALUES (" + insertar[i] + "," + perfil + ","+ 0 +")";
-                DBHelper.GetDBHelper().EjecutarSQL(insertarPermisos);
+                dm.Open();
+                dm.BeginTransaction();
+                
+               
+               
+                    for (int i = 0; i < quitar.Count; i++)
+                    {
+                    
+                        string quitarPermisos = "UPDATE Permisos SET borrado=" + borradoQuitar +
+                                               "WHERE id_formulario=" + quitar[i] + " AND id_perfil=" + perfil;
+
+                        dm.EjecutarSQL(quitarPermisos);
+                    }
+              
+                
+                    for (int i = 0; i < modificar.Count; i++)
+                    {
+                                              
+                        string modificarPermisos = "UPDATE Permisos SET borrado=" + borradoModificar +
+                                               "WHERE id_formulario=" + modificar[i] + " AND id_perfil=" + perfil;
+
+                    
+                        dm.EjecutarSQL(modificarPermisos);
+                    }
+                
+
+                for (int i = 0; i < insertar.Count; i++)
+                {
+                    string insertarPermisos = "INSERT INTO Permisos (id_formulario , id_perfil, borrado)" +
+                                              "VALUES (" + insertar[i] + "," + perfil + "," + 0 + ")";
+                   
+                    dm.EjecutarSQL(insertarPermisos);
+                }
+
+                dm.Commit();
+
             }
+
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                // Cierra la conexión 
+                dm.Close();
+            }
+            return true;
+
         }
 
-        public void modificarFormsUpdate(List<int> update, int perfil, int borrado)
-        {
-            //agregar transaccion con for de varios forms con el id seleccionado, asignandole
-            //el borrado = 0
-            for (int i = 0; i < update.Count ; i++)
-            {
-                //string modificarPermisos = "DELETE FROM Permisos " +
-                //                           "WHERE id_formulario=" + update[i] + "AND id_perfil=" + perfil;
-                string modificarPermisos = "UPDATE Permisos SET borrado="+borrado+
-                                           "WHERE id_formulario="+update[i]+" AND id_perfil="+perfil;
-
-                DBHelper.GetDBHelper().EjecutarSQL(modificarPermisos);
-            }
-        }
-
-        public void quitarPermisos(List<int> update, int perfil, int borrado)
-        {
-            //agregar transaccion con for de varios forms con el id seleccionado, asignandole
-            //el borrado = 0
-            for (int i = 0; i < update.Count; i++)
-            {
-                //string modificarPermisos = "DELETE FROM Permisos " +
-                //                           "WHERE id_formulario=" + update[i] + "AND id_perfil=" + perfil;
-                string quitarPermisos = "UPDATE Permisos SET borrado=" + borrado +
-                                           "WHERE id_formulario=" + update[i] + " AND id_perfil=" + perfil;
-
-                DBHelper.GetDBHelper().EjecutarSQL(quitarPermisos);
-            }
-        }
+    
+            
+        
     }
 }

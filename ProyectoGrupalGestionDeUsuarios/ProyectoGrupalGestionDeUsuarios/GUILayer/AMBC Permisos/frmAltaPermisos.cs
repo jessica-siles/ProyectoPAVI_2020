@@ -128,14 +128,41 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             recorrerGrillas();
-            //llamada a la transaccion de insertar forms (hacer!!)
-            PermisoDao.agregarInsertDeForms(list, Permiso.Id_perfil);
-            //llamada a transaccion update (hacer!!)  
-            if (flagADD)
-                PermisoDao.modificarFormsUpdate(Modificar, Permiso.Id_perfil, 0);  
-            if (flagDEL)
-                PermisoDao.quitarPermisos(Quitar, Permiso.Id_perfil, 1);
+            //intenta agregar a la transaccion las listas para hacer insert y update.
 
+            try
+            { 
+                if (cboPerfil.SelectedIndex == - 1)
+                {
+                    MessageBox.Show("No se selecciono ningun perfil");
+
+                }
+
+                else
+                { 
+                    if(PermisoDao.transaccion(list,Quitar,Modificar,Permiso.Id_perfil,1,0))
+                    {
+                        MessageBox.Show("Permiso asignado con Exito!");
+                        cboPerfil.SelectedIndex = -1;
+                        dgvFormAsignados.Rows.Clear();
+                        dgvFormSinAsignar.Rows.Clear();
+
+                    }
+                }
+            
+
+
+
+            }
+            //sino puede hacer la transaccion muestra un mensaje de error
+            catch (Exception ex)
+            {
+                
+                MessageBox.Show("No se pudo guardar el permiso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboPerfil.SelectedIndex = -1;
+                dgvFormAsignados.Rows.Clear();
+                dgvFormSinAsignar.Rows.Clear();
+            }
             flagADD = flagADD = false;
         }
 
