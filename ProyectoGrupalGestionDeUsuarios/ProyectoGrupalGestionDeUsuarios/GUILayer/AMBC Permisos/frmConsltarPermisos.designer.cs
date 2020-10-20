@@ -38,7 +38,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.groupBoxConsulta = new System.Windows.Forms.GroupBox();
-            this.dgvConsultaUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgvConsultaPermisos = new System.Windows.Forms.DataGridView();
             this.numForm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
             this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.panelBotones.SuspendLayout();
             this.groupBoxConsulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPermisos)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +104,7 @@
             // groupBoxConsulta
             // 
             this.groupBoxConsulta.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxConsulta.Controls.Add(this.dgvConsultaUsuarios);
+            this.groupBoxConsulta.Controls.Add(this.dgvConsultaPermisos);
             this.groupBoxConsulta.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxConsulta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBoxConsulta.Location = new System.Drawing.Point(38, 117);
@@ -114,16 +114,16 @@
             this.groupBoxConsulta.TabStop = false;
             this.groupBoxConsulta.Text = "Listado De Formularios a los que el perfil seleccionado tiene acceso";
             // 
-            // dgvConsultaUsuarios
+            // dgvConsultaPermisos
             // 
-            this.dgvConsultaUsuarios.AllowUserToAddRows = false;
-            this.dgvConsultaUsuarios.AllowUserToDeleteRows = false;
+            this.dgvConsultaPermisos.AllowUserToAddRows = false;
+            this.dgvConsultaPermisos.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvConsultaUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvConsultaUsuarios.BackgroundColor = System.Drawing.Color.MediumOrchid;
-            this.dgvConsultaUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvConsultaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvConsultaPermisos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvConsultaPermisos.BackgroundColor = System.Drawing.Color.MediumOrchid;
+            this.dgvConsultaPermisos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvConsultaPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultaPermisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numForm,
             this.Nombre,
             this.descripcion});
@@ -134,19 +134,19 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvConsultaUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvConsultaUsuarios.GridColor = System.Drawing.Color.Thistle;
-            this.dgvConsultaUsuarios.Location = new System.Drawing.Point(16, 30);
-            this.dgvConsultaUsuarios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvConsultaUsuarios.MultiSelect = false;
-            this.dgvConsultaUsuarios.Name = "dgvConsultaUsuarios";
-            this.dgvConsultaUsuarios.ReadOnly = true;
-            this.dgvConsultaUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvConsultaPermisos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvConsultaPermisos.GridColor = System.Drawing.Color.Thistle;
+            this.dgvConsultaPermisos.Location = new System.Drawing.Point(16, 30);
+            this.dgvConsultaPermisos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvConsultaPermisos.MultiSelect = false;
+            this.dgvConsultaPermisos.Name = "dgvConsultaPermisos";
+            this.dgvConsultaPermisos.ReadOnly = true;
+            this.dgvConsultaPermisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dgvConsultaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvConsultaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConsultaUsuarios.Size = new System.Drawing.Size(703, 330);
-            this.dgvConsultaUsuarios.TabIndex = 0;
+            this.dgvConsultaPermisos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvConsultaPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvConsultaPermisos.Size = new System.Drawing.Size(703, 330);
+            this.dgvConsultaPermisos.TabIndex = 0;
             // 
             // numForm
             // 
@@ -209,6 +209,7 @@
             this.cboPerfil.Name = "cboPerfil";
             this.cboPerfil.Size = new System.Drawing.Size(367, 28);
             this.cboPerfil.TabIndex = 22;
+            this.cboPerfil.SelectedIndexChanged += new System.EventHandler(this.cboPerfil_SelectedIndexChanged);
             // 
             // frmConsltarPermisos
             // 
@@ -226,7 +227,7 @@
             this.Load += new System.EventHandler(this.frmConsltarPermisos_Load);
             this.panelBotones.ResumeLayout(false);
             this.groupBoxConsulta.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPermisos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -239,7 +240,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.GroupBox groupBoxConsulta;
-        private System.Windows.Forms.DataGridView dgvConsultaUsuarios;
+        private System.Windows.Forms.DataGridView dgvConsultaPermisos;
         private System.Windows.Forms.DataGridViewTextBoxColumn numForm;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;

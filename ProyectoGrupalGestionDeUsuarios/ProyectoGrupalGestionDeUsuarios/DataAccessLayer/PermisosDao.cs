@@ -159,11 +159,14 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 dm.Close();
             }
             return true;
-
         }
 
-    
-            
-        
+        public DataTable recuperarFormulariosPorPerfil(int perfil)
+        {
+            return DBHelper.GetDBHelper().ConsultaSQL("SELECT f.* FROM Formularios f, Permisos p " +
+                                                      "WHERE f.id_formulario = p.id_formulario " +
+                                                      "AND p.id_perfil=" + perfil +
+                                                      "AND p.borrado=0");
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDatosUsuarios());
+            //Application.Run(new frmDatosUsuarios());
             //Application.Run(new frmAltaPermisos());
             //Application.Run(new frmAgregarPerfil());            
             //Application.Run(new frmConsultaPerfiles());
@@ -31,6 +31,7 @@ namespace ProyectoGrupalGestionDeUsuarios
             //Application.Run(new frmHistoricoUsuario());
             //Application.Run(new frmFormulario());
             //Application.Run(new frmAltaPermisos());
+            Application.Run(new frmConsltarPermisos());
         }
     }
 }

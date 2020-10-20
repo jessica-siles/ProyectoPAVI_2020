@@ -12,6 +12,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
     public class PermisoService
     {
         UsuarioDao userDao = new UsuarioDao();
+        PermisosDao oPermisosDao = new PermisosDao();
 
         public void cargarComb(ComboBox combo)
         {
@@ -41,6 +42,10 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
             combo.SelectedIndex = -1;
         }
 
+        public DataTable obtenerFormulariosPorPerfil(int id)
+        {
+            return oPermisosDao.recuperarFormulariosPorPerfil(id);
+        }       
 
     }
 }
