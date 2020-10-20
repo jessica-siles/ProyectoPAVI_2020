@@ -32,6 +32,14 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
                 
 
         }
+        public void cargarComboGenerico(DataTable Cargar, ComboBox combo)
+        {
+            combo.DataSource = Cargar;
+            combo.DisplayMember = Cargar.Columns[1].ColumnName;
+            combo.ValueMember = Cargar.Columns[0].ColumnName;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.SelectedIndex = -1;
+        }
 
 
     }
