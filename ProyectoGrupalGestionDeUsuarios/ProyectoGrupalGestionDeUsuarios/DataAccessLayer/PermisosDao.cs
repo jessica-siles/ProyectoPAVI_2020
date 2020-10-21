@@ -64,46 +64,13 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             return resultado;
         }
 
-        //public void agregarInsertDeForms(List<int> insertar, int perfil)
-        //{
-        //    //hacer transaccion con for de varios forms con el id asignado
-        //    for (int i = 0; i < insertar.Count; i++)
-        //    {
-        //        string insertarPermisos = "INSERT INTO Permisos (id_formulario , id_perfil, borrado)" +
-        //                                  "VALUES (" + insertar[i] + "," + perfil + ","+ 0 +")";
-        //        //DBHelper.GetDBHelper().EjecutarSQL(insertarPermisos);
-        //    }
-        //}
+        
 
-        //public void modificarFormsUpdate(List<int> update, int perfil, int borrado)
-        //{
-        //    //agregar transaccion con for de varios forms con el id seleccionado, asignandole
-        //    //el borrado = 0
-        //    for (int i = 0; i < update.Count ; i++)
-        //    {
-        //        //string modificarPermisos = "DELETE FROM Permisos " +
-        //        //                           "WHERE id_formulario=" + update[i] + "AND id_perfil=" + perfil;
-        //        string modificarPermisos = "UPDATE Permisos SET borrado="+borrado+
-        //                                   "WHERE id_formulario="+update[i]+" AND id_perfil="+perfil;
-
-        //        //DBHelper.GetDBHelper().EjecutarSQL(modificarPermisos);
-        //    }
-        //}
-
-        //public void quitarPermisos(List<int> update, int perfil, int borrado)
-        //{
-        //    //agregar transaccion con for de varios forms con el id seleccionado, asignandole
-        //    //el borrado = 0
-        //    for (int i = 0; i < update.Count; i++)
-        //    {
-        //        //string modificarPermisos = "DELETE FROM Permisos " +
-        //        //                           "WHERE id_formulario=" + update[i] + "AND id_perfil=" + perfil;
-        //        string quitarPermisos = "UPDATE Permisos SET borrado=" + borrado +
-        //                                   "WHERE id_formulario=" + update[i] + " AND id_perfil=" + perfil;
-
-        //        //DBHelper.GetDBHelper().EjecutarSQL(quitarPermisos);
-        //    }
-        //}
+        public void eliminartodos(int perfil)
+        {
+            string eliminartodos = "UPDATE Permisos SET borrado= 1 WHERE id_perfil = " + perfil;
+            DataManager.GetInstance().EjecutarSQL(eliminartodos);
+        }
 
         public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar, string fecha)
         {

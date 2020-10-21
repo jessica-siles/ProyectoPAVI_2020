@@ -25,14 +25,28 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
         bool flagADD = false;
         bool flagDEL = false;        
 
-        public frmAltaPermisos()
+        public frmAltaPermisos(int id)
         {
-            InitializeComponent();            
-        }      
-
+            InitializeComponent();
+            this.id = id;
+        }
+        int id;
         private void frmAltaPermisos_Load(object sender, EventArgs e)
         {
-            permisoService.cargarComb(cboPerfil);
+
+            permisoService.cargarComb(cboPerfil, id);
+            
+            if (id != -1)
+            {
+                Permiso.Id_perfil = int.Parse(cboPerfil.SelectedValue.ToString());
+                cargarTablasDeForms(dgvFormAsignados, PermisoDao.buscarPorPerfilForms(Permiso.Id_perfil));
+                cargarTablasDeForms(dgvFormSinAsignar, PermisoDao.MostrarNoRepetidos(Permiso.Id_perfil));
+            }
+            if(id == -1)
+            {
+
+            }
+            
         }
 
         private void cargarTablasDeForms(DataGridView tabla, DataTable consulta)

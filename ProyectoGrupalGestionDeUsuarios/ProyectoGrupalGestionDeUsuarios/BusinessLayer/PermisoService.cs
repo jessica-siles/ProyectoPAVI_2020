@@ -14,7 +14,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
         UsuarioDao userDao = new UsuarioDao();
         PermisosDao oPermisosDao = new PermisosDao();
 
-        public void cargarComb(ComboBox combo)
+        public void cargarComb(ComboBox combo, int select)
         {
 
             DataTable perfiles = userDao.Consultar(userDao.consultarPerfiles());
@@ -22,7 +22,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
             combo.DisplayMember = perfiles.Columns[1].ColumnName;
             combo.ValueMember = perfiles.Columns[0].ColumnName;
             combo.DropDownStyle = ComboBoxStyle.DropDownList;
-            combo.SelectedIndex = -1;
+            combo.SelectedValue = select;
 
             //if (combo.SelectedIndex == -1)
             //{

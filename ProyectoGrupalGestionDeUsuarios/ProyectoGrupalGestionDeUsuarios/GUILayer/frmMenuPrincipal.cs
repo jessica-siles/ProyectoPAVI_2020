@@ -114,7 +114,7 @@ namespace ProyectoGrupalGestionDeUsuarios
 
         private void asignarPermisosAPerfilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAltaPermisos Permiso = new frmAltaPermisos();
+            frmAltaPermisos Permiso = new frmAltaPermisos(-1);
             Permiso.ShowDialog();
         }
 

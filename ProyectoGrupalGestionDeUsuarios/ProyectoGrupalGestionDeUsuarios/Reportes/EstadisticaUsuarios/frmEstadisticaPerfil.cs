@@ -24,6 +24,9 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios
 
         private void frmEstadisticaPerfil_Load(object sender, EventArgs e)
         {
+            reportPerfilEstadistica.LocalReport.SetParameters(new ReportParameter[]{ new
+            ReportParameter("fechaActual", Convert.ToString(DateTime.Today)), new ReportParameter("fechaDesde", dtpDesde.Text) , new ReportParameter("fechaHasta", dtpHasta.Text)});
+
             report.loadEstadisticaPerfil();
 
             
@@ -49,10 +52,17 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios
 
                 hasta = has.ToString("yyyy-MM-dd");
             }
+            reportPerfilEstadistica.LocalReport.SetParameters(new ReportParameter[]{ new
+            ReportParameter("fechaActual", Convert.ToString(DateTime.Today)), new ReportParameter("fechaDesde", dtpDesde.Text) , new ReportParameter("fechaHasta", dtpHasta.Text)});
 
             reportPerfilEstadistica.LocalReport.DataSources.Clear();
             reportPerfilEstadistica.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", report.cantidadPorPerfil(desde, hasta)));
             reportPerfilEstadistica.RefreshReport();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

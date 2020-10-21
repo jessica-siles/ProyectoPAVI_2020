@@ -74,6 +74,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Eliminar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCancelar
             // 
@@ -87,6 +88,7 @@
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnModificar
             // 
@@ -100,6 +102,7 @@
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // groupBoxConsulta
             // 
@@ -140,13 +143,13 @@
             this.dgvConsultaPermisos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvConsultaPermisos.MultiSelect = false;
             this.dgvConsultaPermisos.Name = "dgvConsultaPermisos";
-            this.dgvConsultaPermisos.ReadOnly = true;
             this.dgvConsultaPermisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dgvConsultaPermisos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvConsultaPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultaPermisos.Size = new System.Drawing.Size(703, 330);
             this.dgvConsultaPermisos.TabIndex = 0;
+            this.dgvConsultaPermisos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaPermisos_CellClick);
             // 
             // numForm
             // 
@@ -156,7 +159,6 @@
             this.numForm.DefaultCellStyle = dataGridViewCellStyle2;
             this.numForm.HeaderText = "Nº";
             this.numForm.Name = "numForm";
-            this.numForm.ReadOnly = true;
             this.numForm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.numForm.Width = 50;
             // 
@@ -164,14 +166,12 @@
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             this.Nombre.Width = 250;
             // 
             // descripcion
             // 
             this.descripcion.HeaderText = "Descripcion";
             this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
             this.descripcion.Width = 350;
             // 
             // groupBox2
