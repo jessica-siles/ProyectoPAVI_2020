@@ -21,14 +21,13 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
         public frmConsltarPermisos()
         {
             InitializeComponent();
-            permisoService = new PermisoService();           
+            permisoService = new PermisoService();
         }
 
         private void frmConsltarPermisos_Load(object sender, EventArgs e)
         {
             permisoService.cargarComb(cboPerfil);
         }
-
         private void CargarGrilla(DataGridView grilla, DataTable tabla)
         {
             grilla.Rows.Clear();
@@ -36,7 +35,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
             {
                 grilla.Rows.Add(tabla.Rows[i]["id_formulario"],
                                 tabla.Rows[i]["nombre"],
-                                tabla.Rows[i]["descripcion"]);                                         
+                                tabla.Rows[i]["descripcion"]);
             }
         }
 
@@ -52,7 +51,6 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
                 CargarGrilla(dgvConsultaPermisos, permisoService.obtenerFormulariosPorPerfil(oPerfil.IdPerfil));
                 return;
             }
-            
         }
     }
 }

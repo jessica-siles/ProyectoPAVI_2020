@@ -14,7 +14,8 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Entities;
-
+using ProyectoGrupalGestionDeUsuarios.Reportes;
+using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
@@ -96,8 +97,31 @@ namespace ProyectoGrupalGestionDeUsuarios
 
         private void PermisostoolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void reporteDeHistoricoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDatosUsuarios historicoReport = new frmDatosUsuarios();
+            historicoReport.ShowDialog();
+        }
+
+        private void estadisticaDePerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaPerfil estadisticaPerfil = new frmEstadisticaPerfil();
+            estadisticaPerfil.ShowDialog();
+        }
+
+        private void asignarPermisosAPerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             frmAltaPermisos Permiso = new frmAltaPermisos();
             Permiso.ShowDialog();
+        }
+
+        private void consultarPermisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsltarPermisos consultaPermisos = new frmConsltarPermisos();
+            consultaPermisos.ShowDialog();
         }
     }
 }

@@ -497,7 +497,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>UsuariosDatos</DataSetName>
-            <Top>2.58974cm</Top>
+            <Top>2.58973cm</Top>
             <Left>1.0287cm</Left>
             <Height>1.2cm</Height>
             <Width>21.28542cm</Width>
@@ -545,7 +545,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>0.92287cm</Top>
+            <Top>0.92286cm</Top>
             <Left>1.00224cm</Left>
             <Height>0.93486cm</Height>
             <Width>21.28542cm</Width>
@@ -561,7 +561,7 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>0.92287cm</Top>
+            <Top>0.92286cm</Top>
             <Left>1.0287cm</Left>
             <Height>0cm</Height>
             <Width>21.25896cm</Width>
@@ -574,7 +574,7 @@
             </Style>
           </Line>
           <Line Name="Line2">
-            <Top>1.90183cm</Top>
+            <Top>1.90182cm</Top>
             <Left>1.0287cm</Left>
             <Height>0cm</Height>
             <Width>21.25896cm</Width>
@@ -593,7 +593,7 @@
       <Width>23.22536cm</Width>
       <Page>
         <PageHeader>
-          <Height>3.05104cm</Height>
+          <Height>3.05105cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -604,7 +604,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de Usuarios</Value>
+                      <Value>Reporte Historico de Usuarios</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
@@ -620,9 +620,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.34938cm</Top>
-              <Left>5.45042cm</Left>
+              <Left>2.38125cm</Left>
               <Height>1.70167cm</Height>
-              <Width>11.98057cm</Width>
+              <Width>19.36244cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -659,7 +659,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.86918cm</Top>
+              <Top>0.51125cm</Top>
               <Left>0.68474cm</Left>
               <Height>0.83813cm</Height>
               <Width>5.70146cm</Width>

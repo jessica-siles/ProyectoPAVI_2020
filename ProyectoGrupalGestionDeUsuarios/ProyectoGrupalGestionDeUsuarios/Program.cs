@@ -9,7 +9,7 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
-using ProyectoGrupalGestionDeUsuarios.Reportes;
+using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
@@ -23,7 +23,7 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmDatosUsuarios());
+            Application.Run(new frmMenuPrincipal());
             //Application.Run(new frmAltaPermisos());
             //Application.Run(new frmAgregarPerfil());            
             //Application.Run(new frmConsultaPerfiles());
@@ -31,7 +31,6 @@ namespace ProyectoGrupalGestionDeUsuarios
             //Application.Run(new frmHistoricoUsuario());
             //Application.Run(new frmFormulario());
             //Application.Run(new frmAltaPermisos());
-            Application.Run(new frmConsltarPermisos());
         }
     }
 }

@@ -105,7 +105,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         //    }
         //}
 
-        public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar)
+        public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar, string fecha)
         {
             DataManager dm = new DataManager();
             try
@@ -138,8 +138,8 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
                 for (int i = 0; i < insertar.Count; i++)
                 {
-                    string insertarPermisos = "INSERT INTO Permisos (id_formulario , id_perfil, borrado)" +
-                                              "VALUES (" + insertar[i] + "," + perfil + "," + 0 + ")";
+                    string insertarPermisos = "INSERT INTO Permisos (fecha_alta,id_formulario , id_perfil, borrado)" +
+                                              "VALUES ('" + fecha +"'," + insertar[i] + "," + perfil + "," + 0 + ")";
                    
                     dm.EjecutarSQL(insertarPermisos);
                 }
@@ -159,8 +159,8 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 dm.Close();
             }
             return true;
-        }
 
+        }
         public DataTable recuperarFormulariosPorPerfil(int perfil)
         {
             return DBHelper.GetDBHelper().ConsultaSQL("SELECT f.* FROM Formularios f, Permisos p " +
@@ -168,5 +168,8 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                                                       "AND p.id_perfil=" + perfil +
                                                       "AND p.borrado=0");
         }
+
+
+
     }
 }

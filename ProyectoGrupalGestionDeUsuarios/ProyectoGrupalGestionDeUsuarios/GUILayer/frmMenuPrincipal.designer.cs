@@ -39,6 +39,11 @@
             this.historicoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PermisostoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeHistoricoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaDePerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarPermisosAPerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +56,8 @@
             this.btnPerfil,
             this.usuariosToolStripMenuItem,
             this.formulariosToolStripMenuItem,
-            this.PermisostoolStripMenuItem1});
+            this.PermisostoolStripMenuItem1,
+            this.resportesToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -140,12 +146,58 @@
             // 
             // PermisostoolStripMenuItem1
             // 
+            this.PermisostoolStripMenuItem1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.PermisostoolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asignarPermisosAPerfilesToolStripMenuItem,
+            this.consultarPermisosToolStripMenuItem});
             this.PermisostoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PermisostoolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.PermisostoolStripMenuItem1.Name = "PermisostoolStripMenuItem1";
             this.PermisostoolStripMenuItem1.Size = new System.Drawing.Size(121, 36);
             this.PermisostoolStripMenuItem1.Text = "Permisos";
             this.PermisostoolStripMenuItem1.Click += new System.EventHandler(this.PermisostoolStripMenuItem1_Click);
+            // 
+            // resportesToolStripMenuItem
+            // 
+            this.resportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteDeHistoricoDeUsuariosToolStripMenuItem,
+            this.estadisticaDePerfilesToolStripMenuItem});
+            this.resportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F);
+            this.resportesToolStripMenuItem.Name = "resportesToolStripMenuItem";
+            this.resportesToolStripMenuItem.Size = new System.Drawing.Size(120, 36);
+            this.resportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // reporteDeHistoricoDeUsuariosToolStripMenuItem
+            // 
+            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Name = "reporteDeHistoricoDeUsuariosToolStripMenuItem";
+            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(434, 36);
+            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Text = "Reporte de historico de usuarios";
+            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeHistoricoDeUsuariosToolStripMenuItem_Click);
+            // 
+            // estadisticaDePerfilesToolStripMenuItem
+            // 
+            this.estadisticaDePerfilesToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.estadisticaDePerfilesToolStripMenuItem.Name = "estadisticaDePerfilesToolStripMenuItem";
+            this.estadisticaDePerfilesToolStripMenuItem.Size = new System.Drawing.Size(434, 36);
+            this.estadisticaDePerfilesToolStripMenuItem.Text = "Estadistica de Perfiles";
+            this.estadisticaDePerfilesToolStripMenuItem.Click += new System.EventHandler(this.estadisticaDePerfilesToolStripMenuItem_Click);
+            // 
+            // asignarPermisosAPerfilesToolStripMenuItem
+            // 
+            this.asignarPermisosAPerfilesToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.asignarPermisosAPerfilesToolStripMenuItem.Name = "asignarPermisosAPerfilesToolStripMenuItem";
+            this.asignarPermisosAPerfilesToolStripMenuItem.Size = new System.Drawing.Size(372, 36);
+            this.asignarPermisosAPerfilesToolStripMenuItem.Text = "Asignar Permisos a Perfiles";
+            this.asignarPermisosAPerfilesToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosAPerfilesToolStripMenuItem_Click);
+            // 
+            // consultarPermisosToolStripMenuItem
+            // 
+            this.consultarPermisosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.consultarPermisosToolStripMenuItem.Name = "consultarPermisosToolStripMenuItem";
+            this.consultarPermisosToolStripMenuItem.Size = new System.Drawing.Size(372, 36);
+            this.consultarPermisosToolStripMenuItem.Text = "Consultar Permisos";
+            this.consultarPermisosToolStripMenuItem.Click += new System.EventHandler(this.consultarPermisosToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -185,6 +237,11 @@
         private System.Windows.Forms.ToolStripMenuItem formulariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historicoDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PermisostoolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem resportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeHistoricoDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticaDePerfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarPermisosAPerfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarPermisosToolStripMenuItem;
     }
 }
 

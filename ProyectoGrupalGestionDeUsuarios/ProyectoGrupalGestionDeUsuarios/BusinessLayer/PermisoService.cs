@@ -45,7 +45,6 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
         public DataTable obtenerFormulariosPorPerfil(int id)
         {
             return oPermisosDao.recuperarFormulariosPorPerfil(id);
-        }       
-
+        }
     }
 }

@@ -114,11 +114,11 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(523, 83);
+            this.label4.Location = new System.Drawing.Point(454, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 31);
+            this.label4.Size = new System.Drawing.Size(159, 56);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Estado:";
+            this.label4.Text = "Modificaciones \r\n      del Usuario:";
             this.label4.UseCompatibleTextRendering = true;
             // 
             // label5

@@ -129,6 +129,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
         {
             recorrerGrillas();
             //intenta agregar a la transaccion las listas para hacer insert y update.
+            DateTime des = DateTime.Today;
+            string desde = "";
+            desde = des.ToString("yyyy-MM-dd");
 
             try
             { 
@@ -140,7 +143,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 
                 else
                 { 
-                    if(PermisoDao.transaccion(list,Quitar,Modificar,Permiso.Id_perfil,1,0))
+                    if(PermisoDao.transaccion(list,Quitar,Modificar,Permiso.Id_perfil,1,0,desde))
                     {
                         MessageBox.Show("Permiso asignado con Exito!");
                         cboPerfil.SelectedIndex = -1;

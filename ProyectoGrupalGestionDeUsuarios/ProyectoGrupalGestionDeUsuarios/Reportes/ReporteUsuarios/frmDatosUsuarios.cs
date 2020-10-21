@@ -59,7 +59,8 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
         private void frmDatosUsuarios_Load(object sender, EventArgs e)
         {
             reportViewer2.LocalReport.SetParameters(new ReportParameter[]{ new
-            ReportParameter("fecha", Convert.ToString(DateTime.Today)), new ReportParameter("fechaDesde", dtpDesde.Text) , new ReportParameter("fechaHasta", dtpHasta.Text)});
+            ReportParameter("fecha", Convert.ToString(DateTime.Today)), new ReportParameter("fechaDesde", dtpDesde.Text) , new ReportParameter("fechaHasta", dtpHasta.Text)});
+
             reportViewer2.LocalReport.DataSources.Clear();
             reportViewer2.LocalReport.DataSources.Add(new ReportDataSource("UsuariosDatos", mostrartodo()));
             reportViewer2.RefreshReport();
@@ -81,7 +82,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             DateTime has = Convert.ToDateTime(dtpHasta.Text);
             string desde = "";
             string hasta = "";
-
+            
             int perfil = Convert.ToInt32(cboTitulo.SelectedValue);
 
             if (des > has)
