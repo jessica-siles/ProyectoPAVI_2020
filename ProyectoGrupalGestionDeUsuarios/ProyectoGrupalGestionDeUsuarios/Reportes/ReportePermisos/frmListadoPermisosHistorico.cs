@@ -46,7 +46,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             string _formulario, _perfil; bool conFecha = false;
-            _formulario = _perfil = ""; string prmFecha = "";
+            _formulario = _perfil = ""; string prmFechaDesde = "";
 
 
             if (dtpFechaDesde.Value > dtpFechaHasta.Value)
@@ -76,12 +76,12 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
                 if (chkBoxFechas.Checked)
                 {
                     conFecha = true;
-                    prmFecha = dtpFechaDesde.Value.ToShortDateString();
+                    prmFechaDesde = dtpFechaDesde.Value.ToShortDateString();
                 }
                 else
                 {
                     conFecha = false;
-                    prmFecha = "Todas las fechas registradas";
+                    prmFechaDesde = "Todas las fechas registradas";
                 }
                 
                 DataTable tabla = new DataTable();
@@ -93,6 +93,9 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
                 {
                     MessageBox.Show("No existen permisos con esas condiciones...");
                     this.dtPermisosHistoricoBindingSource.DataSource = tabla;
+                    this.reportViewer1.LocalReport.SetParameters(new ReportParameter[]{ new ReportParameter
+                                                                ("prFechaDesde", prmFechaDesde),
+                                                                 new ReportParameter("prFechaHasta", dtpFechaHasta.Value.ToShortDateString())});
                     this.reportViewer1.RefreshReport();
                     resetearCampos();
                 }
@@ -100,7 +103,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
                 {
                     this.dtPermisosHistoricoBindingSource.DataSource = tabla;                    
                     this.reportViewer1.LocalReport.SetParameters(new ReportParameter[]{ new ReportParameter
-                                                                ("prFechaDesde", prmFecha),
+                                                                ("prFechaDesde", prmFechaDesde),
                                                                  new ReportParameter("prFechaHasta", dtpFechaHasta.Value.ToShortDateString())});
                     this.reportViewer1.RefreshReport();
                 }
