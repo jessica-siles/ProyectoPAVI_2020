@@ -76,5 +76,12 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             DBHelper.GetDBHelper().EjecutarSQL(DeleteSQL);
         }
 
+        public DataTable ConsultarTabla(string nombreTabla)
+        {
+            string consulta = "SELECT * FROM "+nombreTabla+" WHERE borrado=0";
+            DataTable tabla = DBHelper.GetDBHelper().ConsultaSQL(consulta);       
+            return tabla;
+        }
+
     }
 }

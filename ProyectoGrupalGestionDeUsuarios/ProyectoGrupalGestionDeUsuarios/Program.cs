@@ -10,7 +10,8 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios;
-
+using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos;
+using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
 namespace ProyectoGrupalGestionDeUsuarios
 {
     static class Program
@@ -23,7 +24,8 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenuPrincipal());
+            //Application.Run(new frmMenuPrincipal());
+            Application.Run(new frmListadoPermisosHistorico());
             //Application.Run(new frmAltaPermisos());
             //Application.Run(new frmAgregarPerfil());            
             //Application.Run(new frmConsultaPerfiles());
@@ -31,6 +33,7 @@ namespace ProyectoGrupalGestionDeUsuarios
             //Application.Run(new frmHistoricoUsuario());
             //Application.Run(new frmFormulario());
             //Application.Run(new frmAltaPermisos());
+            //Application.Run(new frmListadoPermisosHistorico());
         }
     }
 }

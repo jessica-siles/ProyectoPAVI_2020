@@ -52,7 +52,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
         public DataTable buscarFormAsignado(int perfil, int formulario)
         {
-            string buscar = "SELECT id_formulario FROM Permisos WHERE id_formulario = " + formulario + " AND id_perfil = " + perfil;
+            string buscar = "SELECT id_formulario, borrado FROM Permisos WHERE id_formulario = " + formulario + " AND id_perfil = " + perfil;
             DataTable resultado = userdao.Consultar(buscar);
 
             int buscarForm = -1;
@@ -72,43 +72,53 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             DataManager.GetInstance().EjecutarSQL(eliminartodos);
         }
 
-        public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar, string fecha)
+        public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar, DateTime fecha)
         {
             DataManager dm = new DataManager();
             try
             {
                 dm.Open();
-                dm.BeginTransaction();
-                
+                dm.BeginTransaction();                
                
                
-                    for (int i = 0; i < quitar.Count; i++)
-                    {
+                for (int i = 0; i < quitar.Count; i++)
+                {
                     
-                        string quitarPermisos = "UPDATE Permisos SET borrado=" + borradoQuitar +
-                                               "WHERE id_formulario=" + quitar[i] + " AND id_perfil=" + perfil;
+                    string quitarPermisos = "UPDATE Permisos SET borrado=" + borradoQuitar +
+                                            "WHERE id_formulario=" + quitar[i] + " AND id_perfil=" + perfil;
 
-                        dm.EjecutarSQL(quitarPermisos);
-                    }
+                    string insertarHistoricoPermiso = "INSERT INTO PermisosHistorico (id_formulario,id_perfil,fecha,descripcion)" +
+                                                      "VALUES (" + quitar[i] + "," + perfil + ",'" + fecha + "','" + "Quitar permiso')";
+
+                    dm.EjecutarSQL(quitarPermisos);
+                    dm.EjecutarSQL(insertarHistoricoPermiso);
+                }                    
               
                 
-                    for (int i = 0; i < modificar.Count; i++)
-                    {
+                for (int i = 0; i < modificar.Count; i++)
+                {
                                               
-                        string modificarPermisos = "UPDATE Permisos SET borrado=" + borradoModificar +
+                    string modificarPermisos = "UPDATE Permisos SET borrado=" + borradoModificar +
                                                "WHERE id_formulario=" + modificar[i] + " AND id_perfil=" + perfil;
 
-                    
-                        dm.EjecutarSQL(modificarPermisos);
-                    }
+                    string insertarHistoricoPermiso = "INSERT INTO PermisosHistorico (id_formulario,id_perfil,fecha,descripcion)" +
+                                                      "VALUES (" + modificar[i] + "," + perfil + ",'" + fecha + "','" + "Vuelve a tener permiso')";
+
+                    dm.EjecutarSQL(modificarPermisos);
+                    dm.EjecutarSQL(insertarHistoricoPermiso);
+                }
                 
 
                 for (int i = 0; i < insertar.Count; i++)
                 {
                     string insertarPermisos = "INSERT INTO Permisos (fecha_alta,id_formulario , id_perfil, borrado)" +
                                               "VALUES ('" + fecha +"'," + insertar[i] + "," + perfil + "," + 0 + ")";
-                   
+
+                    string insertarHistoricoPermiso = "INSERT INTO PermisosHistorico (id_formulario,id_perfil,fecha,descripcion)" +
+                                                      "VALUES (" + insertar[i] + "," + perfil + ",'" + fecha + "','" + "Conceder permiso')";
+
                     dm.EjecutarSQL(insertarPermisos);
+                    dm.EjecutarSQL(insertarHistoricoPermiso);
                 }
 
                 dm.Commit();
@@ -128,6 +138,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             return true;
 
         }
+
         public DataTable recuperarFormulariosPorPerfil(int perfil)
         {
             return DBHelper.GetDBHelper().ConsultaSQL("SELECT f.* FROM Formularios f, Permisos p " +
@@ -136,6 +147,39 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                                                       "AND p.borrado=0");
         }
 
+        public DataTable recuperarHistorialPermisos()
+        {
+            string consulta = "SELECT ph.id_phistorico,ph.fecha,f.nombre AS formulario, p.nombre as perfil, ph.descripcion " +
+                              "FROM PermisosHistorico ph, Formularios f, Perfiles p " +
+                              "WHERE ph.id_formulario = f.id_formulario AND ph.id_perfil = p.id_perfil";
+
+            return DBHelper.GetDBHelper().ConsultaSQL(consulta);
+        }
+
+        public DataTable recuperarHistorialPermisosFiltrados(string desde, string hasta, string formulario, string perfil, bool conFecha)
+        {
+            string consulta = "SELECT ph.id_phistorico,ph.fecha,f.nombre AS formulario, p.nombre as perfil, ph.descripcion " +
+                              "FROM PermisosHistorico ph, Formularios f, Perfiles p " +
+                              "WHERE ph.id_formulario = f.id_formulario AND ph.id_perfil = p.id_perfil";
+
+            if (conFecha)
+                consulta += " AND ph.fecha BETWEEN '" + desde + "' AND '" + hasta + "'";
+            if (formulario != "")
+                consulta += " AND ph.id_formulario=" + formulario;
+            if (perfil != "")
+                consulta += " AND ph.id_perfil=" + perfil;
+
+            return DBHelper.GetDBHelper().ConsultaSQL(consulta);
+        }
+
+        public DataTable cantidadDePermisos()
+        {
+            string consulta = "SELECT p.nombre as perfil, COUNT (*) as cantidad FROM Permisos ps,Perfiles p, Formularios f" +
+                              " WHERE ps.id_formulario = f.id_formulario" +
+                              " AND ps.id_perfil = p.id_perfil GROUP BY p.nombre";
+
+            return DBHelper.GetDBHelper().ConsultaSQL(consulta);
+        }
 
 
     }

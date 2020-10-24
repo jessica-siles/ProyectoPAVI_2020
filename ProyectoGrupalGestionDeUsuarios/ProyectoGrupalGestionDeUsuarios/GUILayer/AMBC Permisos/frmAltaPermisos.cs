@@ -89,8 +89,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
                 dgvFormSinAsignar.Rows.Remove(dgvFormSinAsignar.CurrentRow);
             }
             else
-                return;
-            
+                return;            
         }
 
         private void recorrerGrillas()
@@ -98,23 +97,25 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
             list.Clear();
             Modificar.Clear();
             Quitar.Clear();
-
+            
             foreach (DataGridViewRow row in dgvFormAsignados.Rows)
             {
-
                 InsertarPermiso.Id_Formulario = Convert.ToInt32(row.Cells["numForm"].Value);
                 DataTable FormulariosAsignados = PermisoDao.buscarFormAsignado(Permiso.Id_perfil, InsertarPermiso.Id_Formulario);
-
+                
                 if (FormulariosAsignados.Rows.Count == 0 && dgvFormAsignados.Rows.Count > 0)
                 {
                     list.Add(InsertarPermiso.Id_Formulario);
                 }
-
-                if (FormulariosAsignados.Rows.Count > 0 && dgvFormAsignados.Rows.Count > 0)
-                {                    
-                    Modificar.Add(InsertarPermiso.Id_Formulario);
+                foreach (DataRow r in FormulariosAsignados.Rows)
+                {
+                    string borrado = Convert.ToString(r["borrado"]);
+                    if (FormulariosAsignados.Rows.Count == 1 && dgvFormAsignados.Rows.Count > 0 && borrado != "0")
+                    {
+                        Modificar.Add(InsertarPermiso.Id_Formulario);
+                    }
                 }                
-            }
+            }                                 
 
             if (flagDEL) //Si boton quitar fue presionado
             {
@@ -123,10 +124,15 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
                     InsertarPermiso.Id_Formulario = Convert.ToInt32(renglon.Cells["numF"].Value);
                     DataTable FormNoAsignados = PermisoDao.buscarFormAsignado(Permiso.Id_perfil, InsertarPermiso.Id_Formulario);
 
-                    if (FormNoAsignados.Rows.Count == 1 && dgvFormSinAsignar.Rows.Count > 0)
+
+                    foreach (DataRow row in FormNoAsignados.Rows)
                     {
-                        Quitar.Add(InsertarPermiso.Id_Formulario);
-                    }
+                        string borrado = Convert.ToString(row["borrado"]);
+                        if (FormNoAsignados.Rows.Count == 1 && dgvFormSinAsignar.Rows.Count > 0 && borrado != "1")
+                        {
+                            Quitar.Add(InsertarPermiso.Id_Formulario);
+                        }
+                    }                    
                 }
             }
         }
@@ -148,39 +154,34 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
             desde = des.ToString("yyyy-MM-dd");
 
             try
-            { 
+            {
                 if (cboPerfil.SelectedIndex == - 1)
                 {
                     MessageBox.Show("No se selecciono ningun perfil");
-
                 }
 
                 else
-                { 
-                    if(PermisoDao.transaccion(list,Quitar,Modificar,Permiso.Id_perfil,1,0,desde))
+                {
+                    if (PermisoDao.transaccion(list, Quitar, Modificar, Permiso.Id_perfil, 1, 0, des))
                     {
                         MessageBox.Show("Permiso asignado con Exito!");
                         cboPerfil.SelectedIndex = -1;
                         dgvFormAsignados.Rows.Clear();
                         dgvFormSinAsignar.Rows.Clear();
-
                     }
                 }
-            
-
-
-
             }
             //sino puede hacer la transaccion muestra un mensaje de error
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show("No se pudo guardar el permiso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboPerfil.SelectedIndex = -1;
                 dgvFormAsignados.Rows.Clear();
                 dgvFormSinAsignar.Rows.Clear();
             }
-            flagADD = flagADD = false;
+
+            flagADD = flagDEL = false;           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

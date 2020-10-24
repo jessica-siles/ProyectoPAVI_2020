@@ -16,6 +16,8 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Entities;
 using ProyectoGrupalGestionDeUsuarios.Reportes;
 using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios;
+using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos;
+using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
@@ -122,6 +124,18 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             frmConsltarPermisos consultaPermisos = new frmConsltarPermisos();
             consultaPermisos.ShowDialog();
+        }
+
+        private void historicoDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPermisosHistorico consultarPermisosHistorico = new frmPermisosHistorico();
+            consultarPermisosHistorico.ShowDialog();
+        }
+
+        private void reporteDeHistoricoDePermisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoPermisosHistorico permisosHistorico = new frmListadoPermisosHistorico();
+            permisosHistorico.ShowDialog();
         }
     }
 }

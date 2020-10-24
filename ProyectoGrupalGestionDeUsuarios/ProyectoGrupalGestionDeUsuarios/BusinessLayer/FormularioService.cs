@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ProyectoGrupalGestionDeUsuarios.Entities;
 using ProyectoGrupalGestionDeUsuarios.DataAccessLayer;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
 {
@@ -46,6 +47,16 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
         public void eliminarFormulario(int id)
         {
             oFormularioDao.DeleteFormulario(id);
+        }
+
+        public void cargarCombo(ComboBox combo, string nombreTabla)
+        {
+            DataTable formularios = oFormularioDao.ConsultarTabla(nombreTabla);          
+            combo.DataSource = formularios;
+            combo.DisplayMember = formularios.Columns[1].ColumnName;
+            combo.ValueMember = formularios.Columns[0].ColumnName;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.SelectedIndex = -1;            
         }
     }
 }

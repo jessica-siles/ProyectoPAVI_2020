@@ -154,8 +154,25 @@
     <Compile Include="GUILayer\Historico de Usuarios\frmHistoricoUsuario.Designer.cs">
       <DependentUpon>frmHistoricoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Historico Permisos\frmPermisosHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Historico Permisos\frmPermisosHistorico.Designer.cs">
+      <DependentUpon>frmPermisosHistorico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticaPermisosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.Designer.cs">
+      <DependentUpon>frmEstadisticaPermisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\EstadisticaUsuarios\dataUsuarios.cs">
       <DependentUpon>dataUsuarios.xsd</DependentUpon>
     </Compile>
@@ -169,6 +186,17 @@
     </Compile>
     <Compile Include="Reportes\EstadisticaUsuarios\frmEstadisticaPerfil.Designer.cs">
       <DependentUpon>frmEstadisticaPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePermisos\frmListadoPermisosHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePermisos\frmListadoPermisosHistorico.Designer.cs">
+      <DependentUpon>frmListadoPermisosHistorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePermisos\PermisosHistorico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermisosHistorico.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteUsuarios\frmDatosUsuarios.cs">
       <SubType>Form</SubType>
@@ -218,6 +246,9 @@
     <EmbeddedResource Include="GUILayer\Historico de Usuarios\frmHistoricoUsuario.resx">
       <DependentUpon>frmHistoricoUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Historico Permisos\frmPermisosHistorico.resx">
+      <DependentUpon>frmPermisosHistorico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -226,11 +257,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\EstadisticaPermisos\EstadisticaPermisosInforme.rdlc" />
+    <EmbeddedResource Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.resx">
+      <DependentUpon>frmEstadisticaPermisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EstadisticaUsuarios\frmEstadisticaPerfil.resx">
       <DependentUpon>frmEstadisticaPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EstadisticaUsuarios\reportEstadisticaUsuarios.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePermisos\frmListadoPermisosHistorico.resx">
+      <DependentUpon>frmListadoPermisosHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePermisos\PermisosHistoricoInforme.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteUsuarios\frmDatosUsuarios.resx">
       <DependentUpon>frmDatosUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +285,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.xsc">
+      <DependentUpon>EstadisticaPermisosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticaPermisosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.xss">
+      <DependentUpon>EstadisticaPermisosDS.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\EstadisticaUsuarios\dataUsuarios.xsc">
       <DependentUpon>dataUsuarios.xsd</DependentUpon>
     </None>
@@ -255,6 +306,17 @@
     </None>
     <None Include="Reportes\EstadisticaUsuarios\dataUsuarios.xss">
       <DependentUpon>dataUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportePermisos\PermisosHistorico.xsc">
+      <DependentUpon>PermisosHistorico.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportePermisos\PermisosHistorico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PermisosHistorico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportePermisos\PermisosHistorico.xss">
+      <DependentUpon>PermisosHistorico.xsd</DependentUpon>
     </None>
     <None Include="Reportes\ReporteUsuarios\prueba.xsc">
       <DependentUpon>prueba.xsd</DependentUpon>
@@ -274,6 +336,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resource\fondoLoginultimo.jfif" />
+    <None Include="Resource\FondoPerf.jpg" />
+    <None Include="Resource\FONDOoTRO.jpg" />
     <Content Include="Resource\login.jfif" />
     <Content Include="Resource\otroFondo.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />

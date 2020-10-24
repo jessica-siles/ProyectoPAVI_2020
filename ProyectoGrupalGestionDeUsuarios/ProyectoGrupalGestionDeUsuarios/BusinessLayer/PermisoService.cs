@@ -46,5 +46,20 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
         {
             return oPermisosDao.recuperarFormulariosPorPerfil(id);
         }
+
+        public DataTable obtenerHistorialPermisos()
+        {
+            return oPermisosDao.recuperarHistorialPermisos();
+        }
+
+        public DataTable obtenerHistorialPermisosFiltrados(string desde, string hasta,string formulario, string perfil,bool conFecha)
+        {
+            return oPermisosDao.recuperarHistorialPermisosFiltrados(desde,hasta,formulario,perfil,conFecha);
+        }
+
+        public DataTable cantidadPermisosPerfil()
+        {
+            return oPermisosDao.cantidadDePermisos();
+        }
     }
 }
