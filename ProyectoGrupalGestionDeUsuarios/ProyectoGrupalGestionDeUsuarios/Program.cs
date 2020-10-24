@@ -24,8 +24,8 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmMenuPrincipal());
-            Application.Run(new frmListadoPermisosHistorico());
+            Application.Run(new frmMenuPrincipal());
+            //Application.Run(new frmListadoPermisosHistorico());
             //Application.Run(new frmAltaPermisos());
             //Application.Run(new frmAgregarPerfil());            
             //Application.Run(new frmConsultaPerfiles());

@@ -488,7 +488,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>REPORTE HISTORICO DE PERMISOS</Value>
+                      <Value>REPORTE HISTÓRICO DE PERMISOS</Value>
                       <Style>
                         <FontSize>18pt</FontSize>
                         <FontWeight>Bold</FontWeight>

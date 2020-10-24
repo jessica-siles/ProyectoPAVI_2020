@@ -18,6 +18,7 @@ using ProyectoGrupalGestionDeUsuarios.Reportes;
 using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
+using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPermisos;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
@@ -136,6 +137,12 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             frmListadoPermisosHistorico permisosHistorico = new frmListadoPermisosHistorico();
             permisosHistorico.ShowDialog();
+        }
+
+        private void estadísticaDePermisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaPermisos estadisticaPermisos = new frmEstadisticaPermisos();
+            estadisticaPermisos.ShowDialog();
         }
     }
 }

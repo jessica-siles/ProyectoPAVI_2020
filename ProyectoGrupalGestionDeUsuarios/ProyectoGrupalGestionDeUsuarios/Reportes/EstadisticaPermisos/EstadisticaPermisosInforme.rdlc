@@ -363,12 +363,13 @@
               <ChartTitle Name="Default">
                 <Caption>Permisos por perfiles</Caption>
                 <Style>
+                  <BackgroundColor>Black</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                   <TextAlign>Left</TextAlign>
                   <VerticalAlign>Top</VerticalAlign>
-                  <Color>#a6a6a6</Color>
+                  <Color>White</Color>
                 </Style>
                 <Position>TopLeft</Position>
               </ChartTitle>
@@ -430,6 +431,7 @@
                                   <Value>Perfil</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -442,7 +444,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <BackgroundColor>Black</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -463,6 +465,7 @@
                                   <Value>Cantidad</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -475,7 +478,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightSteelBlue</BackgroundColor>
+                            <BackgroundColor>Black</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
