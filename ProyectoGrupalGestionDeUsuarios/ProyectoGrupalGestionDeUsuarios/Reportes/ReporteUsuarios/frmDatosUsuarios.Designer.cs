@@ -44,10 +44,11 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.button1 = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cboTitulo = new System.Windows.Forms.ComboBox();
-            this.prueba = new ProyectoGrupalGestionDeUsuarios.Reportes.ReporteUsuarios.prueba();
             this.reportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.prueba)).BeginInit();
+            this.prueba = new ProyectoGrupalGestionDeUsuarios.Reportes.ReporteUsuarios.prueba();
+            this.btnGenerarEstadistica = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prueba)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer2
@@ -68,7 +69,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(274, 27);
             this.dtpDesde.TabIndex = 2;
-            this.dtpDesde.Value = new System.DateTime(2020, 10, 20, 0, 0, 0, 0);
+            this.dtpDesde.Value = new System.DateTime(2020, 10, 24, 0, 0, 0, 0);
             // 
             // dtpHasta
             // 
@@ -78,7 +79,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(274, 27);
             this.dtpHasta.TabIndex = 3;
-            this.dtpHasta.Value = new System.DateTime(2020, 10, 20, 23, 56, 0, 0);
+            this.dtpHasta.Value = new System.DateTime(2020, 10, 24, 21, 19, 7, 0);
             // 
             // label3
             // 
@@ -184,6 +185,21 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.prueba.DataSetName = "prueba";
             this.prueba.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // btnGenerarEstadistica
+            // 
+            this.btnGenerarEstadistica.BackColor = System.Drawing.Color.DarkViolet;
+            this.btnGenerarEstadistica.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btnGenerarEstadistica.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarEstadistica.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGenerarEstadistica.Location = new System.Drawing.Point(129, 132);
+            this.btnGenerarEstadistica.Margin = new System.Windows.Forms.Padding(5);
+            this.btnGenerarEstadistica.Name = "btnGenerarEstadistica";
+            this.btnGenerarEstadistica.Size = new System.Drawing.Size(274, 40);
+            this.btnGenerarEstadistica.TabIndex = 33;
+            this.btnGenerarEstadistica.Text = "Generar Estadistica";
+            this.btnGenerarEstadistica.UseVisualStyleBackColor = false;
+            this.btnGenerarEstadistica.Click += new System.EventHandler(this.btnGenerarEstadistica_Click);
+            // 
             // frmDatosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +207,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(906, 615);
+            this.Controls.Add(this.btnGenerarEstadistica);
             this.Controls.Add(this.cboTitulo);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.button1);
@@ -206,8 +223,8 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Usuarios";
             this.Load += new System.EventHandler(this.frmDatosUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.prueba)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prueba)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +246,6 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.ComboBox cboTitulo;
         private System.Windows.Forms.BindingSource reportBindingSource;
+        private System.Windows.Forms.Button btnGenerarEstadistica;
     }
 }

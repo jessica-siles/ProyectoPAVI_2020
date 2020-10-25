@@ -49,7 +49,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             string rep = "SELECT Perfiles.nombre AS perfil, count(usuarios.id_perfil) AS cantidad FROM Usuarios "
                         + "INNER JOIN Perfiles ON Perfiles.id_perfil = Usuarios.id_perfil "
                         + "INNER JOIN UsuariosHistorico ON UsuariosHistorico.id_usuario = Usuarios.id_usuario "
-                        + "WHERE UsuariosHistorico.fecha_historico BETWEEN '"+ desde +"' AND '"+ hasta +"' "
+                        + "WHERE UsuariosHistorico.titulo = 'Registro de Usuario' AND UsuariosHistorico.fecha_historico BETWEEN '" + desde +"' AND '"+ hasta +"' "
                         + " GROUP BY Perfiles.nombre";
             DataTable r = DataManager.GetInstance().ConsultaSQL(rep);
             return r;
@@ -61,6 +61,25 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                         + " GROUP BY Perfiles.nombre ";
             DataTable r = DataManager.GetInstance().ConsultaSQL(rep);
             return r;
+        }
+        public DataTable estadisticaHistUsuarios(string desde, string hasta)
+        {
+            string cantidad= "SELECT UsuariosHistorico.titulo AS Estado, count(UsuariosHistorico.titulo) AS Cantidad "
+                            + "FROM UsuariosHistorico "
+                            + "WHERE fecha_historico BETWEEN '"+ desde +"' AND '"+ hasta +"' "
+                            + "GROUP BY UsuariosHistorico.titulo";
+            DataTable r = DataManager.GetInstance().ConsultaSQL(cantidad);
+            return r;
+
+        }
+        public DataTable TodoHistUsuarios()
+        {
+            string cantidad = "SELECT UsuariosHistorico.titulo AS Estado, count(UsuariosHistorico.titulo) AS Cantidad "
+                            + "FROM UsuariosHistorico "
+                            + "GROUP BY UsuariosHistorico.titulo";
+            DataTable r = DataManager.GetInstance().ConsultaSQL(cantidad);
+            return r;
+
         }
     }
 }

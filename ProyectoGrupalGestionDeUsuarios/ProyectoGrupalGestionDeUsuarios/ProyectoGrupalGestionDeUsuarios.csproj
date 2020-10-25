@@ -187,6 +187,12 @@
     <Compile Include="Reportes\EstadisticaUsuarios\frmEstadisticaPerfil.Designer.cs">
       <DependentUpon>frmEstadisticaPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteUsuarios\frmEstadisticaHistoricoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuarios\frmEstadisticaHistoricoUsuarios.Designer.cs">
+      <DependentUpon>frmEstadisticaHistoricoUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReportePermisos\frmListadoPermisosHistorico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
       <DependentUpon>frmEstadisticaPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EstadisticaUsuarios\reportEstadisticaUsuarios.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteUsuarios\frmEstadisticaHistoricoUsuarios.resx">
+      <DependentUpon>frmEstadisticaHistoricoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportePermisos\frmListadoPermisosHistorico.resx">
       <DependentUpon>frmListadoPermisosHistorico.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +283,7 @@
     <EmbeddedResource Include="Reportes\ReporteUsuarios\frmDatosUsuarios.resx">
       <DependentUpon>frmDatosUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteUsuarios\EstadisticaHistoricoUsuarios.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteUsuarios\ReporteDatosUsuario.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

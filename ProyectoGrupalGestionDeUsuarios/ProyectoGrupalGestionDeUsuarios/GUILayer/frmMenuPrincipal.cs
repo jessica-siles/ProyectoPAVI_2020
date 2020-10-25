@@ -144,5 +144,11 @@ namespace ProyectoGrupalGestionDeUsuarios
             frmEstadisticaPermisos estadisticaPermisos = new frmEstadisticaPermisos();
             estadisticaPermisos.ShowDialog();
         }
+
+        private void estadisticaMovimientoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaHistoricoUsuarios movUsuarios = new frmEstadisticaHistoricoUsuarios();
+            movUsuarios.ShowDialog();
+        }
     }
 }

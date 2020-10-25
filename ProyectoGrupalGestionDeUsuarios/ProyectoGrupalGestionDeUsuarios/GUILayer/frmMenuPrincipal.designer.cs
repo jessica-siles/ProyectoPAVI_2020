@@ -47,6 +47,7 @@
             this.estadisticaDePerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeHistoricoDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadísticaDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaMovimientoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,6 +190,7 @@
             // 
             this.resportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteDeHistoricoDeUsuariosToolStripMenuItem,
+            this.estadisticaMovimientoDeUsuariosToolStripMenuItem,
             this.estadisticaDePerfilesToolStripMenuItem,
             this.reporteDeHistoricoDePermisosToolStripMenuItem,
             this.estadísticaDePermisosToolStripMenuItem});
@@ -201,7 +203,7 @@
             // 
             this.reporteDeHistoricoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
             this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Name = "reporteDeHistoricoDeUsuariosToolStripMenuItem";
-            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(449, 36);
+            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(467, 36);
             this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Text = "Reporte De Histórico De Usuarios";
             this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeHistoricoDeUsuariosToolStripMenuItem_Click);
             // 
@@ -209,7 +211,7 @@
             // 
             this.estadisticaDePerfilesToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
             this.estadisticaDePerfilesToolStripMenuItem.Name = "estadisticaDePerfilesToolStripMenuItem";
-            this.estadisticaDePerfilesToolStripMenuItem.Size = new System.Drawing.Size(449, 36);
+            this.estadisticaDePerfilesToolStripMenuItem.Size = new System.Drawing.Size(467, 36);
             this.estadisticaDePerfilesToolStripMenuItem.Text = "Estadística De Perfiles";
             this.estadisticaDePerfilesToolStripMenuItem.Click += new System.EventHandler(this.estadisticaDePerfilesToolStripMenuItem_Click);
             // 
@@ -217,7 +219,7 @@
             // 
             this.reporteDeHistoricoDePermisosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
             this.reporteDeHistoricoDePermisosToolStripMenuItem.Name = "reporteDeHistoricoDePermisosToolStripMenuItem";
-            this.reporteDeHistoricoDePermisosToolStripMenuItem.Size = new System.Drawing.Size(449, 36);
+            this.reporteDeHistoricoDePermisosToolStripMenuItem.Size = new System.Drawing.Size(467, 36);
             this.reporteDeHistoricoDePermisosToolStripMenuItem.Text = "Reporte De Histórico De Permisos";
             this.reporteDeHistoricoDePermisosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeHistoricoDePermisosToolStripMenuItem_Click);
             // 
@@ -225,9 +227,17 @@
             // 
             this.estadísticaDePermisosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
             this.estadísticaDePermisosToolStripMenuItem.Name = "estadísticaDePermisosToolStripMenuItem";
-            this.estadísticaDePermisosToolStripMenuItem.Size = new System.Drawing.Size(449, 36);
+            this.estadísticaDePermisosToolStripMenuItem.Size = new System.Drawing.Size(467, 36);
             this.estadísticaDePermisosToolStripMenuItem.Text = "Estadística De Permisos";
             this.estadísticaDePermisosToolStripMenuItem.Click += new System.EventHandler(this.estadísticaDePermisosToolStripMenuItem_Click);
+            // 
+            // estadisticaMovimientoDeUsuariosToolStripMenuItem
+            // 
+            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Name = "estadisticaMovimientoDeUsuariosToolStripMenuItem";
+            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(467, 36);
+            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Text = "Estadistica Movimiento de Usuarios";
+            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.estadisticaMovimientoDeUsuariosToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -275,6 +285,7 @@
         private System.Windows.Forms.ToolStripMenuItem historicoDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeHistoricoDePermisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadísticaDePermisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticaMovimientoDeUsuariosToolStripMenuItem;
     }
 }
 

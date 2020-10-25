@@ -11,6 +11,7 @@ using Microsoft.Reporting.WinForms;
 using ProyectoGrupalGestionDeUsuarios.DataAccessLayer;
 using ProyectoGrupalGestionDeUsuarios.BusinessLayer;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReporteUsuarios;
+using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
 
 namespace ProyectoGrupalGestionDeUsuarios.Reportes
 {
@@ -129,6 +130,12 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnGenerarEstadistica_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaHistoricoUsuarios estadisticaUsuarios = new frmEstadisticaHistoricoUsuarios();
+            estadisticaUsuarios.ShowDialog();
         }
     }
 }
