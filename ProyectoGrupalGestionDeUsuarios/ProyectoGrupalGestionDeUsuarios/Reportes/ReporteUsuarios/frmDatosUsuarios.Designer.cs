@@ -34,19 +34,18 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatosUsuarios));
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cboTitulo = new System.Windows.Forms.ComboBox();
             this.reportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prueba = new ProyectoGrupalGestionDeUsuarios.Reportes.ReporteUsuarios.prueba();
-            this.btnGenerarEstadistica = new System.Windows.Forms.Button();
+            this.cboUsuario = new System.Windows.Forms.ComboBox();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prueba)).BeginInit();
             this.SuspendLayout();
@@ -60,26 +59,6 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.reportViewer2.ServerReport.BearerToken = null;
             this.reportViewer2.Size = new System.Drawing.Size(882, 351);
             this.reportViewer2.TabIndex = 1;
-            // 
-            // dtpDesde
-            // 
-            this.dtpDesde.CustomFormat = "MM/dd/yy";
-            this.dtpDesde.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.dtpDesde.Location = new System.Drawing.Point(127, 22);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(274, 27);
-            this.dtpDesde.TabIndex = 2;
-            this.dtpDesde.Value = new System.DateTime(2020, 10, 24, 0, 0, 0, 0);
-            // 
-            // dtpHasta
-            // 
-            this.dtpHasta.CustomFormat = "MM/dd/yy";
-            this.dtpHasta.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.dtpHasta.Location = new System.Drawing.Point(602, 27);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(274, 27);
-            this.dtpHasta.TabIndex = 3;
-            this.dtpHasta.Value = new System.DateTime(2020, 10, 24, 21, 19, 7, 0);
             // 
             // label3
             // 
@@ -163,14 +142,6 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtUsuario.Location = new System.Drawing.Point(129, 78);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(274, 27);
-            this.txtUsuario.TabIndex = 31;
-            // 
             // cboTitulo
             // 
             this.cboTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,20 +156,32 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.prueba.DataSetName = "prueba";
             this.prueba.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnGenerarEstadistica
+            // cboUsuario
             // 
-            this.btnGenerarEstadistica.BackColor = System.Drawing.Color.DarkViolet;
-            this.btnGenerarEstadistica.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.btnGenerarEstadistica.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarEstadistica.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGenerarEstadistica.Location = new System.Drawing.Point(129, 132);
-            this.btnGenerarEstadistica.Margin = new System.Windows.Forms.Padding(5);
-            this.btnGenerarEstadistica.Name = "btnGenerarEstadistica";
-            this.btnGenerarEstadistica.Size = new System.Drawing.Size(274, 40);
-            this.btnGenerarEstadistica.TabIndex = 33;
-            this.btnGenerarEstadistica.Text = "Generar Estadistica";
-            this.btnGenerarEstadistica.UseVisualStyleBackColor = false;
-            this.btnGenerarEstadistica.Click += new System.EventHandler(this.btnGenerarEstadistica_Click);
+            this.cboUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboUsuario.FormattingEnabled = true;
+            this.cboUsuario.Location = new System.Drawing.Point(127, 83);
+            this.cboUsuario.Name = "cboUsuario";
+            this.cboUsuario.Size = new System.Drawing.Size(274, 28);
+            this.cboUsuario.TabIndex = 33;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dtpDesde.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dtpDesde.Location = new System.Drawing.Point(127, 31);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(274, 27);
+            this.dtpDesde.TabIndex = 34;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dtpHasta.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dtpHasta.Location = new System.Drawing.Point(602, 27);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(274, 27);
+            this.dtpHasta.TabIndex = 35;
             // 
             // frmDatosUsuarios
             // 
@@ -207,17 +190,16 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(906, 615);
-            this.Controls.Add(this.btnGenerarEstadistica);
+            this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.dtpDesde);
+            this.Controls.Add(this.cboUsuario);
             this.Controls.Add(this.cboTitulo);
-            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.dtpHasta);
-            this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.reportViewer2);
             this.Name = "frmDatosUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -234,8 +216,6 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
 
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
-        private System.Windows.Forms.DateTimePicker dtpDesde;
-        private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label4;
@@ -243,9 +223,10 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private prueba prueba;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.ComboBox cboTitulo;
         private System.Windows.Forms.BindingSource reportBindingSource;
-        private System.Windows.Forms.Button btnGenerarEstadistica;
+        private System.Windows.Forms.ComboBox cboUsuario;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
     }
 }

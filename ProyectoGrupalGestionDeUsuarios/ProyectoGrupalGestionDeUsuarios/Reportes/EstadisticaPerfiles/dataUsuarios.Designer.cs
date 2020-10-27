@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios {
+namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPerfiles {
     
     
     /// <summary>

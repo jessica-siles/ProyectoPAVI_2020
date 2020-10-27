@@ -301,7 +301,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!fecha_historico.Value</Value>
+                                  <Value>=FORMAT(Fields!fecha_historico.Value, "dd/MM/yyyy")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -516,11 +516,19 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Filtrado por fechas desde : </Value>
+                    <Value>Filtrado por fechas desde :</Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!fechaDesde.Value</Value>
+                    <Value>=Parameters!todasFechas.Value</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=FORMAT(Parameters!fechaDesde.Value, "dd/MM/yyyy")</Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -537,7 +545,7 @@
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!fechaHasta.Value</Value>
+                    <Value>=FORMAT(Parameters!fechaHasta.Value, "dd/MM/yyyy")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -545,7 +553,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>0.92286cm</Top>
+            <Top>0.8964cm</Top>
             <Left>1.00224cm</Left>
             <Height>0.93486cm</Height>
             <Width>21.28542cm</Width>
@@ -648,7 +656,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>=Parameters!fecha.Value</Value>
+                      <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <Format>d</Format>
                         <Color>White</Color>
@@ -661,8 +669,8 @@
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.51125cm</Top>
               <Left>0.68474cm</Left>
-              <Height>0.83813cm</Height>
-              <Width>5.70146cm</Width>
+              <Height>0.7323cm</Height>
+              <Width>9.19396cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -770,10 +778,6 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="fecha">
-      <DataType>DateTime</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
     <ReportParameter Name="fechaDesde">
       <DataType>DateTime</DataType>
       <Nullable>true</Nullable>
@@ -784,17 +788,18 @@
       <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="todasFechas">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>fecha</ParameterName>
-        </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
@@ -804,6 +809,11 @@
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>fechaHasta</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>todasFechas</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

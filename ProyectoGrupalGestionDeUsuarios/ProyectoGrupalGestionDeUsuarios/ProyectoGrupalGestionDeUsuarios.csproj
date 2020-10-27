@@ -173,19 +173,33 @@
     <Compile Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.Designer.cs">
       <DependentUpon>frmEstadisticaPermisos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\EstadisticaUsuarios\dataUsuarios.cs">
+    <Compile Include="Reportes\EstadisticaPerfiles\dataUsuarios.cs">
       <DependentUpon>dataUsuarios.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\EstadisticaUsuarios\dataUsuarios.Designer.cs">
+    <Compile Include="Reportes\EstadisticaPerfiles\dataUsuarios.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dataUsuarios.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\EstadisticaUsuarios\frmEstadisticaPerfil.cs">
+    <Compile Include="Reportes\EstadisticaPerfiles\frmEstadisticaPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\EstadisticaUsuarios\frmEstadisticaPerfil.Designer.cs">
+    <Compile Include="Reportes\EstadisticaPerfiles\frmEstadisticaPerfil.Designer.cs">
       <DependentUpon>frmEstadisticaPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfilesUsuario\frmReportePerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfilesUsuario\frmReportePerfiles.Designer.cs">
+      <DependentUpon>frmReportePerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.cs">
+      <DependentUpon>UsuariosPerfilesData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuariosPerfilesData.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteUsuarios\frmEstadisticaHistoricoUsuarios.cs">
       <SubType>Form</SubType>
@@ -269,10 +283,14 @@
     <EmbeddedResource Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.resx">
       <DependentUpon>frmEstadisticaPermisos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\EstadisticaUsuarios\frmEstadisticaPerfil.resx">
+    <EmbeddedResource Include="Reportes\EstadisticaPerfiles\frmEstadisticaPerfil.resx">
       <DependentUpon>frmEstadisticaPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\EstadisticaUsuarios\reportEstadisticaUsuarios.rdlc" />
+    <EmbeddedResource Include="Reportes\EstadisticaPerfiles\reportEstadisticaUsuarios.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePerfilesUsuario\frmReportePerfiles.resx">
+      <DependentUpon>frmReportePerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePerfilesUsuario\ReporteUsuariosPorPefil.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteUsuarios\frmEstadisticaHistoricoUsuarios.resx">
       <DependentUpon>frmEstadisticaHistoricoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,16 +324,27 @@
     <None Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.xss">
       <DependentUpon>EstadisticaPermisosDS.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\EstadisticaUsuarios\dataUsuarios.xsc">
+    <None Include="Reportes\EstadisticaPerfiles\dataUsuarios.xsc">
       <DependentUpon>dataUsuarios.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\EstadisticaUsuarios\dataUsuarios.xsd">
+    <None Include="Reportes\EstadisticaPerfiles\dataUsuarios.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dataUsuarios.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reportes\EstadisticaUsuarios\dataUsuarios.xss">
+    <None Include="Reportes\EstadisticaPerfiles\dataUsuarios.xss">
       <DependentUpon>dataUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.xsc">
+      <DependentUpon>UsuariosPerfilesData.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuariosPerfilesData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.xss">
+      <DependentUpon>UsuariosPerfilesData.xsd</DependentUpon>
     </None>
     <None Include="Reportes\ReportePermisos\PermisosHistorico.xsc">
       <DependentUpon>PermisosHistorico.xsd</DependentUpon>

@@ -9,7 +9,7 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
-using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios;
+using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPerfiles;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
 namespace ProyectoGrupalGestionDeUsuarios

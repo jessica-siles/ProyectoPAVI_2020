@@ -15,10 +15,12 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Entities;
 using ProyectoGrupalGestionDeUsuarios.Reportes;
-using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios;
+using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPerfiles;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPermisos;
+using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePerfilesUsuario;
+using ProyectoGrupalGestionDeUsuarios.Reportes.ReporteUsuarios;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
@@ -149,6 +151,12 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             frmEstadisticaHistoricoUsuarios movUsuarios = new frmEstadisticaHistoricoUsuarios();
             movUsuarios.ShowDialog();
+        }
+
+        private void reportePerfilesPorUsuarioYEstadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReportePerfiles reportPerfiles = new frmReportePerfiles();
+            reportPerfiles.ShowDialog();
         }
     }
 }

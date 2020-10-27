@@ -341,20 +341,6 @@
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartTitles>
-              <ChartTitle Name="Default">
-                <Caption>Título del gráfico</Caption>
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextAlign>Left</TextAlign>
-                  <VerticalAlign>Top</VerticalAlign>
-                  <Color>#a6a6a6</Color>
-                </Style>
-                <Position>TopLeft</Position>
-              </ChartTitle>
-            </ChartTitles>
             <Palette>Berry</Palette>
             <ChartBorderSkin>
               <Style>
@@ -571,19 +557,19 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Filtrado desde : </Value>
+                    <Value>Filtrado Desde : </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!fechaDes.Value</Value>
+                    <Value>=IIF(Parameters!todasFechas.Value = "S","Todas las fechas",FORMAT(Parameters!fechaDes.Value, "dd/MM/yyyy"))</Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>  Hasta: </Value>
+                    <Value>  - Hasta: </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!fechaHas.Value</Value>
+                    <Value>=FORMAT(Parameters!fechaHas.Value, "dd/MM/yyyy")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -670,7 +656,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>=Parameters!fechaAct.Value</Value>
+                      <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <Color>White</Color>
                       </Style>
@@ -801,9 +787,10 @@
       <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="fechaAct">
-      <DataType>DateTime</DataType>
+    <ReportParameter Name="todasFechas">
+      <DataType>String</DataType>
       <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -825,7 +812,7 @@
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>fechaAct</ParameterName>
+          <ParameterName>todasFechas</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

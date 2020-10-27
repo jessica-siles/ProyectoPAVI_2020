@@ -28,7 +28,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dataUsuarios</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\usuario\Desktop\VisualStudioProyectos-PAV1\ProyectoGit\ProyectoGrupalGestionDeUsuarios\ProyectoGrupalGestionDeUsuarios\Reportes\EstadisticaUsuarios\dataUsuarios.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\usuario\Desktop\VisualStudioProyectos-PAV1\ProyectoGit\ProyectoGrupalGestionDeUsuarios\ProyectoGrupalGestionDeUsuarios\Reportes\EstadisticaPerfiles\dataUsuarios.xsd</rd:SchemaPath>
         <rd:TableName>cantiadporPerfil</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -589,19 +589,19 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Filtrado por fecha desde: </Value>
+                    <Value>Filtrado Desde: </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!fechaDesde.Value</Value>
+                    <Value>=IIF(Parameters!todasFechas.Value = "S","Todas las fechas",FORMAT(Parameters!fechaDesde.Value, "dd/MM/yyyy"))</Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value> hasta: </Value>
+                    <Value> - Hasta: </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!fechaHasta.Value</Value>
+                    <Value>=FORMAT(Parameters!fechaHasta.Value, "dd/MM/yyyy")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -708,7 +708,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value>=Parameters!fechaActual.Value</Value>
+                      <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <Color>White</Color>
                       </Style>
@@ -839,9 +839,10 @@
       <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="fechaActual">
-      <DataType>DateTime</DataType>
+    <ReportParameter Name="todasFechas">
+      <DataType>String</DataType>
       <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -861,9 +862,9 @@
           <ParameterName>fechaHasta</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
+          <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>fechaActual</ParameterName>
+          <ParameterName>todasFechas</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

@@ -11,7 +11,7 @@ using Microsoft.Reporting.WinForms;
 using ProyectoGrupalGestionDeUsuarios.DataAccessLayer;
 
 
-namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios
+namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPerfiles
 {
     public partial class frmEstadisticaPerfil : Form
     {
@@ -25,9 +25,12 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios
         private void frmEstadisticaPerfil_Load(object sender, EventArgs e)
         {
             reportPerfilEstadistica.LocalReport.SetParameters(new ReportParameter[]{ new
-            ReportParameter("fechaActual", Convert.ToString(DateTime.Today)), new ReportParameter("fechaDesde", dtpDesde.Text) , new ReportParameter("fechaHasta", dtpHasta.Text)});
+            ReportParameter("todasFechas", "S"), new ReportParameter("fechaHasta", dtpHasta.Text)});
 
-            report.loadEstadisticaPerfil();
+            reportPerfilEstadistica.LocalReport.DataSources.Clear();
+            reportPerfilEstadistica.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", report.loadEstadisticaPerfil()));
+            reportPerfilEstadistica.RefreshReport();
+            
 
             
             
@@ -52,8 +55,8 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios
 
                 hasta = has.ToString("yyyy-MM-dd");
             }
-            reportPerfilEstadistica.LocalReport.SetParameters(new ReportParameter[]{ new
-            ReportParameter("fechaActual", Convert.ToString(DateTime.Today)), new ReportParameter("fechaDesde", dtpDesde.Text) , new ReportParameter("fechaHasta", dtpHasta.Text)});
+            reportPerfilEstadistica.LocalReport.SetParameters(new ReportParameter[]{
+            new ReportParameter("fechaDesde", dtpDesde.Text) ,new ReportParameter("todasFechas", "desde"), new ReportParameter("fechaHasta", dtpHasta.Text)});
 
             reportPerfilEstadistica.LocalReport.DataSources.Clear();
             reportPerfilEstadistica.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", report.cantidadPorPerfil(desde, hasta)));

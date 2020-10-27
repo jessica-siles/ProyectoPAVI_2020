@@ -132,7 +132,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         public string EliminarPorId(int idAEliminar)
 
         {
-            string buscarEliminar = "UPDATE Usuarios SET borrado = 1 WHERE id_usuario = " + idAEliminar + "";
+            string buscarEliminar = "UPDATE Usuarios SET borrado = 1,estado = 'N' WHERE id_usuario = " + idAEliminar + "";
             //actualizarusuario(buscarEliminar);
             return buscarEliminar;
             

@@ -1,4 +1,4 @@
-﻿namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios
+﻿namespace ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPerfiles
 {
     partial class frmEstadisticaPerfil
     {
@@ -32,15 +32,15 @@
             this.reportPerfilEstadistica = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // reportPerfilEstadistica
             // 
-            this.reportPerfilEstadistica.LocalReport.ReportEmbeddedResource = "ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaUsuarios.reportEstadisticaUsu" +
+            this.reportPerfilEstadistica.LocalReport.ReportEmbeddedResource = "ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPerfiles.reportEstadisticaUsu" +
     "arios.rdlc";
             this.reportPerfilEstadistica.Location = new System.Drawing.Point(39, 150);
             this.reportPerfilEstadistica.Name = "reportPerfilEstadistica";
@@ -74,26 +74,6 @@
             this.label5.Text = "Desde:";
             this.label5.UseCompatibleTextRendering = true;
             // 
-            // dtpHasta
-            // 
-            this.dtpHasta.CustomFormat = "MM/dd/yy";
-            this.dtpHasta.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.dtpHasta.Location = new System.Drawing.Point(527, 23);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(274, 27);
-            this.dtpHasta.TabIndex = 31;
-            this.dtpHasta.Value = new System.DateTime(2020, 10, 24, 0, 0, 0, 0);
-            // 
-            // dtpDesde
-            // 
-            this.dtpDesde.CustomFormat = "MM/dd/yy";
-            this.dtpDesde.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.dtpDesde.Location = new System.Drawing.Point(166, 23);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(274, 27);
-            this.dtpDesde.TabIndex = 30;
-            this.dtpDesde.Value = new System.DateTime(2020, 10, 24, 0, 0, 0, 0);
-            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.DarkViolet;
@@ -124,6 +104,22 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dtpDesde.Location = new System.Drawing.Point(166, 27);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(274, 27);
+            this.dtpDesde.TabIndex = 36;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dtpHasta.Location = new System.Drawing.Point(527, 23);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(274, 27);
+            this.dtpHasta.TabIndex = 37;
+            // 
             // frmEstadisticaPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,12 +127,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(901, 600);
+            this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dtpHasta);
-            this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.reportPerfilEstadistica);
             this.Name = "frmEstadisticaPerfil";
             this.Text = "frmEstadisticaPerfil";
@@ -151,9 +147,9 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportPerfilEstadistica;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpHasta;
-        private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
     }
 }

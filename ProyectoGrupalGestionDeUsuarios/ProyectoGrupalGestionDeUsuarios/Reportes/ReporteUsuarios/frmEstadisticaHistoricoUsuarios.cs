@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoGrupalGestionDeUsuarios.DataAccessLayer;
 
-namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
+namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReporteUsuarios
 {
     public partial class frmEstadisticaHistoricoUsuarios : Form
     {
@@ -23,7 +23,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
         private void frmEstadisticaHistoricoUsuarios_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.SetParameters(new ReportParameter[]{ new
-            ReportParameter("fechaAct", Convert.ToString(DateTime.Today)), new ReportParameter("fechaDes", dtpDesde.Text) , new ReportParameter("fechaHas", dtpHasta.Text)});
+            ReportParameter("todasFechas", "S"), new ReportParameter("fechaHas", dtpHasta.Text)});
 
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("EstadisticaUsuarios", reporte.TodoHistUsuarios()));
@@ -39,12 +39,18 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
             desde = des.ToString("yyyy-MM-dd");
 
             hasta = has.ToString("yyyy-MM-dd");
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[]{ new
-            ReportParameter("fechaAct", Convert.ToString(DateTime.Today)), new ReportParameter("fechaDes", dtpDesde.Text) , new ReportParameter("fechaHas", dtpHasta.Text)});
+
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[]{
+            new ReportParameter("fechaDes", dtpDesde.Text) ,new ReportParameter("todasFechas", "FechaDesde") , new ReportParameter("fechaHas", dtpHasta.Text)});
 
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("EstadisticaUsuarios", reporte.estadisticaHistUsuarios(desde, hasta)));
             reportViewer1.RefreshReport();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
