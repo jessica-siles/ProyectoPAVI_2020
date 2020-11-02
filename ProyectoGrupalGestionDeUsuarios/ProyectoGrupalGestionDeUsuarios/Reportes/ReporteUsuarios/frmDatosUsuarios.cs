@@ -70,7 +70,8 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             ReportParameter("fechaDesde", dtpDesde.Text),new ReportParameter("fechaHasta", dtpHasta.Text)});
             reportViewer2.LocalReport.DataSources.Clear();
             
-            reportViewer2.LocalReport.DataSources.Add(new ReportDataSource("UsuariosDatos", reporte.reporteHistoricoUsuarios(usuario,titulo,desde,hasta)));
+            
+reportViewer2.LocalReport.DataSources.Add(new ReportDataSource("UsuariosDatos", reporte.reporteHistoricoUsuarios(usuario,titulo,desde,hasta)));
             
             reportViewer2.RefreshReport();
         }

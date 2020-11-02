@@ -18,6 +18,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
         private readonly UsuarioService usuarioService;
 
         public string UsuarioLogueado { get; internal set; }
+        bool Salir = true;
 
         public frmLogin()
         {
@@ -57,7 +58,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                 // Login OK
                 UsuarioLogueado = usr.NombreUsuario;
                 MessageBox.Show("Usuario y Contraseña Correctos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                this.Close();
+                Salir = false;
+                this.Close();                
             }
             else
             {
@@ -114,6 +116,25 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
             frmAltaUsuario altaUsuario = new frmAltaUsuario();
             altaUsuario.ShowDialog();
         }
-    }
 
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Salir)
+            {
+                if (MessageBox.Show("Salir de programa", "Salir",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Exclamation,
+                                     MessageBoxDefaultButton.Button2)
+                                     == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    Application.ExitThread();
+                }                
+            }
+        }
+            
+    }        
 }
