@@ -30,7 +30,15 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
         private void btnSalir_Click(object sender, EventArgs e)
         {
             // Terminamos la aplicacion dado que el usuario no inicio sesion.
-            Environment.Exit(0);
+            if (MessageBox.Show("Salir del programa", "Salir",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Exclamation,
+                                    MessageBoxDefaultButton.Button2)
+                                    == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }            
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -121,7 +129,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
         {
             if (Salir)
             {
-                if (MessageBox.Show("Salir de programa", "Salir",
+                if (MessageBox.Show("Salir del programa", "Salir",
                                      MessageBoxButtons.YesNo,
                                      MessageBoxIcon.Exclamation,
                                      MessageBoxDefaultButton.Button2)
@@ -131,8 +139,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                 }
                 else
                 {
-                    Application.ExitThread();
-                }                
+                    Environment.Exit(0);
+                    //Application.ExitThread();
+                }
             }
         }
             
