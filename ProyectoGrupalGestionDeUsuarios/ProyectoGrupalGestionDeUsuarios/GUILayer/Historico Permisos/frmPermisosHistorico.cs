@@ -89,10 +89,11 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos
                 if (tablaFiltrados.Rows.Count == 0)
                 {
                     MessageBox.Show("No existen permisos con esas condiciones...");
-                    dtpFechaDesde.Value = DateTime.Today;
-                    dtpFechaHasta.Value = DateTime.Today;
-                    cboFormulario.SelectedIndex = -1;
-                    cboPerfil.SelectedIndex = -1;
+                    //dtpFechaDesde.Value = DateTime.Today;
+                    //dtpFechaHasta.Value = DateTime.Today;
+                    //cboFormulario.SelectedIndex = -1;
+                    //cboPerfil.SelectedIndex = -1;
+                    this.cargarGrilla(grdHistorialPermisos, tablaFiltrados);
                 }
                 else
                     this.cargarGrilla(grdHistorialPermisos, tablaFiltrados);
