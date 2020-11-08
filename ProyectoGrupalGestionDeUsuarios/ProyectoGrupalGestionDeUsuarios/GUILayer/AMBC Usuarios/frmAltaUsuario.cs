@@ -73,8 +73,6 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
         {
             DataTable busca = UsuarioDao.Consultar(UsuarioDao.buscarAdministrador());
             
-            
-
             int cantidadUsuarios = busca.Rows.Count;
 
             if (perfil.Text == "Administrador")

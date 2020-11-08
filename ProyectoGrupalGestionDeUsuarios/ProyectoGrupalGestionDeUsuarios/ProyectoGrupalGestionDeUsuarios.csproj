@@ -372,7 +372,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reportes\ReporteLogin\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Resource\fondoLoginultimo.jfif" />
     <None Include="Resource\FondoPerf.jpg" />

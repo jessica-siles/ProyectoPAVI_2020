@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
+using ProyectoGrupalGestionDeUsuarios.Entities;
 
 namespace ProyectoGrupalGestionDeUsuarios.GUILayer
 {
@@ -67,7 +68,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                 UsuarioLogueado = usr.NombreUsuario;
                 MessageBox.Show("Usuario y Contraseña Correctos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Salir = false;
-                this.Close();                
+                DateTime fecha = DateTime.Now;
+                usuarioService.registrarLogueo(usr,fecha.ToString());
+                this.Close();               
             }
             else
             {
@@ -78,6 +81,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                 //Mostramos un mensaje indicando que el usuario/password es invalido.
                 MessageBox.Show("Debe ingresar usuario y/o contraseña válidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

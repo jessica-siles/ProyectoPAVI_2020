@@ -42,7 +42,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         public Usuario GetUser(string pUsuario)
         {        
             //Construimos la consulta sql para buscar el usuario en la base de datos.
-            String consultaSql = string.Concat(" SELECT id_usuario, usuario, email, estado, password ",
+            String consultaSql = string.Concat(" SELECT id_usuario, id_perfil, usuario, email, estado, password ",
                                                "   FROM Usuarios ",
                                                "  WHERE borrado=0 and usuario =  '", pUsuario, "'");
 
@@ -63,6 +63,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             Usuario oUsuario = new Usuario
             {
                 IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
+                perfil = Convert.ToInt32(row["id_perfil"].ToString()),
                 NombreUsuario = row["usuario"].ToString(),
                 Email = row["email"].ToString(),
                 Estado = row["estado"].ToString(),
@@ -140,7 +141,9 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
         public string BuscarPorId(int buscar)
         {
-            string buscarId = "SELECT id_usuario,usuario,password,email,nombre,estado FROM Usuarios INNER JOIN Perfiles ON Usuarios.id_perfil = Perfiles.id_perfil WHERE Usuarios.id_usuario = " + buscar + "";
+            string buscarId = "SELECT id_usuario,usuario,password,email,nombre,estado " +
+                              "FROM Usuarios INNER JOIN Perfiles " +
+                              "ON Usuarios.id_perfil = Perfiles.id_perfil WHERE Usuarios.id_usuario = " + buscar + "";
             return buscarId;
         }
 
@@ -289,7 +292,32 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             string updateSQL = "UPDATE Usuarios SET id_perfil=14 WHERE id_perfil="+idPerfil;
             DBHelper.GetDBHelper().EjecutarSQL(updateSQL);
         }
-    }
 
+        public bool transaccionLogueo(int nroUsuario, int nroPerfil, string Nombre, string Email, string Fecha)        
+        {
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+
+                string insertLogueo = "INSERT INTO Logueos (idUsuario,idPerfil,nombre,email,fecha) " +
+                                      "VALUES (" +nroUsuario+","+nroPerfil+","+"'"+Nombre+"'"+","+"'"+Email+"'"+","+"'"+Fecha+"')";
+
+                dm.EjecutarSQL(insertLogueo);
+                dm.Commit();
+            }
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                dm.Close();
+            }
+            return true;
+        }
+    }
 }
 

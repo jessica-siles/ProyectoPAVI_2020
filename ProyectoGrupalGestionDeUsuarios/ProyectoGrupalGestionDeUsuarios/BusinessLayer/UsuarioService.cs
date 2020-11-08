@@ -51,6 +51,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
 
             return null;
         }
+
         public bool busAdmin(ComboBox perfil, int id_usuario)
         {
             DataTable busca = oUsuarioDao.Consultar(oUsuarioDao.buscarAdministrador());
@@ -244,5 +245,11 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
         {
             oUsuarioDao.actualizarPerfiles(idPerfil);
         }
+
+        public void registrarLogueo(Usuario user, string fecha)
+        {
+            oUsuarioDao.transaccionLogueo(user.IdUsuario,user.perfil,user.NombreUsuario,user.Email,fecha);
+        }
+        
     }
 }
