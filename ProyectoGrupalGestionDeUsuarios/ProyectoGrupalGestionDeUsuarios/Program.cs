@@ -12,6 +12,8 @@ using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPerfiles;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
+using ProyectoGrupalGestionDeUsuarios.Reportes.ReporteLogin;
+
 namespace ProyectoGrupalGestionDeUsuarios
 {
     static class Program
@@ -34,6 +36,7 @@ namespace ProyectoGrupalGestionDeUsuarios
             //Application.Run(new frmFormulario());
             //Application.Run(new frmAltaPermisos());
             //Application.Run(new frmListadoPermisosHistorico());
+            //Application.Run(new frmLogueo());
         }
     }
 }

@@ -248,8 +248,12 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
 
         public void registrarLogueo(Usuario user, string fecha)
         {
-            oUsuarioDao.transaccionLogueo(user.IdUsuario,user.perfil,user.NombreUsuario,user.Email,fecha);
+            oUsuarioDao.transaccionLogueo(user.IdUsuario,user.perfil,fecha);
         }
         
+        public DataTable obtenerLogueos(string usuario, string perfil, string desde, string hasta, bool conFecha)
+        {
+            return oUsuarioDao.recuperarLogin(usuario,perfil,desde,hasta, conFecha);
+        }
     }
 }

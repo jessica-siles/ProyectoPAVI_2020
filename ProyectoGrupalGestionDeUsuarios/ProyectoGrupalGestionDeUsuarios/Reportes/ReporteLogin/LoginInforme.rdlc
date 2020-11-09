@@ -2,42 +2,46 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="PermisosHistorico">
+    <DataSource Name="LoginDS">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>88b8d811-2ced-4cf3-99c1-bcecf643c7f7</rd:DataSourceID>
+      <rd:DataSourceID>b8587fbc-bd9f-46fd-a1f3-94243bab1954</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="PermisoHistoricoDS">
+    <DataSet Name="LoginDS">
       <Query>
-        <DataSourceName>PermisosHistorico</DataSourceName>
+        <DataSourceName>LoginDS</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="fecha">
-          <DataField>fecha</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="formulario">
-          <DataField>formulario</DataField>
+        <Field Name="usuario">
+          <DataField>usuario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="perfil">
           <DataField>perfil</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="descripcion">
-          <DataField>descripcion</DataField>
+        <Field Name="email">
+          <DataField>email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fecha">
+          <DataField>fecha</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>PermisosHistorico</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\AFS\Documents\ProyectosGit\ProyectoPAVI_2020\ProyectoGrupalGestionDeUsuarios\ProyectoGrupalGestionDeUsuarios\Reportes\ReportePermisos\PermisosHistorico.xsd</rd:SchemaPath>
-        <rd:TableName>dtPermisosHistorico</rd:TableName>
+        <rd:DataSetName>LoginDS</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\AFS\Documents\ProyectosGit\ProyectoPAVI_2020\ProyectoGrupalGestionDeUsuarios\ProyectoGrupalGestionDeUsuarios\Reportes\ReporteLogin\LoginDS.xsd</rd:SchemaPath>
+        <rd:TableName>dtLogin</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -52,57 +56,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.89802cm</Width>
+                  <Width>3.56495cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.89802cm</Width>
+                  <Width>6.29016cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.89802cm</Width>
+                  <Width>5.48791cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.89802cm</Width>
+                  <Width>4.70266cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.28792cm</Height>
+                  <Height>0.63969cm</Height>
                   <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox1">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Fecha</Value>
-                                  <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox3">
@@ -112,16 +81,14 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Formulario</Value>
+                                  <Value>Usuario</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -154,9 +121,7 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -175,26 +140,57 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox7">
+                        <Textbox Name="Textbox11">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Descripcion</Value>
+                                  <Value>E-mail</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Fecha</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -211,67 +207,27 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>1.12917cm</Height>
+                  <Height>0.63969cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="fecha">
+                        <Textbox Name="usuario">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value xml:space="preserve"> </Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
-                                  <Value>=Fields!fecha.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!usuario.Value</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>fecha</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="formulario">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value xml:space="preserve"> </Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
-                                  <Value>=Fields!formulario.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>formulario</rd:DefaultName>
+                          <rd:DefaultName>usuario</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -294,17 +250,13 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value xml:space="preserve"> </Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
                                   <Value>=Fields!perfil.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>perfil</rd:DefaultName>
@@ -323,27 +275,55 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="descripcion">
+                        <Textbox Name="email">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value xml:space="preserve"> </Value>
-                                  <Style />
-                                </TextRun>
-                                <TextRun>
-                                  <Value>=Fields!descripcion.Value</Value>
-                                  <Style />
+                                  <Value>=Fields!email.Value</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <TextAlign>Left</TextAlign>
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>descripcion</rd:DefaultName>
+                          <rd:DefaultName>email</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="fecha">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!fecha.Value</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>fecha</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -379,11 +359,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>PermisoHistoricoDS</DataSetName>
-            <Top>1.3185cm</Top>
-            <Left>1.45205cm</Left>
-            <Height>2.41709cm</Height>
-            <Width>19.59208cm</Width>
+            <DataSetName>LoginDS</DataSetName>
+            <Top>1.50495cm</Top>
+            <Left>1.14053cm</Left>
+            <Height>1.27938cm</Height>
+            <Width>20.04568cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -391,10 +371,10 @@
             </Style>
           </Tablix>
           <Line Name="Line2">
-            <Top>1.14211cm</Top>
-            <Left>1.45205cm</Left>
+            <Top>1.06398cm</Top>
+            <Left>1.14054cm</Left>
             <Height>0cm</Height>
-            <Width>19.59207cm</Width>
+            <Width>20.04567cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -402,7 +382,7 @@
               </Border>
             </Style>
           </Line>
-          <Textbox Name="Textbox4">
+          <Textbox Name="Textbox12">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
@@ -420,11 +400,11 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <rd:DefaultName>Textbox12</rd:DefaultName>
             <Top>0.17639cm</Top>
-            <Left>1.45205cm</Left>
+            <Left>1.14053cm</Left>
             <Height>0.6cm</Height>
-            <Width>5.85051cm</Width>
+            <Width>7.24266cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -436,7 +416,7 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox6">
+          <Textbox Name="Textbox1">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
@@ -454,11 +434,11 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.17639cm</Top>
-            <Left>16.14611cm</Left>
+            <Left>17.62127cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.898cm</Width>
+            <Width>4.04119cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -471,40 +451,38 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>2.39827in</Height>
+        <Height>2.46875in</Height>
         <Style />
       </Body>
-      <Width>8.44134in</Width>
+      <Width>8.76425in</Width>
       <Page>
         <PageHeader>
-          <Height>2.51354cm</Height>
+          <Height>3.28084cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox9">
+            <Textbox Name="Textbox2">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>REPORTE HISTÓRICO DE PERMISOS</Value>
+                      <Value>REPORTE DE INGRESOS AL SISTEMA</Value>
                       <Style>
                         <FontSize>18pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
+                  <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>1.24037cm</Top>
-              <Left>1.45205cm</Left>
-              <Height>0.99688cm</Height>
-              <Width>19.59207cm</Width>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>1.83719cm</Top>
+              <Left>5.31402cm</Left>
+              <Height>1.11443cm</Height>
+              <Width>12.14849cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -515,7 +493,19 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox2">
+            <Line Name="Line1">
+              <Top>3.05745cm</Top>
+              <Left>1.14053cm</Left>
+              <Height>0cm</Height>
+              <Width>20.04567cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="Textbox9">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -533,12 +523,12 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.29104cm</Top>
-              <Left>1.45205cm</Left>
+              <rd:DefaultName>Textbox9</rd:DefaultName>
+              <Top>0.42016cm</Top>
+              <Left>1.14053cm</Left>
               <Height>0.6cm</Height>
-              <Width>5.85051cm</Width>
-              <ZIndex>1</ZIndex>
+              <Width>5.53671cm</Width>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -549,18 +539,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line1">
-              <Top>2.37243cm</Top>
-              <Left>1.45205cm</Left>
-              <Height>0cm</Height>
-              <Width>19.59207cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
           </ReportItems>
           <Style>
             <Border>
@@ -569,20 +547,16 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.32292cm</Height>
+          <Height>1.39058cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox11">
+            <Textbox Name="Textbox10">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
-                    <TextRun>
-                      <Value>Pagina: </Value>
-                      <Style />
-                    </TextRun>
                     <TextRun>
                       <Value>=Globals!PageNumber</Value>
                       <Style />
@@ -591,11 +565,11 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox11</rd:DefaultName>
+              <rd:DefaultName>Textbox10</rd:DefaultName>
               <Top>0.34078cm</Top>
-              <Left>17.12503cm</Left>
+              <Left>18.6862cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.91908cm</Width>
+              <Width>2.5cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -613,7 +587,7 @@
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>30cm</PageHeight>
+        <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
@@ -653,5 +627,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>fabf8f16-4c9f-498f-91b9-241f75c81115</rd:ReportID>
+  <rd:ReportID>3077eec9-482d-4a80-b772-5a0d1b08bb60</rd:ReportID>
 </Report>

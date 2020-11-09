@@ -21,6 +21,7 @@ using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPermisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePerfilesUsuario;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReporteUsuarios;
+using ProyectoGrupalGestionDeUsuarios.Reportes.ReporteLogin;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
@@ -157,6 +158,26 @@ namespace ProyectoGrupalGestionDeUsuarios
         {
             frmReportePerfiles reportPerfiles = new frmReportePerfiles();
             reportPerfiles.ShowDialog();
+        }
+
+        private void reporteIngresosAlSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogueo logueos = new frmLogueo();
+            logueos.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Salir del programa", "Salir",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Exclamation,
+                                     MessageBoxDefaultButton.Button2)
+                                     == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            
+                
         }
     }
 }

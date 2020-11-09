@@ -118,14 +118,17 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
             cboPerfil.SelectedIndex = -1;
         }
 
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            resetearCampos();
+        }
+
         private void habilitar(bool x)
         {
             cboFormulario.Enabled = x;
             cboPerfil.Enabled = x;
             dtpFechaDesde.Enabled = x;
-            dtpFechaHasta.Enabled = x;
-            dtpFechaDesde.Value = DateTime.Today;
-            dtpFechaHasta.Value = DateTime.Today;
+            dtpFechaHasta.Enabled = x;           
             cboFormulario.SelectedIndex = -1;
             cboPerfil.SelectedIndex = -1;
             btnLimpiar.Enabled = x;
@@ -138,6 +141,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
                 habilitar(false);
                 chkBoxFechas.Checked = false;
                 chkBoxFechas.Enabled = false;
+                resetearCampos();
             }
             else
             {
@@ -161,15 +165,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
                 dtpFechaDesde.Enabled = false;
                 dtpFechaHasta.Enabled = false;
             }
-        }
-
-        private void btnLimpiar_Click_1(object sender, EventArgs e)
-        {
-            dtpFechaDesde.Value = DateTime.Today;
-            dtpFechaHasta.Value = DateTime.Today;
-            cboFormulario.SelectedIndex = -1;
-            cboPerfil.SelectedIndex = -1;
-        }       
+        }              
         
     }
 }

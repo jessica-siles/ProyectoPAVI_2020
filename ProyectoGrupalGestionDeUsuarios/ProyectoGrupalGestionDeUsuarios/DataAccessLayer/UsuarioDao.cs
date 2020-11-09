@@ -293,7 +293,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             DBHelper.GetDBHelper().EjecutarSQL(updateSQL);
         }
 
-        public bool transaccionLogueo(int nroUsuario, int nroPerfil, string Nombre, string Email, string Fecha)        
+        public bool transaccionLogueo(int nroUsuario, int nroPerfil, string Fecha)        
         {
             DataManager dm = new DataManager();
             try
@@ -301,8 +301,8 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 dm.Open();
                 dm.BeginTransaction();
 
-                string insertLogueo = "INSERT INTO Logueos (idUsuario,idPerfil,nombre,email,fecha) " +
-                                      "VALUES (" +nroUsuario+","+nroPerfil+","+"'"+Nombre+"'"+","+"'"+Email+"'"+","+"'"+Fecha+"')";
+                string insertLogueo = "INSERT INTO Logueos (idUsuario,idPerfil,fecha) " +
+                                      "VALUES (" +nroUsuario+","+nroPerfil+","+"'"+Fecha+"')";
 
                 dm.EjecutarSQL(insertLogueo);
                 dm.Commit();
@@ -317,6 +317,22 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
                 dm.Close();
             }
             return true;
+        }
+
+        public DataTable recuperarLogin(string usuario, string perfil, string desde, string hasta, bool fecha)
+        {
+            string traerLogins = "SELECT L.id, U.usuario, P.nombre perfil, U.email, L.fecha " +
+                                "FROM Logueos L INNER JOIN Usuarios U ON (L.idUsuario = U.id_usuario) " +
+                                "INNER JOIN Perfiles P ON (L.idPerfil = P.id_perfil)";
+
+            if (fecha)
+                traerLogins += " AND L.fecha BETWEEN '" + desde + "' AND '" + hasta + "'";
+            if (usuario != "")
+                traerLogins += " AND U.usuario='" + usuario + "'";
+            if (perfil != "")
+                traerLogins += " AND P.id_perfil='" + perfil + "'";
+
+            return DBHelper.GetDBHelper().ConsultaSQL(traerLogins);
         }
     }
 }

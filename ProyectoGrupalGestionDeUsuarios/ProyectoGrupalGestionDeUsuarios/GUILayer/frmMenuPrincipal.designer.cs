@@ -45,10 +45,12 @@
             this.resportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeHistoricoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticaMovimientoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticaDePerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeHistoricoDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadísticaDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteIngresosAlSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +64,8 @@
             this.usuariosToolStripMenuItem,
             this.formulariosToolStripMenuItem,
             this.PermisostoolStripMenuItem1,
-            this.resportesToolStripMenuItem});
+            this.resportesToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -195,7 +198,8 @@
             this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem,
             this.estadisticaDePerfilesToolStripMenuItem,
             this.reporteDeHistoricoDePermisosToolStripMenuItem,
-            this.estadísticaDePermisosToolStripMenuItem});
+            this.estadísticaDePermisosToolStripMenuItem,
+            this.reporteIngresosAlSistemaToolStripMenuItem});
             this.resportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.resportesToolStripMenuItem.Name = "resportesToolStripMenuItem";
             this.resportesToolStripMenuItem.Size = new System.Drawing.Size(120, 36);
@@ -216,6 +220,14 @@
             this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
             this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Text = "Estadistica Movimiento de Usuarios";
             this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.estadisticaMovimientoDeUsuariosToolStripMenuItem_Click);
+            // 
+            // reportePerfilesPorUsuarioYEstadoToolStripMenuItem
+            // 
+            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Name = "reportePerfilesPorUsuarioYEstadoToolStripMenuItem";
+            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
+            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Text = "Reporte Perfiles por Usuario y Estado";
+            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Click += new System.EventHandler(this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem_Click);
             // 
             // estadisticaDePerfilesToolStripMenuItem
             // 
@@ -241,13 +253,21 @@
             this.estadísticaDePermisosToolStripMenuItem.Text = "Estadística De Permisos";
             this.estadísticaDePermisosToolStripMenuItem.Click += new System.EventHandler(this.estadísticaDePermisosToolStripMenuItem_Click);
             // 
-            // reportePerfilesPorUsuarioYEstadoToolStripMenuItem
+            // reporteIngresosAlSistemaToolStripMenuItem
             // 
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Name = "reportePerfilesPorUsuarioYEstadoToolStripMenuItem";
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Text = "Reporte Perfiles por Usuario y Estado";
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Click += new System.EventHandler(this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem_Click);
+            this.reporteIngresosAlSistemaToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.reporteIngresosAlSistemaToolStripMenuItem.Name = "reporteIngresosAlSistemaToolStripMenuItem";
+            this.reporteIngresosAlSistemaToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
+            this.reporteIngresosAlSistemaToolStripMenuItem.Text = "Reporte Ingresos al Sistema";
+            this.reporteIngresosAlSistemaToolStripMenuItem.Click += new System.EventHandler(this.reporteIngresosAlSistemaToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(72, 36);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -297,6 +317,8 @@
         private System.Windows.Forms.ToolStripMenuItem estadísticaDePermisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticaMovimientoDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportePerfilesPorUsuarioYEstadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteIngresosAlSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 
