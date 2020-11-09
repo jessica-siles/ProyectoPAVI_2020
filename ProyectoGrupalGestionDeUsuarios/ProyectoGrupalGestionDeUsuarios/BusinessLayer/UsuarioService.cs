@@ -255,5 +255,10 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
         {
             return oUsuarioDao.recuperarLogin(usuario,perfil,desde,hasta, conFecha);
         }
+
+        public DataTable cantidadLogueos(string desde, string hasta, bool conFecha)
+        {
+            return oUsuarioDao.cantidadIngresos(desde,hasta,conFecha);
+        }
     }
 }

@@ -51,6 +51,8 @@
             this.estadísticaDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteIngresosAlSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.estadísticaIngresosAlSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,7 +201,9 @@
             this.estadisticaDePerfilesToolStripMenuItem,
             this.reporteDeHistoricoDePermisosToolStripMenuItem,
             this.estadísticaDePermisosToolStripMenuItem,
-            this.reporteIngresosAlSistemaToolStripMenuItem});
+            this.reporteIngresosAlSistemaToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.estadísticaIngresosAlSistemaToolStripMenuItem});
             this.resportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.resportesToolStripMenuItem.Name = "resportesToolStripMenuItem";
             this.resportesToolStripMenuItem.Size = new System.Drawing.Size(120, 36);
@@ -269,6 +273,19 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(479, 6);
+            // 
+            // estadísticaIngresosAlSistemaToolStripMenuItem
+            // 
+            this.estadísticaIngresosAlSistemaToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
+            this.estadísticaIngresosAlSistemaToolStripMenuItem.Name = "estadísticaIngresosAlSistemaToolStripMenuItem";
+            this.estadísticaIngresosAlSistemaToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
+            this.estadísticaIngresosAlSistemaToolStripMenuItem.Text = "Estadística Ingresos al Sistema";
+            this.estadísticaIngresosAlSistemaToolStripMenuItem.Click += new System.EventHandler(this.estadísticaIngresosAlSistemaToolStripMenuItem_Click);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -319,6 +336,8 @@
         private System.Windows.Forms.ToolStripMenuItem reportePerfilesPorUsuarioYEstadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteIngresosAlSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem estadísticaIngresosAlSistemaToolStripMenuItem;
     }
 }
 

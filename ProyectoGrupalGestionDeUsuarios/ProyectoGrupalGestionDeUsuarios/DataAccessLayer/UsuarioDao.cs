@@ -334,6 +334,21 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
             return DBHelper.GetDBHelper().ConsultaSQL(traerLogins);
         }
+
+        public DataTable cantidadIngresos(string desde, string hasta, bool fecha)
+        {
+            string consulta = "SELECT U.usuario, P.nombre as perfil, COUNT(*) ingresos" +
+                              " FROM Logueos L, Usuarios U, Perfiles P" +
+                              " WHERE L.idUsuario = U.id_usuario" +
+                              " AND L.idPerfil = P.id_perfil";
+
+           if (fecha)
+                consulta += " AND L.fecha BETWEEN '"+desde+"' AND '"+hasta+"'";           
+
+                   consulta +=" GROUP BY U.usuario, P.nombre ORDER BY 3 DESC";
+                              
+            return DBHelper.GetDBHelper().ConsultaSQL(consulta);
+        }
     }
 }
 

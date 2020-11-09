@@ -22,15 +22,12 @@ using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPermisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePerfilesUsuario;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReporteUsuarios;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReporteLogin;
+using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaLogins;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
     public partial class frmMenuPrincipal : Form
     {
-
-        
-       
-
         public frmMenuPrincipal()
         {
             InitializeComponent();
@@ -175,9 +172,13 @@ namespace ProyectoGrupalGestionDeUsuarios
                                      == DialogResult.Yes)
             {
                 Environment.Exit(0);
-            }
-            
-                
+            }              
+        }
+
+        private void estadísticaIngresosAlSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaLogin logins = new frmEstadisticaLogin();
+            logins.ShowDialog();
         }
     }
 }

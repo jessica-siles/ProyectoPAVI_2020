@@ -162,6 +162,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.cs">
+      <DependentUpon>EstadisticaLoginDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticaLoginDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaLogin\frmEstadisticaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaLogin\frmEstadisticaLogin.Designer.cs">
+      <DependentUpon>frmEstadisticaLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -293,6 +307,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\EstadisticaLogin\EstadisticaLoginInforme.rdlc" />
+    <EmbeddedResource Include="Reportes\EstadisticaLogin\frmEstadisticaLogin.resx">
+      <DependentUpon>frmEstadisticaLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EstadisticaPermisos\EstadisticaPermisosInforme.rdlc" />
     <EmbeddedResource Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.resx">
       <DependentUpon>frmEstadisticaPermisos.cs</DependentUpon>
@@ -331,6 +349,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.xsc">
+      <DependentUpon>EstadisticaLoginDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticaLoginDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.xss">
+      <DependentUpon>EstadisticaLoginDS.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.xsc">
       <DependentUpon>EstadisticaPermisosDS.xsd</DependentUpon>
     </None>

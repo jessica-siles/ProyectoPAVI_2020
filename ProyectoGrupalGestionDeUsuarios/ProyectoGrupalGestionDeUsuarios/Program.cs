@@ -13,6 +13,7 @@ using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaPerfiles;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos;
 using ProyectoGrupalGestionDeUsuarios.Reportes.ReporteLogin;
+using ProyectoGrupalGestionDeUsuarios.Reportes.EstadisticaLogins;
 
 namespace ProyectoGrupalGestionDeUsuarios
 {
@@ -37,6 +38,7 @@ namespace ProyectoGrupalGestionDeUsuarios
             //Application.Run(new frmAltaPermisos());
             //Application.Run(new frmListadoPermisosHistorico());
             //Application.Run(new frmLogueo());
+            //Application.Run(new frmEstadisticaLogin());
         }
     }
 }
