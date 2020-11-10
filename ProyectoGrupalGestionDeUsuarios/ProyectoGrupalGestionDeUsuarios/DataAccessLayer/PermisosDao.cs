@@ -180,7 +180,14 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
             return DBHelper.GetDBHelper().ConsultaSQL(consulta);
         }
-
+        public DataTable permisosPorPerfil(string nombre)
+        {
+            string consulta = "SELECT id_formulario,Permisos.id_perfil FROM Permisos " +
+                              "INNER JOIN Perfiles ON Perfiles.id_perfil = Permisos.id_perfil " +
+                              "INNER JOIN Usuarios ON Usuarios.id_perfil = Perfiles.id_perfil " +
+                              "WHERE Permisos.borrado = 0 AND Usuarios.usuario = '" + nombre + "'";
+            return DBHelper.GetDBHelper().ConsultaSQL(consulta);
+        }
 
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoGrupalGestionDeUsuarios.GUILayer;
+using ProyectoGrupalGestionDeUsuarios.DataAccessLayer;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios;
 using ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios;
@@ -28,11 +29,14 @@ namespace ProyectoGrupalGestionDeUsuarios
 {
     public partial class frmMenuPrincipal : Form
     {
+        PermisosDao permisos = new PermisosDao();
+        string nombreLogeado;
+
         public frmMenuPrincipal()
         {
             InitializeComponent();
         }
-
+        
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
             frmLogin formularioLogin;
@@ -40,6 +44,30 @@ namespace ProyectoGrupalGestionDeUsuarios
             formularioLogin.ShowDialog();
 
             this.Text = this.Text + " - Usuario: " + formularioLogin.UsuarioLogueado;
+            nombreLogeado = formularioLogin.UsuarioLogueado;
+        }
+        private void mostrarBotones()
+        {
+            bool permitir = false;
+            DataTable permisosMenuPrincipal = permisos.permisosPorPerfil(nombreLogeado);
+
+            btnAgregarNuevoPerfil.Visible = permitir;
+            btnConsultarPerfiles.Visible = permitir;
+            btnRegistrarNuevoUsuario.Visible = permitir;
+            btnConsultarUsuarios.Visible = permitir;
+            btnHistoricoDeUsuarios.Visible = permitir;
+            btnFormularios.Visible = permitir;
+            btnAsignarPermisosPerfiles.Visible = permitir;
+            btnConsultarPermisos.Visible = permitir;
+            btnHistoricoDePermisos.Visible = permitir;
+            btnReporteHistoricoUsuarios.Visible = permitir;
+            btnEstadisticaMovimientosUsuarios.Visible = permitir;
+            btnReportePerfilesUsuariosYestados.Visible = permitir;
+            btnEstadisticaPerfiles.Visible = permitir;
+            btnReporteHistoricoPermisos.Visible = permitir;
+            btnEstadisticaPermisos.Visible = permitir;
+            btnReporteIngresosAlSistema.Visible = permitir;
+            btnEstadísticaIngresosAlSistema.Visible = permitir;
 
         }
 

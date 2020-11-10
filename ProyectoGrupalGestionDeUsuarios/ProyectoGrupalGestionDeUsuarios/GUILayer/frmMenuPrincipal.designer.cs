@@ -31,28 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnPerfil = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarPerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAgregarNuevoPerfil = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConsultarPerfiles = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarNuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historicoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRegistrarNuevoUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConsultarUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHistoricoDeUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFormularios = new System.Windows.Forms.ToolStripMenuItem();
             this.PermisostoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignarPermisosAPerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historicoDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAsignarPermisosPerfiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConsultarPermisos = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHistoricoDePermisos = new System.Windows.Forms.ToolStripMenuItem();
             this.resportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeHistoricoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadisticaMovimientoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadisticaDePerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeHistoricoDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadísticaDePermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteIngresosAlSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReporteHistoricoUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEstadisticaMovimientosUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReportePerfilesUsuariosYestados = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEstadisticaPerfiles = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReporteHistoricoPermisos = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEstadisticaPermisos = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReporteIngresosAlSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.estadísticaIngresosAlSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEstadísticaIngresosAlSistema = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPerfil,
             this.usuariosToolStripMenuItem,
-            this.formulariosToolStripMenuItem,
+            this.btnFormularios,
             this.PermisostoolStripMenuItem1,
             this.resportesToolStripMenuItem,
             this.salirToolStripMenuItem});
@@ -79,88 +79,88 @@
             // btnPerfil
             // 
             this.btnPerfil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuarioToolStripMenuItem,
-            this.consultarPerfilesToolStripMenuItem});
+            this.btnAgregarNuevoPerfil,
+            this.btnConsultarPerfiles});
             this.btnPerfil.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerfil.ForeColor = System.Drawing.Color.Black;
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.Size = new System.Drawing.Size(103, 36);
             this.btnPerfil.Text = "Perfiles";
             // 
-            // usuarioToolStripMenuItem
+            // btnAgregarNuevoPerfil
             // 
-            this.usuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.usuarioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(312, 36);
-            this.usuarioToolStripMenuItem.Text = "Agregar Nuevo Perfil";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            this.btnAgregarNuevoPerfil.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnAgregarNuevoPerfil.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarNuevoPerfil.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarNuevoPerfil.Name = "btnAgregarNuevoPerfil";
+            this.btnAgregarNuevoPerfil.Size = new System.Drawing.Size(312, 36);
+            this.btnAgregarNuevoPerfil.Text = "Agregar Nuevo Perfil";
+            this.btnAgregarNuevoPerfil.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
-            // consultarPerfilesToolStripMenuItem
+            // btnConsultarPerfiles
             // 
-            this.consultarPerfilesToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.consultarPerfilesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consultarPerfilesToolStripMenuItem.Name = "consultarPerfilesToolStripMenuItem";
-            this.consultarPerfilesToolStripMenuItem.Size = new System.Drawing.Size(312, 36);
-            this.consultarPerfilesToolStripMenuItem.Text = "Consultar Perfiles";
-            this.consultarPerfilesToolStripMenuItem.Click += new System.EventHandler(this.consultarPerfilesToolStripMenuItem_Click);
+            this.btnConsultarPerfiles.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnConsultarPerfiles.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarPerfiles.Name = "btnConsultarPerfiles";
+            this.btnConsultarPerfiles.Size = new System.Drawing.Size(312, 36);
+            this.btnConsultarPerfiles.Text = "Consultar Perfiles";
+            this.btnConsultarPerfiles.Click += new System.EventHandler(this.consultarPerfilesToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarNuevoUsuarioToolStripMenuItem,
-            this.consultarUsuariosToolStripMenuItem,
-            this.historicoDeUsuariosToolStripMenuItem});
+            this.btnRegistrarNuevoUsuario,
+            this.btnConsultarUsuarios,
+            this.btnHistoricoDeUsuarios});
             this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(117, 36);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
-            // registrarNuevoUsuarioToolStripMenuItem
+            // btnRegistrarNuevoUsuario
             // 
-            this.registrarNuevoUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.registrarNuevoUsuarioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registrarNuevoUsuarioToolStripMenuItem.Name = "registrarNuevoUsuarioToolStripMenuItem";
-            this.registrarNuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
-            this.registrarNuevoUsuarioToolStripMenuItem.Text = "Registrar Nuevo Usuario";
-            this.registrarNuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.registrarNuevoUsuarioToolStripMenuItem_Click);
+            this.btnRegistrarNuevoUsuario.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnRegistrarNuevoUsuario.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarNuevoUsuario.Name = "btnRegistrarNuevoUsuario";
+            this.btnRegistrarNuevoUsuario.Size = new System.Drawing.Size(347, 36);
+            this.btnRegistrarNuevoUsuario.Text = "Registrar Nuevo Usuario";
+            this.btnRegistrarNuevoUsuario.Click += new System.EventHandler(this.registrarNuevoUsuarioToolStripMenuItem_Click);
             // 
-            // consultarUsuariosToolStripMenuItem
+            // btnConsultarUsuarios
             // 
-            this.consultarUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.consultarUsuariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consultarUsuariosToolStripMenuItem.Name = "consultarUsuariosToolStripMenuItem";
-            this.consultarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
-            this.consultarUsuariosToolStripMenuItem.Text = "Consultar Usuarios";
-            this.consultarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.consultarUsuariosToolStripMenuItem_Click);
+            this.btnConsultarUsuarios.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnConsultarUsuarios.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarUsuarios.Name = "btnConsultarUsuarios";
+            this.btnConsultarUsuarios.Size = new System.Drawing.Size(347, 36);
+            this.btnConsultarUsuarios.Text = "Consultar Usuarios";
+            this.btnConsultarUsuarios.Click += new System.EventHandler(this.consultarUsuariosToolStripMenuItem_Click);
             // 
-            // historicoDeUsuariosToolStripMenuItem
+            // btnHistoricoDeUsuarios
             // 
-            this.historicoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.historicoDeUsuariosToolStripMenuItem.Name = "historicoDeUsuariosToolStripMenuItem";
-            this.historicoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(347, 36);
-            this.historicoDeUsuariosToolStripMenuItem.Text = "Histórico De Usuarios";
-            this.historicoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.historicoDeUsuariosToolStripMenuItem_Click);
+            this.btnHistoricoDeUsuarios.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnHistoricoDeUsuarios.Name = "btnHistoricoDeUsuarios";
+            this.btnHistoricoDeUsuarios.Size = new System.Drawing.Size(347, 36);
+            this.btnHistoricoDeUsuarios.Text = "Histórico De Usuarios";
+            this.btnHistoricoDeUsuarios.Click += new System.EventHandler(this.historicoDeUsuariosToolStripMenuItem_Click);
             // 
-            // formulariosToolStripMenuItem
+            // btnFormularios
             // 
-            this.formulariosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.formulariosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.formulariosToolStripMenuItem.Name = "formulariosToolStripMenuItem";
-            this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(152, 36);
-            this.formulariosToolStripMenuItem.Text = "Formularios";
-            this.formulariosToolStripMenuItem.Click += new System.EventHandler(this.formulariosToolStripMenuItem_Click);
+            this.btnFormularios.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormularios.ForeColor = System.Drawing.Color.Black;
+            this.btnFormularios.Name = "btnFormularios";
+            this.btnFormularios.Size = new System.Drawing.Size(152, 36);
+            this.btnFormularios.Text = "Formularios";
+            this.btnFormularios.Click += new System.EventHandler(this.formulariosToolStripMenuItem_Click);
             // 
             // PermisostoolStripMenuItem1
             // 
             this.PermisostoolStripMenuItem1.BackColor = System.Drawing.Color.MediumOrchid;
             this.PermisostoolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asignarPermisosAPerfilesToolStripMenuItem,
-            this.consultarPermisosToolStripMenuItem,
-            this.historicoDeToolStripMenuItem});
+            this.btnAsignarPermisosPerfiles,
+            this.btnConsultarPermisos,
+            this.btnHistoricoDePermisos});
             this.PermisostoolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PermisostoolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.PermisostoolStripMenuItem1.Name = "PermisostoolStripMenuItem1";
@@ -168,102 +168,115 @@
             this.PermisostoolStripMenuItem1.Text = "Permisos";
             this.PermisostoolStripMenuItem1.Click += new System.EventHandler(this.PermisostoolStripMenuItem1_Click);
             // 
-            // asignarPermisosAPerfilesToolStripMenuItem
+            // btnAsignarPermisosPerfiles
             // 
-            this.asignarPermisosAPerfilesToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.asignarPermisosAPerfilesToolStripMenuItem.Name = "asignarPermisosAPerfilesToolStripMenuItem";
-            this.asignarPermisosAPerfilesToolStripMenuItem.Size = new System.Drawing.Size(375, 36);
-            this.asignarPermisosAPerfilesToolStripMenuItem.Text = "Asignar Permisos A Perfiles";
-            this.asignarPermisosAPerfilesToolStripMenuItem.Click += new System.EventHandler(this.asignarPermisosAPerfilesToolStripMenuItem_Click);
+            this.btnAsignarPermisosPerfiles.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnAsignarPermisosPerfiles.Name = "btnAsignarPermisosPerfiles";
+            this.btnAsignarPermisosPerfiles.Size = new System.Drawing.Size(375, 36);
+            this.btnAsignarPermisosPerfiles.Text = "Asignar Permisos A Perfiles";
+            this.btnAsignarPermisosPerfiles.Click += new System.EventHandler(this.asignarPermisosAPerfilesToolStripMenuItem_Click);
             // 
-            // consultarPermisosToolStripMenuItem
+            // btnConsultarPermisos
             // 
-            this.consultarPermisosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.consultarPermisosToolStripMenuItem.Name = "consultarPermisosToolStripMenuItem";
-            this.consultarPermisosToolStripMenuItem.Size = new System.Drawing.Size(375, 36);
-            this.consultarPermisosToolStripMenuItem.Text = "Consultar Permisos";
-            this.consultarPermisosToolStripMenuItem.Click += new System.EventHandler(this.consultarPermisosToolStripMenuItem_Click);
+            this.btnConsultarPermisos.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnConsultarPermisos.Name = "btnConsultarPermisos";
+            this.btnConsultarPermisos.Size = new System.Drawing.Size(375, 36);
+            this.btnConsultarPermisos.Text = "Consultar Permisos";
+            this.btnConsultarPermisos.Click += new System.EventHandler(this.consultarPermisosToolStripMenuItem_Click);
             // 
-            // historicoDeToolStripMenuItem
+            // btnHistoricoDePermisos
             // 
-            this.historicoDeToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.historicoDeToolStripMenuItem.Name = "historicoDeToolStripMenuItem";
-            this.historicoDeToolStripMenuItem.Size = new System.Drawing.Size(375, 36);
-            this.historicoDeToolStripMenuItem.Text = "Historico De Permisos";
-            this.historicoDeToolStripMenuItem.Click += new System.EventHandler(this.historicoDeToolStripMenuItem_Click);
+            this.btnHistoricoDePermisos.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnHistoricoDePermisos.Name = "btnHistoricoDePermisos";
+            this.btnHistoricoDePermisos.Size = new System.Drawing.Size(375, 36);
+            this.btnHistoricoDePermisos.Text = "Historico De Permisos";
+            this.btnHistoricoDePermisos.Click += new System.EventHandler(this.historicoDeToolStripMenuItem_Click);
             // 
             // resportesToolStripMenuItem
             // 
             this.resportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteDeHistoricoDeUsuariosToolStripMenuItem,
-            this.estadisticaMovimientoDeUsuariosToolStripMenuItem,
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem,
-            this.estadisticaDePerfilesToolStripMenuItem,
-            this.reporteDeHistoricoDePermisosToolStripMenuItem,
-            this.estadísticaDePermisosToolStripMenuItem,
-            this.reporteIngresosAlSistemaToolStripMenuItem,
+            this.btnReporteHistoricoUsuarios,
+            this.btnEstadisticaMovimientosUsuarios,
+            this.btnReportePerfilesUsuariosYestados,
+            this.btnEstadisticaPerfiles,
+            this.btnReporteHistoricoPermisos,
+            this.btnEstadisticaPermisos,
+            this.btnReporteIngresosAlSistema,
             this.toolStripSeparator1,
-            this.estadísticaIngresosAlSistemaToolStripMenuItem});
+            this.btnEstadísticaIngresosAlSistema});
             this.resportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.resportesToolStripMenuItem.Name = "resportesToolStripMenuItem";
             this.resportesToolStripMenuItem.Size = new System.Drawing.Size(120, 36);
             this.resportesToolStripMenuItem.Text = "Reportes";
             // 
-            // reporteDeHistoricoDeUsuariosToolStripMenuItem
+            // btnReporteHistoricoUsuarios
             // 
-            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Name = "reporteDeHistoricoDeUsuariosToolStripMenuItem";
-            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Text = "Reporte De Histórico De Usuarios";
-            this.reporteDeHistoricoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeHistoricoDeUsuariosToolStripMenuItem_Click);
+            this.btnReporteHistoricoUsuarios.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnReporteHistoricoUsuarios.Name = "btnReporteHistoricoUsuarios";
+            this.btnReporteHistoricoUsuarios.Size = new System.Drawing.Size(482, 36);
+            this.btnReporteHistoricoUsuarios.Text = "Reporte De Histórico De Usuarios";
+            this.btnReporteHistoricoUsuarios.Click += new System.EventHandler(this.reporteDeHistoricoDeUsuariosToolStripMenuItem_Click);
             // 
-            // estadisticaMovimientoDeUsuariosToolStripMenuItem
+            // btnEstadisticaMovimientosUsuarios
             // 
-            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Name = "estadisticaMovimientoDeUsuariosToolStripMenuItem";
-            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Text = "Estadistica Movimiento de Usuarios";
-            this.estadisticaMovimientoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.estadisticaMovimientoDeUsuariosToolStripMenuItem_Click);
+            this.btnEstadisticaMovimientosUsuarios.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnEstadisticaMovimientosUsuarios.Name = "btnEstadisticaMovimientosUsuarios";
+            this.btnEstadisticaMovimientosUsuarios.Size = new System.Drawing.Size(482, 36);
+            this.btnEstadisticaMovimientosUsuarios.Text = "Estadistica Movimiento de Usuarios";
+            this.btnEstadisticaMovimientosUsuarios.Click += new System.EventHandler(this.estadisticaMovimientoDeUsuariosToolStripMenuItem_Click);
             // 
-            // reportePerfilesPorUsuarioYEstadoToolStripMenuItem
+            // btnReportePerfilesUsuariosYestados
             // 
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Name = "reportePerfilesPorUsuarioYEstadoToolStripMenuItem";
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Text = "Reporte Perfiles por Usuario y Estado";
-            this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem.Click += new System.EventHandler(this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem_Click);
+            this.btnReportePerfilesUsuariosYestados.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnReportePerfilesUsuariosYestados.Name = "btnReportePerfilesUsuariosYestados";
+            this.btnReportePerfilesUsuariosYestados.Size = new System.Drawing.Size(482, 36);
+            this.btnReportePerfilesUsuariosYestados.Text = "Reporte Perfiles por Usuario y Estado";
+            this.btnReportePerfilesUsuariosYestados.Click += new System.EventHandler(this.reportePerfilesPorUsuarioYEstadoToolStripMenuItem_Click);
             // 
-            // estadisticaDePerfilesToolStripMenuItem
+            // btnEstadisticaPerfiles
             // 
-            this.estadisticaDePerfilesToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.estadisticaDePerfilesToolStripMenuItem.Name = "estadisticaDePerfilesToolStripMenuItem";
-            this.estadisticaDePerfilesToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.estadisticaDePerfilesToolStripMenuItem.Text = "Estadística De Perfiles";
-            this.estadisticaDePerfilesToolStripMenuItem.Click += new System.EventHandler(this.estadisticaDePerfilesToolStripMenuItem_Click);
+            this.btnEstadisticaPerfiles.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnEstadisticaPerfiles.Name = "btnEstadisticaPerfiles";
+            this.btnEstadisticaPerfiles.Size = new System.Drawing.Size(482, 36);
+            this.btnEstadisticaPerfiles.Text = "Estadística De Perfiles";
+            this.btnEstadisticaPerfiles.Click += new System.EventHandler(this.estadisticaDePerfilesToolStripMenuItem_Click);
             // 
-            // reporteDeHistoricoDePermisosToolStripMenuItem
+            // btnReporteHistoricoPermisos
             // 
-            this.reporteDeHistoricoDePermisosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.reporteDeHistoricoDePermisosToolStripMenuItem.Name = "reporteDeHistoricoDePermisosToolStripMenuItem";
-            this.reporteDeHistoricoDePermisosToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.reporteDeHistoricoDePermisosToolStripMenuItem.Text = "Reporte De Histórico De Permisos";
-            this.reporteDeHistoricoDePermisosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeHistoricoDePermisosToolStripMenuItem_Click);
+            this.btnReporteHistoricoPermisos.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnReporteHistoricoPermisos.Name = "btnReporteHistoricoPermisos";
+            this.btnReporteHistoricoPermisos.Size = new System.Drawing.Size(482, 36);
+            this.btnReporteHistoricoPermisos.Text = "Reporte De Histórico De Permisos";
+            this.btnReporteHistoricoPermisos.Click += new System.EventHandler(this.reporteDeHistoricoDePermisosToolStripMenuItem_Click);
             // 
-            // estadísticaDePermisosToolStripMenuItem
+            // btnEstadisticaPermisos
             // 
-            this.estadísticaDePermisosToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.estadísticaDePermisosToolStripMenuItem.Name = "estadísticaDePermisosToolStripMenuItem";
-            this.estadísticaDePermisosToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.estadísticaDePermisosToolStripMenuItem.Text = "Estadística De Permisos";
-            this.estadísticaDePermisosToolStripMenuItem.Click += new System.EventHandler(this.estadísticaDePermisosToolStripMenuItem_Click);
+            this.btnEstadisticaPermisos.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnEstadisticaPermisos.Name = "btnEstadisticaPermisos";
+            this.btnEstadisticaPermisos.Size = new System.Drawing.Size(482, 36);
+            this.btnEstadisticaPermisos.Text = "Estadística De Permisos";
+            this.btnEstadisticaPermisos.Click += new System.EventHandler(this.estadísticaDePermisosToolStripMenuItem_Click);
             // 
-            // reporteIngresosAlSistemaToolStripMenuItem
+            // btnReporteIngresosAlSistema
             // 
-            this.reporteIngresosAlSistemaToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.reporteIngresosAlSistemaToolStripMenuItem.Name = "reporteIngresosAlSistemaToolStripMenuItem";
-            this.reporteIngresosAlSistemaToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.reporteIngresosAlSistemaToolStripMenuItem.Text = "Reporte Ingresos al Sistema";
-            this.reporteIngresosAlSistemaToolStripMenuItem.Click += new System.EventHandler(this.reporteIngresosAlSistemaToolStripMenuItem_Click);
+            this.btnReporteIngresosAlSistema.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnReporteIngresosAlSistema.Name = "btnReporteIngresosAlSistema";
+            this.btnReporteIngresosAlSistema.Size = new System.Drawing.Size(482, 36);
+            this.btnReporteIngresosAlSistema.Text = "Reporte Ingresos al Sistema";
+            this.btnReporteIngresosAlSistema.Click += new System.EventHandler(this.reporteIngresosAlSistemaToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(479, 6);
+            // 
+            // btnEstadísticaIngresosAlSistema
+            // 
+            this.btnEstadísticaIngresosAlSistema.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btnEstadísticaIngresosAlSistema.Name = "btnEstadísticaIngresosAlSistema";
+            this.btnEstadísticaIngresosAlSistema.Size = new System.Drawing.Size(482, 36);
+            this.btnEstadísticaIngresosAlSistema.Text = "Estadística Ingresos al Sistema";
+            this.btnEstadísticaIngresosAlSistema.Click += new System.EventHandler(this.estadísticaIngresosAlSistemaToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -272,19 +285,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(72, 36);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(479, 6);
-            // 
-            // estadísticaIngresosAlSistemaToolStripMenuItem
-            // 
-            this.estadísticaIngresosAlSistemaToolStripMenuItem.BackColor = System.Drawing.Color.MediumOrchid;
-            this.estadísticaIngresosAlSistemaToolStripMenuItem.Name = "estadísticaIngresosAlSistemaToolStripMenuItem";
-            this.estadísticaIngresosAlSistemaToolStripMenuItem.Size = new System.Drawing.Size(482, 36);
-            this.estadísticaIngresosAlSistemaToolStripMenuItem.Text = "Estadística Ingresos al Sistema";
-            this.estadísticaIngresosAlSistemaToolStripMenuItem.Click += new System.EventHandler(this.estadísticaIngresosAlSistemaToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -316,28 +316,28 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnPerfil;
-        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarPerfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnAgregarNuevoPerfil;
+        private System.Windows.Forms.ToolStripMenuItem btnConsultarPerfiles;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarNuevoUsuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formulariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historicoDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnRegistrarNuevoUsuario;
+        private System.Windows.Forms.ToolStripMenuItem btnConsultarUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem btnFormularios;
+        private System.Windows.Forms.ToolStripMenuItem btnHistoricoDeUsuarios;
         private System.Windows.Forms.ToolStripMenuItem PermisostoolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem resportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeHistoricoDeUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estadisticaDePerfilesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asignarPermisosAPerfilesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarPermisosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historicoDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeHistoricoDePermisosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estadísticaDePermisosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estadisticaMovimientoDeUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportePerfilesPorUsuarioYEstadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteIngresosAlSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnReporteHistoricoUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem btnEstadisticaPerfiles;
+        private System.Windows.Forms.ToolStripMenuItem btnAsignarPermisosPerfiles;
+        private System.Windows.Forms.ToolStripMenuItem btnConsultarPermisos;
+        private System.Windows.Forms.ToolStripMenuItem btnHistoricoDePermisos;
+        private System.Windows.Forms.ToolStripMenuItem btnReporteHistoricoPermisos;
+        private System.Windows.Forms.ToolStripMenuItem btnEstadisticaPermisos;
+        private System.Windows.Forms.ToolStripMenuItem btnEstadisticaMovimientosUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem btnReportePerfilesUsuariosYestados;
+        private System.Windows.Forms.ToolStripMenuItem btnReporteIngresosAlSistema;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem estadísticaIngresosAlSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnEstadísticaIngresosAlSistema;
     }
 }
 
