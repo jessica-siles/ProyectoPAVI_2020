@@ -13,11 +13,13 @@ namespace ProyectoGrupalGestionDeUsuarios.Entities
         string nombre;
         int borrado;
         string descripcion;
+        string nombreBoton;
 
         public int IdFormulario { get => idFormulario; set => idFormulario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public int Borrado { get => borrado; set => borrado = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
+        public string NombreBoton { get => nombreBoton; set => nombreBoton = value; }
 
         public override string ToString()
         {

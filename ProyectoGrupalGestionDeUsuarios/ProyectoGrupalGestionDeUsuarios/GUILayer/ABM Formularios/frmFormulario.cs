@@ -49,7 +49,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
                     estado = "Activo";
                 grilla.Rows.Add(tabla.Rows[i]["id_formulario"],
                                 tabla.Rows[i]["nombre"],
-                                estado);
+                                estado,
+                                tabla.Rows[i]["boton_name"]);
                                 //tabla.Rows[i]["borrado"]);               
             }            
         }
@@ -60,6 +61,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
             txtNombre.Enabled = x;
             cboBorrado.Enabled = x;
             txtDescripción.Enabled = x;
+            txtNombreBoton.Enabled = x;
             btnCancelar.Enabled = x;
             btnGuardar.Enabled = x;
             btnAgregar.Enabled = !x;
@@ -67,6 +69,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
             btnEliminar.Enabled = !x;
             btnSalir.Enabled = !x;
             grdFormularios.Enabled = !x;
+            
         }
 
         private void LimpiarCampos()
@@ -75,6 +78,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
             txtNombre.Clear();
             cboBorrado.SelectedIndex = 0;
             txtDescripción.Text = string.Empty;
+            txtNombreBoton.Text = string.Empty;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -115,6 +119,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
             oFormulario.Nombre = txtNombre.Text;
             oFormulario.Descripcion = txtDescripción.Text;
             oFormulario.Borrado = cboBorrado.SelectedIndex;
+            oFormulario.NombreBoton = txtNombreBoton.Text;
 
             if (oFormulario.ValidarFormulario())
             {
@@ -152,6 +157,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.ABM_Formularios
             txtNombre.Text = oFormulario.Nombre;
             txtDescripción.Text = oFormulario.Descripcion;
             cboBorrado.SelectedIndex = oFormulario.Borrado;
+            txtNombreBoton.Text = oFormulario.NombreBoton;
         }
 
         private void grdFormularios_SelectionChanged(object sender, EventArgs e)

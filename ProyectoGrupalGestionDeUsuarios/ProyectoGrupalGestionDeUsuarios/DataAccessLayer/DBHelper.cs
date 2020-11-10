@@ -14,9 +14,9 @@ namespace ProyectoGrupalGestionDeUsuarios
 
         private DBHelper()
         {
-            string_conexion = @"Data Source=DESKTOP-IJEL4J8\SQLEXPRESS;Initial Catalog=Base_Usuarios;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //string_conexion = @"Data Source=DESKTOP-IJEL4J8\SQLEXPRESS;Initial Catalog=Base_Usuarios;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             
-            //string_conexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=Base_Usuarios;User ID=sa;Password=pcN4conexion";
+            string_conexion = "Data Source=DESKTOP-MGL5JN4;Initial Catalog=Base_Usuarios;User ID=sa;Password=pcN4conexion";
             //string_conexion = "workstation id=ProyectoUsuarios.mssql.somee.com;packet size=4096;user id=jessica_ardi_SQLLogin_1;pwd=ssklwm8k3k;data source=ProyectoUsuarios.mssql.somee.com;persist security info=False;initial catalog=ProyectoUsuarios";
 
             //base al servidor oficial

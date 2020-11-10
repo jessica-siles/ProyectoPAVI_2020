@@ -32,7 +32,8 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             oFormulario.IdFormulario = Convert.ToInt32(row["id_formulario"].ToString());
             oFormulario.Nombre = row["nombre"].ToString();            
             oFormulario.Borrado = Convert.ToInt32(row["borrado"]);
-            oFormulario.Descripcion = row["descripcion"].ToString();           
+            oFormulario.Descripcion = row["descripcion"].ToString();
+            oFormulario.NombreBoton = row["boton_name"].ToString();
             return oFormulario;
         }
 
@@ -49,11 +50,12 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
         public void InsertarFormulario(Formulario oFormulario)
         {
-            string insertSQL = "INSERT INTO Formularios (nombre, borrado, descripcion) "
+            string insertSQL = "INSERT INTO Formularios (nombre, borrado, descripcion, boton_name) "
                                 + "VALUES ('" +
                                 oFormulario.Nombre + "','" +
                                 oFormulario.Borrado + "','" +
-                                oFormulario.Descripcion + "')";
+                                oFormulario.Descripcion + "','" +
+                                oFormulario.NombreBoton + "')";
 
             //oDatos.Actualizar(insertSQL);
             DBHelper.GetDBHelper().EjecutarSQL(insertSQL);
@@ -63,7 +65,8 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         {
             string UpdateSQL = "UPDATE Formularios SET nombre='" + oFormulario.Nombre + "'," +
                                                                   "borrado=" + oFormulario.Borrado + "," +
-                                                                  "descripcion='" + oFormulario.Descripcion + "'" +
+                                                                  "descripcion='" + oFormulario.Descripcion + "'," +
+                                                                  "boton_name ='" + oFormulario.NombreBoton + "'" +
                                                                   "WHERE id_formulario=" + oFormulario.IdFormulario;
             //oDatos.Actualizar(UpdateSQL);  
             DBHelper.GetDBHelper().EjecutarSQL(UpdateSQL);
