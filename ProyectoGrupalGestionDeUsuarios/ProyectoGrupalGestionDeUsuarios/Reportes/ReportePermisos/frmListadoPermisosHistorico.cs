@@ -85,8 +85,8 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
                 }
                 
                 DataTable tabla = new DataTable();
-                tabla = permisoService.obtenerHistorialPermisosFiltrados(dtpFechaDesde.Value.ToShortDateString(),
-                                                                         dtpFechaHasta.Value.ToShortDateString(),
+                tabla = permisoService.obtenerHistorialPermisosFiltrados(dtpFechaDesde.Value.ToString("yyyy-MM-dd"),
+                                                                         dtpFechaHasta.Value.ToString("yyyy-MM-dd"),
                                                                          _formulario, _perfil, conFecha);
 
                 if (tabla.Rows.Count == 0)

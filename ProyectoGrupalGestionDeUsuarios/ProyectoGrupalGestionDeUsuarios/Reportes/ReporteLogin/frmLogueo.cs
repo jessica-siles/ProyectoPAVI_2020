@@ -122,8 +122,8 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReporteLogin
                 usuario = txtUsuario.Text;
             if (cboPerfil.SelectedIndex != -1)
                 perfil = cboPerfil.SelectedValue.ToString();
-            desde = dtpFechaDesde.Value.ToShortDateString();
-            hasta = dtpFechaHasta.Value.ToString("dd-MM-yyyy 23:59:59");
+            desde = dtpFechaDesde.Value.ToString("yyyy-MM-dd");
+            hasta = dtpFechaHasta.Value.ToString("yyyy-MM-dd 23:59:59");
             
 
             if (chkBoxTodos.Checked)

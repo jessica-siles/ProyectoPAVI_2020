@@ -50,7 +50,6 @@
             this.btnReporteHistoricoPermisos = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEstadisticaPermisos = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReporteIngresosAlSistema = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEstadísticaIngresosAlSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -202,7 +201,6 @@
             this.btnReporteHistoricoPermisos,
             this.btnEstadisticaPermisos,
             this.btnReporteIngresosAlSistema,
-            this.toolStripSeparator1,
             this.btnEstadísticaIngresosAlSistema});
             this.resportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.resportesToolStripMenuItem.Name = "resportesToolStripMenuItem";
@@ -264,11 +262,6 @@
             this.btnReporteIngresosAlSistema.Size = new System.Drawing.Size(482, 36);
             this.btnReporteIngresosAlSistema.Text = "Reporte Ingresos al Sistema";
             this.btnReporteIngresosAlSistema.Click += new System.EventHandler(this.reporteIngresosAlSistemaToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(479, 6);
             // 
             // btnEstadísticaIngresosAlSistema
             // 
@@ -336,7 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnReportePerfilesUsuariosYestados;
         private System.Windows.Forms.ToolStripMenuItem btnReporteIngresosAlSistema;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem btnEstadísticaIngresosAlSistema;
     }
 }

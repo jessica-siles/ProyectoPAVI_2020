@@ -39,6 +39,7 @@ namespace ProyectoGrupalGestionDeUsuarios
             //Application.Run(new frmListadoPermisosHistorico());
             //Application.Run(new frmLogueo());
             //Application.Run(new frmEstadisticaLogin());
+          
         }
     }
 }
