@@ -18,6 +18,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
         DataManager DataMan = new DataManager();
         UsuarioDao UsuarioDao = new UsuarioDao();
         HistorialUsuario historial = new HistorialUsuario();
+
         public frmConsultarUsuario()
         {
             InitializeComponent();
@@ -31,6 +32,10 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
         private void frmConsultarUsuario_Load(object sender, EventArgs e)
         {
             cargarGrilla(UsuarioDao.consultaUsuarios());
+            if (cargarGrilla(UsuarioDao.consultaUsuarios()) > 0)
+                btnModificar.Enabled = true;
+            else
+                btnModificar.Enabled = false;
 
         }
         private int cargarGrilla(string SQLconsulta)
@@ -105,10 +110,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
             frmModificarUsuario modificarUsuario = new frmModificarUsuario(usuarioEntities.IdUsuario);
             modificarUsuario.ShowDialog();
-            cargarGrilla(UsuarioDao.consultaUsuarios());
+            cargarGrilla(UsuarioDao.consultaUsuarios());           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

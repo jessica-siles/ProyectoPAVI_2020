@@ -21,20 +21,19 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
         HistorialUsuario historial = new HistorialUsuario();
 
         public frmModificarUsuario(int var)
-        {
+        {            
             InitializeComponent();
-            this.var = var;
+            this.var = var;            
         }
+
         int var;
+
         private void frmModificarUsuario_Load(object sender, EventArgs e)
-        {
-             
-            
+        {             
             cargarTextos(var);
-            txtUsuario.Enabled = false;
-
-
+            txtUsuario.Enabled = false;          
         }
+
         private void cargarTextos(int id_usuario)
         {
             DataTable cargaUusuarios = UsuarioDao.Consultar(UsuarioDao.BuscarPorId(var));
@@ -42,19 +41,19 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             txtPass.Text = cargaUusuarios.Rows[0][2].ToString();
             txtEmail.Text = cargaUusuarios.Rows[0][3].ToString();
             string checkbox = cargaUusuarios.Rows[0][5].ToString();
+
             if (checkbox == "S")
             {
                 chkBoxEstado.Checked = true;
             }
             if (checkbox == "N")
                 chkBoxEstado.Checked = false;
-
             
             cargarComb(cboPerfil);
             cboPerfil.Text = cargaUusuarios.Rows[0][4].ToString();
 
-
         }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -67,15 +66,12 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
             combo.DataSource = perfiles;
             combo.DisplayMember = perfiles.Columns[1].ColumnName;
             combo.ValueMember = perfiles.Columns[0].ColumnName;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-            
-
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;           
         }
         
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             bool check = chkBoxEstado.Checked;
             string estado = "";
             if (check)
@@ -91,10 +87,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                 string fecha = fecha_actual.ToString("yyyy-MM-dd 00:00:00");
                 historial.Fecha = fecha;
                 historial.Titulo = "Modificacion de Usuario";
-                
-
-
-
+              
                 usuarioEntities.NombreUsuario = txtUsuario.Text;
 
                 usuarioEntities.Password = txtPass.Text;
@@ -118,22 +111,12 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                         this.Close();
                     }
                 }
-
-                    else
+                else
                 { 
                     MessageBox.Show("NO SE REALIZARON CAMBIOS", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
-                
-
-
-
-
-
-
             }
         }
-
     }
 }
 
