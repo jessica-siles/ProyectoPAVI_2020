@@ -45,30 +45,58 @@ namespace ProyectoGrupalGestionDeUsuarios
 
             this.Text = this.Text + " - Usuario: " + formularioLogin.UsuarioLogueado;
             nombreLogeado = formularioLogin.UsuarioLogueado;
+            Lista();
         }
-        private void mostrarBotones()
+        private void Lista()
         {
-            bool permitir = false;
             DataTable permisosMenuPrincipal = permisos.permisosPorPerfil(nombreLogeado);
+            List<ToolStripMenuItem> items = new List<ToolStripMenuItem>();
+            List<string> nombreItemsBase = new List<string>();
 
-            btnAgregarNuevoPerfil.Visible = permitir;
-            btnConsultarPerfiles.Visible = permitir;
-            btnRegistrarNuevoUsuario.Visible = permitir;
-            btnConsultarUsuarios.Visible = permitir;
-            btnHistoricoDeUsuarios.Visible = permitir;
-            btnFormularios.Visible = permitir;
-            btnAsignarPermisosPerfiles.Visible = permitir;
-            btnConsultarPermisos.Visible = permitir;
-            btnHistoricoDePermisos.Visible = permitir;
-            btnReporteHistoricoUsuarios.Visible = permitir;
-            btnEstadisticaMovimientosUsuarios.Visible = permitir;
-            btnReportePerfilesUsuariosYestados.Visible = permitir;
-            btnEstadisticaPerfiles.Visible = permitir;
-            btnReporteHistoricoPermisos.Visible = permitir;
-            btnEstadisticaPermisos.Visible = permitir;
-            btnReporteIngresosAlSistema.Visible = permitir;
-            btnEstadísticaIngresosAlSistema.Visible = permitir;
+            items.Add(btnAgregarNuevoPerfil);
+            items.Add(btnConsultarPerfiles);
+            items.Add(btnRegistrarNuevoUsuario);
+            items.Add(btnConsultarUsuarios);
+            items.Add(btnHistoricoDeUsuarios);
+            items.Add(btnFormularios);
+            items.Add(btnAsignarPermisosPerfiles);
+            items.Add(btnConsultarPermisos);
+            items.Add(btnHistoricoDePermisos);
+            items.Add(btnReporteHistoricoUsuarios);
+            items.Add(btnEstadisticaMovimientosUsuarios);
+            items.Add(btnReportePerfilesUsuariosYestados);
+            items.Add(btnEstadisticaPerfiles);
+            items.Add(btnReporteHistoricoPermisos);
+            items.Add(btnEstadisticaPermisos);
+            items.Add(btnReporteIngresosAlSistema);
+            items.Add(btnEstadísticaIngresosAlSistema);
 
+            foreach (DataRow row in permisosMenuPrincipal.Rows)
+            {
+                nombreItemsBase.Add(row["boton_name"].ToString());
+            }
+
+            List<ToolStripMenuItem> m = new List<ToolStripMenuItem>();
+
+            for (int i = 0; i < nombreItemsBase.Count(); i++)
+            {
+                for (int j = 0; j < items.Count(); j++)
+                {
+
+                    if (items[j].Name.ToString() == nombreItemsBase[i])
+                    {
+
+                        items.Remove(items[j]);
+
+                    }
+
+                }
+
+            }
+            foreach (ToolStripMenuItem botones in items)
+            {
+                botones.Visible = false;
+            }
         }
 
         private void bugsToolStripMenuItem_Click(object sender, EventArgs e)
