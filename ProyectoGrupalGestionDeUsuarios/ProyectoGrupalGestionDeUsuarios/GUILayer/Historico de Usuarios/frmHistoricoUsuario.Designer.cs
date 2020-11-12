@@ -29,33 +29,27 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoricoUsuario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.groupBoxConsulta = new System.Windows.Forms.GroupBox();
             this.dgvConsultaHistorial = new System.Windows.Forms.DataGridView();
-            this.id_historico_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBoxConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaHistorial)).BeginInit();
@@ -119,24 +113,21 @@
             this.dgvConsultaHistorial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvConsultaHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultaHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_historico_usuario,
             this.fecha,
             this.titulo,
             this.descripcion,
             this.usuario,
             this.id_perfil,
-            this.id_usuario,
             this.email,
-            this.estado,
-            this.borrado});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvConsultaHistorial.DefaultCellStyle = dataGridViewCellStyle11;
+            this.estado});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConsultaHistorial.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvConsultaHistorial.GridColor = System.Drawing.Color.Thistle;
             this.dgvConsultaHistorial.Location = new System.Drawing.Point(14, 30);
             this.dgvConsultaHistorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -144,36 +135,27 @@
             this.dgvConsultaHistorial.Name = "dgvConsultaHistorial";
             this.dgvConsultaHistorial.ReadOnly = true;
             this.dgvConsultaHistorial.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.dgvConsultaHistorial.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.dgvConsultaHistorial.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvConsultaHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultaHistorial.Size = new System.Drawing.Size(1198, 329);
             this.dgvConsultaHistorial.TabIndex = 0;
             // 
-            // id_historico_usuario
+            // fecha
             // 
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Indigo;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.id_historico_usuario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id_historico_usuario.HeaderText = "Id";
-            this.id_historico_usuario.Name = "id_historico_usuario";
-            this.id_historico_usuario.ReadOnly = true;
-            this.id_historico_usuario.Width = 50;
-            // 
-            // fecha
-            // 
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.fecha.DefaultCellStyle = dataGridViewCellStyle3;
+            this.fecha.DefaultCellStyle = dataGridViewCellStyle2;
             this.fecha.HeaderText = "Fecha";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
+            this.fecha.Width = 150;
             // 
             // titulo
             // 
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.titulo.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.titulo.DefaultCellStyle = dataGridViewCellStyle3;
             this.titulo.HeaderText = "Título";
             this.titulo.Name = "titulo";
             this.titulo.ReadOnly = true;
@@ -181,9 +163,9 @@
             // 
             // descripcion
             // 
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.descripcion.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.descripcion.DefaultCellStyle = dataGridViewCellStyle4;
             this.descripcion.HeaderText = "Descripcion";
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
@@ -191,10 +173,10 @@
             // 
             // usuario
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.usuario.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.usuario.DefaultCellStyle = dataGridViewCellStyle5;
             this.usuario.HeaderText = "Usuario";
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
@@ -203,46 +185,30 @@
             // 
             // id_perfil
             // 
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.id_perfil.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.id_perfil.DefaultCellStyle = dataGridViewCellStyle6;
             this.id_perfil.HeaderText = "Perfil";
             this.id_perfil.Name = "id_perfil";
             this.id_perfil.ReadOnly = true;
-            // 
-            // id_usuario
-            // 
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.id_usuario.DefaultCellStyle = dataGridViewCellStyle8;
-            this.id_usuario.HeaderText = "Nro";
-            this.id_usuario.Name = "id_usuario";
-            this.id_usuario.ReadOnly = true;
-            this.id_usuario.Width = 50;
+            this.id_perfil.Width = 150;
             // 
             // email
             // 
             this.email.HeaderText = "Email";
             this.email.Name = "email";
             this.email.ReadOnly = true;
+            this.email.Width = 150;
             // 
             // estado
             // 
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.estado.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.estado.DefaultCellStyle = dataGridViewCellStyle7;
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
-            // 
-            // borrado
-            // 
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.borrado.DefaultCellStyle = dataGridViewCellStyle10;
-            this.borrado.HeaderText = "Borrado";
-            this.borrado.Name = "borrado";
-            this.borrado.ReadOnly = true;
+            this.estado.Width = 150;
             // 
             // frmHistoricoUsuario
             // 
@@ -271,15 +237,12 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.GroupBox groupBoxConsulta;
         private System.Windows.Forms.DataGridView dgvConsultaHistorial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_historico_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_perfil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
     }
 }

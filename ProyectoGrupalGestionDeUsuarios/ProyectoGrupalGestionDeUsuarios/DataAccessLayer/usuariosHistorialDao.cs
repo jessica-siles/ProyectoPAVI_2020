@@ -19,9 +19,10 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
         public string cargarGrilla()
         {
-            string historico = "SELECT h.* , p.nombre " +
-                               "FROM usuariosHistorico h INNER JOIN Perfiles p " +
-                               "ON h.id_perfil=p.id_perfil";
+            string historico = "SELECT h.fecha_historico,h.titulo,h."
+                            +" descripcion,h.usuario,p.nombre,email,h.estado"
+                            +" FROM usuariosHistorico h INNER JOIN Perfiles p"
+                            +" ON h.id_perfil = p.id_perfil";
             return historico;
         }
 
@@ -32,7 +33,10 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         }
         public string buscarNombre(string nombreUsuario)
         {
-            string nombre = "SELECT * FROM UsuariosHistorico WHERE usuario = '"+ nombreUsuario + "'";
+            string nombre = "SELECT h.fecha_historico,h.titulo,h."
+                            +"descripcion,h.usuario,p.nombre,email,h.estado"
+                            +" FROM usuariosHistorico h INNER JOIN Perfiles p"
+                            +" ON h.id_perfil = p.id_perfil WHERE usuario = '"+ nombreUsuario + "'";
             return nombre;
         }
 

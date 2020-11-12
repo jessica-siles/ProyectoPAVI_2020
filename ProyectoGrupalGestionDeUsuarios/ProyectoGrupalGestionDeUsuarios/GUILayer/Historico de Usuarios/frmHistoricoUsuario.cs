@@ -37,19 +37,15 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios
                 else
                     estado = "Inactivo";
 
-                dgvConsultaHistorial.Rows.Add(historialUsuarios.Rows[i]["id_historico_usuario"],
+                dgvConsultaHistorial.Rows.Add(
                                              historialUsuarios.Rows[i]["fecha_historico"],
                                              historialUsuarios.Rows[i]["titulo"],
                                              historialUsuarios.Rows[i]["descripcion"],
                                              historialUsuarios.Rows[i]["usuario"],
                                              historialUsuarios.Rows[i]["nombre"],
-                                             historialUsuarios.Rows[i]["id_usuario"],
-                                             //historialUsuarios.Rows[i]["id_perfil"],
                                              historialUsuarios.Rows[i]["email"],
-                                             //historialUsuarios.Rows[i]["password"],                                            
-                                             //historialUsuarios.Rows[i]["estado"],
-                                             estado,
-                                             historialUsuarios.Rows[i]["borrado"]);
+                                             estado
+                                             );
             }
             return cantFilas;
         }
