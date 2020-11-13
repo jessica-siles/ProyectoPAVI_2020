@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsltarPermisos));
             this.panelBotones = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,12 +42,12 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.groupBoxConsulta = new System.Windows.Forms.GroupBox();
             this.dgvConsultaPermisos = new System.Windows.Forms.DataGridView();
-            this.numForm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
+            this.numForm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBotones.SuspendLayout();
             this.groupBoxConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPermisos)).BeginInit();
@@ -70,9 +73,9 @@
             this.button1.Location = new System.Drawing.Point(188, 18);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 53);
+            this.button1.Size = new System.Drawing.Size(178, 53);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Eliminar";
+            this.button1.Text = "Eliminar Todos";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -122,57 +125,44 @@
             this.dgvConsultaPermisos.AllowUserToAddRows = false;
             this.dgvConsultaPermisos.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvConsultaPermisos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvConsultaPermisos.BackgroundColor = System.Drawing.Color.MediumOrchid;
             this.dgvConsultaPermisos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConsultaPermisos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvConsultaPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultaPermisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numForm,
             this.Nombre,
             this.descripcion});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvConsultaPermisos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConsultaPermisos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvConsultaPermisos.GridColor = System.Drawing.Color.Thistle;
             this.dgvConsultaPermisos.Location = new System.Drawing.Point(16, 30);
             this.dgvConsultaPermisos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvConsultaPermisos.MultiSelect = false;
             this.dgvConsultaPermisos.Name = "dgvConsultaPermisos";
             this.dgvConsultaPermisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dgvConsultaPermisos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dgvConsultaPermisos.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvConsultaPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultaPermisos.Size = new System.Drawing.Size(703, 330);
             this.dgvConsultaPermisos.TabIndex = 0;
             this.dgvConsultaPermisos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaPermisos_CellClick);
-            // 
-            // numForm
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.numForm.DefaultCellStyle = dataGridViewCellStyle2;
-            this.numForm.HeaderText = "Nº";
-            this.numForm.Name = "numForm";
-            this.numForm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.numForm.Width = 50;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 250;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.Width = 350;
             // 
             // groupBox2
             // 
@@ -211,6 +201,35 @@
             this.cboPerfil.TabIndex = 22;
             this.cboPerfil.SelectedIndexChanged += new System.EventHandler(this.cboPerfil_SelectedIndexChanged);
             // 
+            // numForm
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.numForm.DefaultCellStyle = dataGridViewCellStyle3;
+            this.numForm.HeaderText = "Nº";
+            this.numForm.Name = "numForm";
+            this.numForm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.numForm.Width = 50;
+            // 
+            // Nombre
+            // 
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.Nombre.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 250;
+            // 
+            // descripcion
+            // 
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.descripcion.DefaultCellStyle = dataGridViewCellStyle5;
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Width = 350;
+            // 
             // frmConsltarPermisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,12 +264,12 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.GroupBox groupBoxConsulta;
         private System.Windows.Forms.DataGridView dgvConsultaPermisos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numForm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.ComboBox cboPerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numForm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
     }
 }
