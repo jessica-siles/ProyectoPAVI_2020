@@ -340,7 +340,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             string consulta = "SELECT U.usuario, P.nombre as perfil, COUNT(*) ingresos" +
                               " FROM Logueos L, Usuarios U, Perfiles P" +
                               " WHERE L.idUsuario = U.id_usuario" +
-                              " AND L.idPerfil = P.id_perfil";
+                              " AND U.id_perfil = P.id_perfil";
 
            if (fecha)
                 consulta += " AND L.fecha BETWEEN '"+desde+"' AND '"+hasta+"'";           
