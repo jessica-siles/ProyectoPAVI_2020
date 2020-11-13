@@ -34,11 +34,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos
         }
 
         private void cargarGrilla(DataGridView grilla, DataTable tabla)
-        {            
-<<<<<<< HEAD
-=======
-            grilla.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
->>>>>>> 0a4e91629c1b935969dd6cefcaba16f8e82a8dd5
+        {           
             grilla.Rows.Clear();
             grilla.Columns[1].DefaultCellStyle.Format = "dd/MM/yyyy";
             for (int i = 0; i < tabla.Rows.Count; i++)

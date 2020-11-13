@@ -43,15 +43,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_de_Usuarios
                                              historialUsuarios.Rows[i]["descripcion"],
                                              historialUsuarios.Rows[i]["usuario"],
                                              historialUsuarios.Rows[i]["nombre"],
-<<<<<<< HEAD
-                                             historialUsuarios.Rows[i]["id_usuario"],
+                                             //historialUsuarios.Rows[i]["id_usuario"],
                                              historialUsuarios.Rows[i]["email"],
-                                             estado);                                             
-=======
-                                             historialUsuarios.Rows[i]["email"],
-                                             estado
-                                             );
->>>>>>> 6fdfe0d6c472db4842e578118d3b40a2ca96fd3c
+                                            estado);                                         
             }
             return cantFilas;
         }
