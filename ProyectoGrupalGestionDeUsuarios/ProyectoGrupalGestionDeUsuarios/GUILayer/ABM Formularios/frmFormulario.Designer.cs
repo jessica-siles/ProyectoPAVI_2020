@@ -163,10 +163,12 @@
             this.Estado,
             this.boton_name});
             this.grdFormularios.Location = new System.Drawing.Point(4, 15);
+            this.grdFormularios.MultiSelect = false;
             this.grdFormularios.Name = "grdFormularios";
             this.grdFormularios.ReadOnly = true;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.grdFormularios.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdFormularios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdFormularios.Size = new System.Drawing.Size(876, 190);
             this.grdFormularios.TabIndex = 0;
             this.grdFormularios.SelectionChanged += new System.EventHandler(this.grdFormularios_SelectionChanged);
