@@ -101,7 +101,8 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             string buscarEliminar = "UPDATE Perfiles SET borrado = 1 WHERE id_perfil = " + idAEliminar + "";
             DBHelper.GetDBHelper().EjecutarSQL(buscarEliminar);
 
-            string perfilPorDefecto = "UPDATE Usuarios SET ";
+            string perfilPorDefecto = "UPDATE Usuarios SET id_perfil = 6 WHERE id_perfil = " + idAEliminar;
+            DBHelper.GetDBHelper().EjecutarSQL(perfilPorDefecto);
         }
     }
 }
