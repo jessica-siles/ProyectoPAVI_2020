@@ -389,7 +389,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtPermisosHistoricoRow AdddtPermisosHistoricoRow(string fecha, string formulario, string perfil, string descripcion) {
+            public dtPermisosHistoricoRow AdddtPermisosHistoricoRow(System.DateTime fecha, string formulario, string perfil, string descripcion) {
                 dtPermisosHistoricoRow rowdtPermisosHistoricoRow = ((dtPermisosHistoricoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fecha,
@@ -427,7 +427,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha);
                 this.columnformulario = new global::System.Data.DataColumn("formulario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnformulario);
@@ -577,10 +577,10 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string fecha {
+            public System.DateTime fecha {
                 get {
                     try {
-                        return ((string)(this[this.tabledtPermisosHistorico.fechaColumn]));
+                        return ((global::System.DateTime)(this[this.tabledtPermisosHistorico.fechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'dtPermisosHistorico\' es DBNull.", e);

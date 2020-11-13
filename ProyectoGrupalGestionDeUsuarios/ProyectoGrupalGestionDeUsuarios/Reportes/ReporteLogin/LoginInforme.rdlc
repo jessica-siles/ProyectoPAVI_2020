@@ -59,10 +59,10 @@
                   <Width>3.56495cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6.29016cm</Width>
+                  <Width>4.38516cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.48791cm</Width>
+                  <Width>7.3929cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>4.70266cm</Width>
@@ -314,13 +314,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!fecha.Value</Value>
+                                  <Value>=FORMAT(Fields!fecha.Value, "dd/MM/yyyy")</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>fecha</rd:DefaultName>
@@ -335,6 +337,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -363,7 +366,7 @@
             <Top>1.50495cm</Top>
             <Left>1.14053cm</Left>
             <Height>1.27938cm</Height>
-            <Width>20.04568cm</Width>
+            <Width>20.04567cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

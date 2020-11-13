@@ -226,7 +226,7 @@
                                   <Style />
                                 </TextRun>
                                 <TextRun>
-                                  <Value>=Fields!fecha.Value</Value>
+                                  <Value>=FORMAT(Fields!fecha.Value, "dd/MM/yyyy")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

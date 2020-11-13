@@ -52,11 +52,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                 else
                     estado = "Inactivo";
 
-                dgvConsultaUsuarios.Rows.Add(usuarios.Rows[i]["usuario"],
-                                             usuarios.Rows[i]["password"],
+                dgvConsultaUsuarios.Rows.Add(usuarios.Rows[i]["usuario"],                                             
                                              usuarios.Rows[i]["email"],
-                                             usuarios.Rows[i]["nombre"], //perfil
-                                             //usuarios.Rows[i]["estado"],
+                                             usuarios.Rows[i]["nombre"],
                                              estado,
                                              usuarios.Rows[i]["id_usuario"]);
             }
@@ -104,7 +102,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
 
         private void dgvConsultaUsuarios_SelectionChanged(object sender, EventArgs e)
         {
-            usuarioEntities.IdUsuario = Convert.ToInt32(dgvConsultaUsuarios.CurrentRow.Cells[5].Value);
+            usuarioEntities.IdUsuario = Convert.ToInt32(dgvConsultaUsuarios.CurrentRow.Cells[4].Value);
             usuarioEntities.NombreUsuario = Convert.ToString(dgvConsultaUsuarios.CurrentRow.Cells[0].Value);
         }
 

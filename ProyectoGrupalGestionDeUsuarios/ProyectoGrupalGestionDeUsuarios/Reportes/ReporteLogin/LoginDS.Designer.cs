@@ -399,7 +399,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReporteLogin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtLoginRow AdddtLoginRow(int id, string usuario, string perfil, string email, string fecha) {
+            public dtLoginRow AdddtLoginRow(int id, string usuario, string perfil, string email, System.DateTime fecha) {
                 dtLoginRow rowdtLoginRow = ((dtLoginRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -447,7 +447,7 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReporteLogin {
                 base.Columns.Add(this.columnperfil);
                 this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemail);
-                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha);
             }
             
@@ -655,10 +655,10 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReporteLogin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string fecha {
+            public System.DateTime fecha {
                 get {
                     try {
-                        return ((string)(this[this.tabledtLogin.fechaColumn]));
+                        return ((global::System.DateTime)(this[this.tabledtLogin.fechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'dtLogin\' es DBNull.", e);
