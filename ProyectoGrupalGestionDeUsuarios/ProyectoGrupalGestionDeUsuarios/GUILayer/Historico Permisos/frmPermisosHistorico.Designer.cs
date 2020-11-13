@@ -72,6 +72,7 @@
             this.grdHistorialPermisos.ReadOnly = true;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.grdHistorialPermisos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdHistorialPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdHistorialPermisos.Size = new System.Drawing.Size(798, 268);
             this.grdHistorialPermisos.TabIndex = 0;
             // 
