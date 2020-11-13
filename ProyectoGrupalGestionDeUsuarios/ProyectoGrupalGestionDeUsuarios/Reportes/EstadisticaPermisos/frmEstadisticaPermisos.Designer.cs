@@ -48,6 +48,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "frmEstadisticaPermisos";
             this.Text = "frmEstadisticaPermisos";
             this.Load += new System.EventHandler(this.frmEstadisticaPermisos_Load);

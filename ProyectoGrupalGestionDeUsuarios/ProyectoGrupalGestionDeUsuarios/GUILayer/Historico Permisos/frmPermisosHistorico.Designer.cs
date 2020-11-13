@@ -30,6 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdHistorialPermisos = new System.Windows.Forms.DataGridView();
+            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Formulario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpBoxHistorioPermisos = new System.Windows.Forms.GroupBox();
             this.grpBoxFiltros = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -45,11 +50,6 @@
             this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.cboFormulario = new System.Windows.Forms.ComboBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Formulario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdHistorialPermisos)).BeginInit();
             this.grpBoxHistorioPermisos.SuspendLayout();
             this.grpBoxFiltros.SuspendLayout();
@@ -74,6 +74,41 @@
             this.grdHistorialPermisos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdHistorialPermisos.Size = new System.Drawing.Size(798, 268);
             this.grdHistorialPermisos.TabIndex = 0;
+            // 
+            // Nro
+            // 
+            this.Nro.HeaderText = "Nro";
+            this.Nro.Name = "Nro";
+            this.Nro.ReadOnly = true;
+            this.Nro.Width = 50;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            this.fecha.Width = 120;
+            // 
+            // Formulario
+            // 
+            this.Formulario.HeaderText = "Formulario";
+            this.Formulario.Name = "Formulario";
+            this.Formulario.ReadOnly = true;
+            this.Formulario.Width = 250;
+            // 
+            // Perfil
+            // 
+            this.Perfil.HeaderText = "Perfil";
+            this.Perfil.Name = "Perfil";
+            this.Perfil.ReadOnly = true;
+            this.Perfil.Width = 120;
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            this.Descripción.Width = 200;
             // 
             // grpBoxHistorioPermisos
             // 
@@ -248,45 +283,11 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // Nro
-            // 
-            this.Nro.HeaderText = "Nro";
-            this.Nro.Name = "Nro";
-            this.Nro.ReadOnly = true;
-            this.Nro.Width = 50;
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            this.fecha.Width = 120;
-            // 
-            // Formulario
-            // 
-            this.Formulario.HeaderText = "Formulario";
-            this.Formulario.Name = "Formulario";
-            this.Formulario.ReadOnly = true;
-            this.Formulario.Width = 250;
-            // 
-            // Perfil
-            // 
-            this.Perfil.HeaderText = "Perfil";
-            this.Perfil.Name = "Perfil";
-            this.Perfil.ReadOnly = true;
-            this.Perfil.Width = 120;
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
-            this.Descripción.Width = 200;
-            // 
             // frmPermisosHistorico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::ProyectoGrupalGestionDeUsuarios.Properties.Resources.FondoPerf;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(884, 561);
@@ -294,7 +295,10 @@
             this.Controls.Add(this.grpBoxFiltros);
             this.Controls.Add(this.grpBoxHistorioPermisos);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(900, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "frmPermisosHistorico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial De Permisos";
             this.Load += new System.EventHandler(this.frmPermisosHistorico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdHistorialPermisos)).EndInit();

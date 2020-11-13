@@ -134,7 +134,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.reportPerfilEstadistica);
+            this.MaximumSize = new System.Drawing.Size(917, 639);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(917, 639);
             this.Name = "frmEstadisticaPerfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEstadisticaPerfil";
             this.Load += new System.EventHandler(this.frmEstadisticaPerfil_Load);
             this.ResumeLayout(false);

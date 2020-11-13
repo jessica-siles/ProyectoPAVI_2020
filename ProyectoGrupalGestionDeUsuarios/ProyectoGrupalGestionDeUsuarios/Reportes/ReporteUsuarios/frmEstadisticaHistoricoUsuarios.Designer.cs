@@ -134,6 +134,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.reportViewer1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(892, 768);
+            this.MinimumSize = new System.Drawing.Size(892, 768);
             this.Name = "frmEstadisticaHistoricoUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEstadisticaHistoricoUsuarios";

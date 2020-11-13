@@ -245,7 +245,10 @@
             this.Controls.Add(this.grpBoxFiltros);
             this.Controls.Add(this.reportViewer1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(900, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "frmLogueo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de accesos al sistema";
             this.Load += new System.EventHandler(this.LogueoFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtLoginBindingSource)).EndInit();

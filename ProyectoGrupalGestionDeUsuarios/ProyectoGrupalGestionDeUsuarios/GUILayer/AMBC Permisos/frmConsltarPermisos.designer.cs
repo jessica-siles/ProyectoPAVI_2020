@@ -215,12 +215,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(819, 599);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxConsulta);
             this.Controls.Add(this.panelBotones);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(835, 638);
+            this.MinimumSize = new System.Drawing.Size(835, 638);
             this.Name = "frmConsltarPermisos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Permisos ";

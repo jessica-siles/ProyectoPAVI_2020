@@ -40,6 +40,10 @@
             this.cboBorrado = new System.Windows.Forms.ComboBox();
             this.gbxFormulario = new System.Windows.Forms.GroupBox();
             this.grdFormularios = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boton_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -48,10 +52,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreBoton = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boton_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFormularios)).BeginInit();
             this.SuspendLayout();
@@ -171,6 +171,33 @@
             this.grdFormularios.TabIndex = 0;
             this.grdFormularios.SelectionChanged += new System.EventHandler(this.grdFormularios_SelectionChanged);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 300;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 200;
+            // 
+            // boton_name
+            // 
+            this.boton_name.HeaderText = "Nombre del Boton";
+            this.boton_name.Name = "boton_name";
+            this.boton_name.ReadOnly = true;
+            this.boton_name.Width = 230;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.White;
@@ -258,33 +285,6 @@
             this.txtNombreBoton.Size = new System.Drawing.Size(400, 29);
             this.txtNombreBoton.TabIndex = 16;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 300;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 200;
-            // 
-            // boton_name
-            // 
-            this.boton_name.HeaderText = "Nombre del Boton";
-            this.boton_name.Name = "boton_name";
-            this.boton_name.ReadOnly = true;
-            this.boton_name.Width = 230;
-            // 
             // frmFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +311,8 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtID);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(926, 640);
+            this.MinimumSize = new System.Drawing.Size(926, 640);
             this.Name = "frmFormulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formularios";

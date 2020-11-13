@@ -212,6 +212,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnGuardar);
+            this.MaximumSize = new System.Drawing.Size(903, 718);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(903, 718);
             this.Name = "frmReportePerfiles";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmReportePerfiles_Load);

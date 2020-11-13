@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dtPermisosHistoricoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PermisosHistorico = new ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos.PermisosHistorico();
             this.grpBoxFiltros = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.chkBoxFechas = new System.Windows.Forms.CheckBox();
             this.chkBoxTodos = new System.Windows.Forms.CheckBox();
@@ -44,13 +47,20 @@
             this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.cboFormulario = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.PermisosHistorico = new ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos.PermisosHistorico();
-            this.dtPermisosHistoricoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.grpBoxFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PermisosHistorico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPermisosHistoricoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PermisosHistorico)).BeginInit();
+            this.grpBoxFiltros.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dtPermisosHistoricoBindingSource
+            // 
+            this.dtPermisosHistoricoBindingSource.DataMember = "dtPermisosHistorico";
+            this.dtPermisosHistoricoBindingSource.DataSource = this.PermisosHistorico;
+            // 
+            // PermisosHistorico
+            // 
+            this.PermisosHistorico.DataSetName = "PermisosHistorico";
+            this.PermisosHistorico.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grpBoxFiltros
             // 
@@ -76,6 +86,18 @@
             this.grpBoxFiltros.TabIndex = 3;
             this.grpBoxFiltros.TabStop = false;
             this.grpBoxFiltros.Text = "Filtros";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Location = new System.Drawing.Point(527, 147);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(221, 30);
+            this.btnSalir.TabIndex = 13;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnLimpiar
             // 
@@ -203,9 +225,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource7.Name = "PermisoHistoricoDS";
-            reportDataSource7.Value = this.dtPermisosHistoricoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource1.Name = "PermisoHistoricoDS";
+            reportDataSource1.Value = this.dtPermisosHistoricoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos.PermisosHistoricoInforme" +
     ".rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(13, 224);
@@ -213,28 +235,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(859, 325);
             this.reportViewer1.TabIndex = 4;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Location = new System.Drawing.Point(527, 147);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(221, 30);
-            this.btnSalir.TabIndex = 13;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // PermisosHistorico
-            // 
-            this.PermisosHistorico.DataSetName = "PermisosHistorico";
-            this.PermisosHistorico.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dtPermisosHistoricoBindingSource
-            // 
-            this.dtPermisosHistoricoBindingSource.DataMember = "dtPermisosHistorico";
-            this.dtPermisosHistoricoBindingSource.DataSource = this.PermisosHistorico;
             // 
             // frmListadoPermisosHistorico
             // 
@@ -246,13 +246,15 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.grpBoxFiltros);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(900, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "frmListadoPermisosHistorico";
             this.Text = "Reporte Historico de Permisos";
             this.Load += new System.EventHandler(this.frmListadoPermisosHistorico_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtPermisosHistoricoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PermisosHistorico)).EndInit();
             this.grpBoxFiltros.ResumeLayout(false);
             this.grpBoxFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PermisosHistorico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtPermisosHistoricoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

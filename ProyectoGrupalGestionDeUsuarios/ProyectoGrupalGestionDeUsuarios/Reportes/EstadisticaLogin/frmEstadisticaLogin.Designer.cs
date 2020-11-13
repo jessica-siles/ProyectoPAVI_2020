@@ -30,12 +30,12 @@
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.grpBoxEstLogins = new System.Windows.Forms.GroupBox();
-            this.lblDesde = new System.Windows.Forms.Label();
-            this.lblHasta = new System.Windows.Forms.Label();
-            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.bntSalir = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.lblHasta = new System.Windows.Forms.Label();
+            this.lblDesde = new System.Windows.Forms.Label();
             this.grpBoxEstLogins.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,39 +67,17 @@
             this.grpBoxEstLogins.TabStop = false;
             this.grpBoxEstLogins.Text = "Filtros";
             // 
-            // lblDesde
+            // bntSalir
             // 
-            this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(79, 28);
-            this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(61, 18);
-            this.lblDesde.TabIndex = 0;
-            this.lblDesde.Text = "Desde:";
-            // 
-            // lblHasta
-            // 
-            this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(485, 29);
-            this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(57, 18);
-            this.lblHasta.TabIndex = 1;
-            this.lblHasta.Text = "Hasta:";
-            // 
-            // dtpFechaDesde
-            // 
-            this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDesde.Location = new System.Drawing.Point(170, 24);
-            this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 24);
-            this.dtpFechaDesde.TabIndex = 2;
-            // 
-            // dtpFechaHasta
-            // 
-            this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaHasta.Location = new System.Drawing.Point(571, 24);
-            this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 24);
-            this.dtpFechaHasta.TabIndex = 3;
+            this.bntSalir.BackColor = System.Drawing.Color.White;
+            this.bntSalir.ForeColor = System.Drawing.Color.Black;
+            this.bntSalir.Location = new System.Drawing.Point(571, 73);
+            this.bntSalir.Name = "bntSalir";
+            this.bntSalir.Size = new System.Drawing.Size(200, 33);
+            this.bntSalir.TabIndex = 5;
+            this.bntSalir.Text = "Salir";
+            this.bntSalir.UseVisualStyleBackColor = false;
+            this.bntSalir.Click += new System.EventHandler(this.bntSalir_Click);
             // 
             // btnConsultar
             // 
@@ -113,17 +91,39 @@
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // bntSalir
+            // dtpFechaHasta
             // 
-            this.bntSalir.BackColor = System.Drawing.Color.White;
-            this.bntSalir.ForeColor = System.Drawing.Color.Black;
-            this.bntSalir.Location = new System.Drawing.Point(571, 73);
-            this.bntSalir.Name = "bntSalir";
-            this.bntSalir.Size = new System.Drawing.Size(200, 33);
-            this.bntSalir.TabIndex = 5;
-            this.bntSalir.Text = "Salir";
-            this.bntSalir.UseVisualStyleBackColor = false;
-            this.bntSalir.Click += new System.EventHandler(this.bntSalir_Click);
+            this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaHasta.Location = new System.Drawing.Point(571, 24);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 24);
+            this.dtpFechaHasta.TabIndex = 3;
+            // 
+            // dtpFechaDesde
+            // 
+            this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDesde.Location = new System.Drawing.Point(170, 24);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 24);
+            this.dtpFechaDesde.TabIndex = 2;
+            // 
+            // lblHasta
+            // 
+            this.lblHasta.AutoSize = true;
+            this.lblHasta.Location = new System.Drawing.Point(485, 29);
+            this.lblHasta.Name = "lblHasta";
+            this.lblHasta.Size = new System.Drawing.Size(57, 18);
+            this.lblHasta.TabIndex = 1;
+            this.lblHasta.Text = "Hasta:";
+            // 
+            // lblDesde
+            // 
+            this.lblDesde.AutoSize = true;
+            this.lblDesde.Location = new System.Drawing.Point(79, 28);
+            this.lblDesde.Name = "lblDesde";
+            this.lblDesde.Size = new System.Drawing.Size(61, 18);
+            this.lblDesde.TabIndex = 0;
+            this.lblDesde.Text = "Desde:";
             // 
             // frmEstadisticaLogin
             // 
@@ -134,7 +134,11 @@
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.grpBoxEstLogins);
             this.Controls.Add(this.reportViewer1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(900, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "frmEstadisticaLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEstadisticaLogin";
             this.Load += new System.EventHandler(this.frmEstadisticaLogin_Load);
             this.grpBoxEstLogins.ResumeLayout(false);

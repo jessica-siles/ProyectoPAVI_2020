@@ -201,6 +201,9 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.reportViewer2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(922, 654);
+            this.MinimumSize = new System.Drawing.Size(922, 654);
             this.Name = "frmDatosUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Usuarios";
