@@ -106,7 +106,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                     if (UsuarioDao.UsuarioModificarConHistorial(var, usuarioEntities, historial))
                     {
 
-                        MessageBox.Show(historial.Descripcion + " Usuario " + txtUsuario.Text + " Modificado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(historial.Descripcion + " Usuario " + txtUsuario.Text + " Modificado !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         this.Close();
                     }

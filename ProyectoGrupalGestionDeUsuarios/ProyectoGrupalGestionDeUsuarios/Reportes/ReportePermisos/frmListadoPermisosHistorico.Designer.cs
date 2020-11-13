@@ -249,6 +249,7 @@
             this.MaximumSize = new System.Drawing.Size(900, 600);
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "frmListadoPermisosHistorico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Historico de Permisos";
             this.Load += new System.EventHandler(this.frmListadoPermisosHistorico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtPermisosHistoricoBindingSource)).EndInit();

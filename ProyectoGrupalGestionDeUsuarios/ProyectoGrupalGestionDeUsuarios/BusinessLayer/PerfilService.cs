@@ -55,11 +55,10 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
             }
             else
             {
-                MessageBox.Show("Perfil Generado con Exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Perfil Generado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return -1;
             }
         }
-
         internal object ObtenerPerfil(string perfil)
         {
             //SIN PARAMETROS
@@ -68,11 +67,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
 
         public void eliminarPerfil(int perfil)
         {
-
             oPerfilDao.EliminarPorId(perfil);
         }
-
-
-
     }
 }

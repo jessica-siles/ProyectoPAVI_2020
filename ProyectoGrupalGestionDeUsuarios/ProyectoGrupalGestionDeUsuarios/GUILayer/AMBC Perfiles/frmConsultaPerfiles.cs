@@ -114,16 +114,14 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Perfiles
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
-            DialogResult dialogoResultante = MessageBox.Show("Seguro que desea eliminar " + objetoPerfil.Nombre + "", "Aviso", MessageBoxButtons.YesNo);
-
+            DialogResult dialogoResultante = MessageBox.Show("Seguro que desea eliminar " + objetoPerfil.Nombre + "",
+                                                             "Aviso", MessageBoxButtons.YesNo);
 
             if (dialogoResultante == DialogResult.Yes)
             {
                 //agregado de recargado de grilla
                 perfilService.eliminarPerfil(objetoPerfil.IdPerfil);
-                dgvConsulta.DataSource = perfilService.obtenerPerfiles();
-                
-
+                dgvConsulta.DataSource = perfilService.obtenerPerfiles();                
             }
             else if (dialogoResultante == DialogResult.No)
             {
