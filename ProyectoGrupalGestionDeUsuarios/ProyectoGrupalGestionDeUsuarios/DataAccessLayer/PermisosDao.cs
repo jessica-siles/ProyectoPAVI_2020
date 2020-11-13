@@ -72,7 +72,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
             DataManager.GetInstance().EjecutarSQL(eliminartodos);
         }
 
-        public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar, DateTime fecha)
+        public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar, string fecha)
         {
             DataManager dm = new DataManager();
             try

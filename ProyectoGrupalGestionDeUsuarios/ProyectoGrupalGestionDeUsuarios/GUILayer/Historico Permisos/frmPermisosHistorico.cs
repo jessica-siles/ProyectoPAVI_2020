@@ -34,8 +34,9 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos
         }
 
         private void cargarGrilla(DataGridView grilla, DataTable tabla)
-        {
+        {            
             grilla.Rows.Clear();
+            grilla.Columns[1].DefaultCellStyle.Format = "dd/MM/yyyy";
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 grilla.Rows.Add(tabla.Rows[i]["id_phistorico"],
@@ -82,8 +83,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.Historico_Permisos
                     conFecha = false;                
 
                 DataTable tablaFiltrados = new DataTable();
-                tablaFiltrados = permisoService.obtenerHistorialPermisosFiltrados(dtpFechaDesde.Value.ToShortDateString(),
-                                                                                      dtpFechaHasta.Value.ToShortDateString()
+                tablaFiltrados = permisoService.obtenerHistorialPermisosFiltrados(dtpFechaDesde.Value.ToString("yyyy-MM-dd"),
+                                                                                      dtpFechaHasta.Value.ToString("yyyy-MM-dd 23:59:59")
                                                                                       , _formulario, _perfil,conFecha);
 
                 if (tablaFiltrados.Rows.Count == 0)

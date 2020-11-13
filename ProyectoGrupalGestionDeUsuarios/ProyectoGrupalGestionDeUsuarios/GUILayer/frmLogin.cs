@@ -69,7 +69,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                 MessageBox.Show("Usuario y Contraseña Correctos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Salir = false;
                 DateTime fecha = DateTime.Now;
-                usuarioService.registrarLogueo(usr,fecha.ToString());
+                usuarioService.registrarLogueo(usr,fecha.ToString("yyyy-MM-dd"));
                 this.Close();               
             }
             else
