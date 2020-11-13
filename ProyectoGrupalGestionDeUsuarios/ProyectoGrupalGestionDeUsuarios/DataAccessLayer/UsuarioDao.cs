@@ -43,8 +43,8 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
         {        
             //Construimos la consulta sql para buscar el usuario en la base de datos.
             String consultaSql = string.Concat(" SELECT id_usuario, id_perfil, usuario, email, estado, password ",
-                                               "   FROM Usuarios ",
-                                               "  WHERE borrado=0 and usuario =  '", pUsuario, "'");
+                                               " FROM Usuarios ",
+                                               " WHERE borrado=0 AND usuario =  '", pUsuario, "'");
 
             //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
             var resultado = DBHelper.GetDBHelper().ConsultaSQL(consultaSql);

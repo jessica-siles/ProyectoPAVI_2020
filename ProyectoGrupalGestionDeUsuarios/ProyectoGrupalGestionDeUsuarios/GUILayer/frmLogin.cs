@@ -62,27 +62,33 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
 
             var usr = usuarioService.ValidarUsuario(lblUsuario.Text, lblContrasena.Text);
             //Controlamos que las creadenciales sean las correctas. 
-            if (usr != null)
+            if (usr != null && usr.Estado is "S")
             {
                 // Login OK
                 UsuarioLogueado = usr.NombreUsuario;
                 MessageBox.Show("Usuario y Contraseña Correctos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Salir = false;
                 DateTime fecha = DateTime.Now;
-                usuarioService.registrarLogueo(usr,fecha.ToString("yyyy-MM-dd"));
+                usuarioService.registrarLogueo(usr,fecha.ToString("yyyy-MM-dd HH:mm:ss"));
                 this.Close();               
             }
             else
             {
-                //Limpiamos el campo password, para que el usuario intente ingresar un usuario distinto.
-                lblContrasena.Text = "";
-                // Enfocamos el cursor en el campo password para que el usuario complete sus datos.
-                lblContrasena.Focus();
-                //Mostramos un mensaje indicando que el usuario/password es invalido.
-                MessageBox.Show("Debe ingresar usuario y/o contraseña válidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            
+                if (usr != null && usr.Estado is "N")
+                {
+                    MessageBox.Show("Usuario inactivo. Comunicarse con el administrador del sistema","AVISO",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    lblContrasena.Text = "";
+                }
+                else
+                {
+                    //Limpiamos el campo password, para que el usuario intente ingresar un usuario distinto.
+                    lblContrasena.Text = "";
+                    // Enfocamos el cursor en el campo password para que el usuario complete sus datos.
+                    lblContrasena.Focus();
+                    //Mostramos un mensaje indicando que el usuario/password es invalido.
+                    MessageBox.Show("Debe ingresar usuario y/o contraseña válidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }                
+            }            
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -144,6 +150,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                 }
                 else
                 {
+                    
                     Environment.Exit(0);
                     //Application.ExitThread();
                 }

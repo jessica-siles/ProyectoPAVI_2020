@@ -314,7 +314,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FORMAT(Fields!fecha.Value, "dd/MM/yyyy")</Value>
+                                  <Value>=FORMAT(Fields!fecha.Value, "dd/MM/yyyy HH:mm:ss")</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                   </Style>
@@ -337,7 +337,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
