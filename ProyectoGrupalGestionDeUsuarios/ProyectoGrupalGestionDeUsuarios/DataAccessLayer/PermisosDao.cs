@@ -66,10 +66,25 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
         
 
-        public void eliminartodos(int perfil)
+        public void eliminartodos(int perfil, List<int>quitar, string fecha)
         {
-            string eliminartodos = "UPDATE Permisos SET borrado= 1 WHERE id_perfil = " + perfil;
-            DataManager.GetInstance().EjecutarSQL(eliminartodos);
+            //string eliminartodos = "UPDATE Permisos SET borrado= 1 WHERE id_perfil = " + perfil;
+            //DataManager.GetInstance().EjecutarSQL(eliminartodos);
+
+            for (int i = 0; i < quitar.Count; i++)
+            {
+
+                string quitarPermisos = "UPDATE Permisos SET borrado=1" +
+                                        " WHERE id_formulario=" + quitar[i] + " AND id_perfil=" + perfil;
+
+                string insertarHistoricoPermiso = "INSERT INTO PermisosHistorico (id_formulario,id_perfil,fecha,descripcion)" +
+                                                  "VALUES (" + quitar[i] + "," + perfil + ",'" + fecha + "','" + "Quitar permiso')";
+
+                DataManager.GetInstance().EjecutarSQL(quitarPermisos);
+                DataManager.GetInstance().EjecutarSQL(insertarHistoricoPermiso);
+            }
+            
+            
         }
 
         public bool transaccion(List<int>insertar,List<int>quitar,List<int>modificar,int perfil, int borradoQuitar, int borradoModificar, string fecha)

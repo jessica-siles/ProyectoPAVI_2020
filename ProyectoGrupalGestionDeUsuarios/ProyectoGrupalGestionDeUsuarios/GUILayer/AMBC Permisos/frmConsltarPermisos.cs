@@ -17,7 +17,10 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
     {
         private readonly PermisoService permisoService;
         PermisosDao permisoDao = new PermisosDao();
+        Permiso oPermiso = new Permiso();
         Perfil oPerfil = new Perfil();
+        List<int> list = new List<int>();
+
         int nro;
 
         public frmConsltarPermisos()
@@ -66,10 +69,8 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
                     btnModificar.Enabled = true;
                     button1.Enabled = true;
                     return;
-                }
-               
+                }               
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,15 +79,32 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
 
             if (dialogoResultante == DialogResult.Yes)
             {
-                permisoDao.eliminartodos(oPerfil.IdPerfil);
+                string fecha = DateTime.Today.ToString("yyyy-MM-dd");
+                RecorrerGrilla();
+                permisoDao.eliminartodos(oPerfil.IdPerfil,list,fecha);
                 CargarGrilla(dgvConsultaPermisos, permisoService.obtenerFormulariosPorPerfil(oPerfil.IdPerfil));
-                
+
             }
             else if (dialogoResultante == DialogResult.No)
             {
-                    //nothing
+                //nothing
+            }           
+        }
+
+        private void RecorrerGrilla()
+        {
+            list.Clear();
+
+            foreach (DataGridViewRow row in dgvConsultaPermisos.Rows)
+            {
+                oPermiso.Id_Formulario = Convert.ToInt32(row.Cells["numForm"].Value);
+                DataTable FormulariosAsignados = permisoDao.buscarFormAsignado(oPermiso.Id_perfil, oPermiso.Id_Formulario);
+
+                if (FormulariosAsignados.Rows.Count == 0 && dgvConsultaPermisos.Rows.Count > 0)
+                {
+                    list.Add(oPermiso.Id_Formulario);
+                }
             }
-        
         }
 
         private void dgvConsultaPermisos_CellClick(object sender, DataGridViewCellEventArgs e)
