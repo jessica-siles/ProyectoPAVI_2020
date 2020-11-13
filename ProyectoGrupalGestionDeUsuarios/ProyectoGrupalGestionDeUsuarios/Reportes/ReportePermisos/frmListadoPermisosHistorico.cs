@@ -29,13 +29,13 @@ namespace ProyectoGrupalGestionDeUsuarios.Reportes.ReportePermisos
             dtpFechaDesde.Value = DateTime.Today;
             dtpFechaHasta.Value = DateTime.Today;
             formularioService.cargarCombo(cboPerfil, "Perfiles");
-            formularioService.cargarCombo(cboFormulario, "Formularios");           
-
+            formularioService.cargarCombo(cboFormulario, "Formularios");         
+                        
             this.dtPermisosHistoricoBindingSource.DataSource = permisoService.obtenerHistorialPermisos();           
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter[]{ new ReportParameter
                                                                 ("prFechaDesde", "Todos las fechas registradas"),
                                                                  new ReportParameter("prFechaHasta", dtpFechaHasta.Value.ToShortDateString())});
-            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

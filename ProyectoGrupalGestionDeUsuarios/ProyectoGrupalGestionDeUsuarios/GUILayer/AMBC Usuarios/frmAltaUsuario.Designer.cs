@@ -59,7 +59,7 @@
             this.lblUsuario.Location = new System.Drawing.Point(90, 50);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(83, 31);
-            this.lblUsuario.TabIndex = 1;
+            this.lblUsuario.TabIndex = 7;
             this.lblUsuario.Text = "Usuario:";
             this.lblUsuario.UseCompatibleTextRendering = true;
             // 
@@ -72,7 +72,7 @@
             this.label1.Location = new System.Drawing.Point(109, 192);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 31);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 9;
             this.label1.Text = "Email:";
             this.label1.UseCompatibleTextRendering = true;
             // 
@@ -93,7 +93,7 @@
             this.label2.Location = new System.Drawing.Point(74, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 31);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Password:";
             this.label2.UseCompatibleTextRendering = true;
             // 
@@ -103,7 +103,7 @@
             this.txtPass.Location = new System.Drawing.Point(179, 119);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(286, 29);
-            this.txtPass.TabIndex = 4;
+            this.txtPass.TabIndex = 1;
             // 
             // btnCancelar
             // 
@@ -115,7 +115,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(153, 43);
-            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -130,7 +130,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(146, 43);
-            this.btnGuardar.TabIndex = 19;
+            this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -144,7 +144,7 @@
             this.label3.Location = new System.Drawing.Point(109, 330);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 31);
-            this.label3.TabIndex = 21;
+            this.label3.TabIndex = 10;
             this.label3.Text = "Perfil:";
             this.label3.UseCompatibleTextRendering = true;
             // 
@@ -155,7 +155,7 @@
             this.cboPerfil.Location = new System.Drawing.Point(179, 336);
             this.cboPerfil.Name = "cboPerfil";
             this.cboPerfil.Size = new System.Drawing.Size(286, 28);
-            this.cboPerfil.TabIndex = 22;
+            this.cboPerfil.TabIndex = 4;
             // 
             // chkBoxEstado
             // 
@@ -169,7 +169,7 @@
             this.chkBoxEstado.Location = new System.Drawing.Point(179, 264);
             this.chkBoxEstado.Name = "chkBoxEstado";
             this.chkBoxEstado.Size = new System.Drawing.Size(150, 29);
-            this.chkBoxEstado.TabIndex = 24;
+            this.chkBoxEstado.TabIndex = 3;
             this.chkBoxEstado.Text = "Estado Activo";
             this.chkBoxEstado.UseVisualStyleBackColor = false;
             // 

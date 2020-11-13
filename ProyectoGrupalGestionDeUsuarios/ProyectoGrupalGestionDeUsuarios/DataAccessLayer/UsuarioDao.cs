@@ -108,7 +108,7 @@ namespace ProyectoGrupalGestionDeUsuarios.DataAccessLayer
 
         public string consultaUsuarios()
         {
-            string consultaUusuarios = "SELECT id_usuario,usuario,password,email,nombre,estado " +
+            string consultaUusuarios = "SELECT id_usuario,usuario,email,nombre,estado " +
                                        "FROM Usuarios INNER JOIN Perfiles " +
                                        "ON Usuarios.id_perfil = Perfiles.id_perfil " +
                                        "WHERE Usuarios.borrado = 0";
