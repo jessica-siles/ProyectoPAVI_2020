@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F2495D9-0828-438C-A728-5663D98ABE31}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProyectoGrupalGestionDeUsuarios</RootNamespace>
+    <AssemblyName>ProyectoGrupalGestionDeUsuarios</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\FormularioService.cs" />
+    <Compile Include="BusinessLayer\PerfilService.cs" />
+    <Compile Include="BusinessLayer\PermisoService.cs" />
+    <Compile Include="BusinessLayer\UsuarioService.cs" />
+    <Compile Include="DataAccessLayer\DataManager.cs" />
+    <Compile Include="DataAccessLayer\DBHelper.cs" />
+    <Compile Include="DataAccessLayer\FormularioDao.cs" />
+    <Compile Include="DataAccessLayer\PerfilDao.cs" />
+    <Compile Include="DataAccessLayer\PermisosDao.cs" />
+    <Compile Include="DataAccessLayer\Reporte.cs" />
+    <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="DataAccessLayer\usuariosHistorialDao.cs" />
+    <Compile Include="Entities\Formulario.cs" />
+    <Compile Include="Entities\HistorialUsuario.cs" />
+    <Compile Include="Entities\Perfil.cs" />
+    <Compile Include="Entities\Permiso.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUILayer\ABM Formularios\frmFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABM Formularios\frmFormulario.Designer.cs">
+      <DependentUpon>frmFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Perfiles\frmConsultaPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Perfiles\frmConsultaPerfiles.Designer.cs">
+      <DependentUpon>frmConsultaPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Perfiles\frmModificarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Perfiles\frmModificarPerfil.Designer.cs">
+      <DependentUpon>frmModificarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Perfiles\frmAgregarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Perfiles\frmAgregarPerfil.Designer.cs">
+      <DependentUpon>frmAgregarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Permisos\frmAltaPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Permisos\frmAltaPermisos.Designer.cs">
+      <DependentUpon>frmAltaPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Permisos\frmConsltarPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Permisos\frmConsltarPermisos.designer.cs">
+      <DependentUpon>frmConsltarPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmAltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmAltaUsuario.Designer.cs">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmConsultarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmConsultarUsuario.Designer.cs">
+      <DependentUpon>frmConsultarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\AMBC Usuarios\frmModificarUsuario.Designer.cs">
+      <DependentUpon>frmModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmMenuPrincipal.designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Historico de Usuarios\frmHistoricoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Historico de Usuarios\frmHistoricoUsuario.Designer.cs">
+      <DependentUpon>frmHistoricoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Historico Permisos\frmPermisosHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Historico Permisos\frmPermisosHistorico.Designer.cs">
+      <DependentUpon>frmPermisosHistorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.cs">
+      <DependentUpon>EstadisticaLoginDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticaLoginDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaLogin\frmEstadisticaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaLogin\frmEstadisticaLogin.Designer.cs">
+      <DependentUpon>frmEstadisticaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticaPermisosDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.Designer.cs">
+      <DependentUpon>frmEstadisticaPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPerfiles\dataUsuarios.cs">
+      <DependentUpon>dataUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPerfiles\dataUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPerfiles\frmEstadisticaPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\EstadisticaPerfiles\frmEstadisticaPerfil.Designer.cs">
+      <DependentUpon>frmEstadisticaPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteLogin\LoginDS.cs">
+      <DependentUpon>LoginDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteLogin\LoginDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteLogin\frmLogueo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteLogin\frmLogueo.Designer.cs">
+      <DependentUpon>frmLogueo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfilesUsuario\frmReportePerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfilesUsuario\frmReportePerfiles.Designer.cs">
+      <DependentUpon>frmReportePerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.cs">
+      <DependentUpon>UsuariosPerfilesData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuariosPerfilesData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuarios\frmEstadisticaHistoricoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuarios\frmEstadisticaHistoricoUsuarios.Designer.cs">
+      <DependentUpon>frmEstadisticaHistoricoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePermisos\frmListadoPermisosHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePermisos\frmListadoPermisosHistorico.Designer.cs">
+      <DependentUpon>frmListadoPermisosHistorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePermisos\PermisosHistorico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermisosHistorico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuarios\frmDatosUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuarios\frmDatosUsuarios.Designer.cs">
+      <DependentUpon>frmDatosUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuarios\prueba.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prueba.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="GUILayer\ABM Formularios\frmFormulario.resx">
+      <DependentUpon>frmFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Perfiles\frmModificarPerfil.resx">
+      <DependentUpon>frmModificarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Perfiles\frmConsultaPerfiles.resx">
+      <DependentUpon>frmConsultaPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Perfiles\frmAgregarPerfil.resx">
+      <DependentUpon>frmAgregarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Permisos\frmAltaPermisos.resx">
+      <DependentUpon>frmAltaPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Permisos\frmConsltarPermisos.resx">
+      <DependentUpon>frmConsltarPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Usuarios\frmAltaUsuario.resx">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Usuarios\frmConsultarUsuario.resx">
+      <DependentUpon>frmConsultarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\AMBC Usuarios\frmModificarUsuario.resx">
+      <DependentUpon>frmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Historico de Usuarios\frmHistoricoUsuario.resx">
+      <DependentUpon>frmHistoricoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Historico Permisos\frmPermisosHistorico.resx">
+      <DependentUpon>frmPermisosHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reportes\EstadisticaLogin\EstadisticaLoginInforme.rdlc" />
+    <EmbeddedResource Include="Reportes\EstadisticaLogin\frmEstadisticaLogin.resx">
+      <DependentUpon>frmEstadisticaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EstadisticaPermisos\EstadisticaPermisosInforme.rdlc" />
+    <EmbeddedResource Include="Reportes\EstadisticaPermisos\frmEstadisticaPermisos.resx">
+      <DependentUpon>frmEstadisticaPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EstadisticaPerfiles\frmEstadisticaPerfil.resx">
+      <DependentUpon>frmEstadisticaPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EstadisticaPerfiles\reportEstadisticaUsuarios.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteLogin\LoginInforme.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteLogin\frmLogueo.resx">
+      <DependentUpon>frmLogueo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePerfilesUsuario\frmReportePerfiles.resx">
+      <DependentUpon>frmReportePerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePerfilesUsuario\ReporteUsuariosPorPefil.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteUsuarios\frmEstadisticaHistoricoUsuarios.resx">
+      <DependentUpon>frmEstadisticaHistoricoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePermisos\frmListadoPermisosHistorico.resx">
+      <DependentUpon>frmListadoPermisosHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePermisos\PermisosHistoricoInforme.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteUsuarios\frmDatosUsuarios.resx">
+      <DependentUpon>frmDatosUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteUsuarios\EstadisticaHistoricoUsuarios.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteUsuarios\ReporteDatosUsuario.rdlc" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.xsc">
+      <DependentUpon>EstadisticaLoginDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticaLoginDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\EstadisticaLogin\EstadisticaLoginDS.xss">
+      <DependentUpon>EstadisticaLoginDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.xsc">
+      <DependentUpon>EstadisticaPermisosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticaPermisosDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\EstadisticaPermisos\EstadisticaPermisosDS.xss">
+      <DependentUpon>EstadisticaPermisosDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\EstadisticaPerfiles\dataUsuarios.xsc">
+      <DependentUpon>dataUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\EstadisticaPerfiles\dataUsuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataUsuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\EstadisticaPerfiles\dataUsuarios.xss">
+      <DependentUpon>dataUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReporteLogin\LoginDS.xsc">
+      <DependentUpon>LoginDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReporteLogin\LoginDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoginDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReporteLogin\LoginDS.xss">
+      <DependentUpon>LoginDS.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.xsc">
+      <DependentUpon>UsuariosPerfilesData.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuariosPerfilesData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportePerfilesUsuario\UsuariosPerfilesData.xss">
+      <DependentUpon>UsuariosPerfilesData.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportePermisos\PermisosHistorico.xsc">
+      <DependentUpon>PermisosHistorico.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportePermisos\PermisosHistorico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PermisosHistorico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportePermisos\PermisosHistorico.xss">
+      <DependentUpon>PermisosHistorico.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReporteUsuarios\prueba.xsc">
+      <DependentUpon>prueba.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReporteUsuarios\prueba.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>prueba.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReporteUsuarios\prueba.xss">
+      <DependentUpon>prueba.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resource\fondoLoginultimo.jfif" />
+    <None Include="Resource\FondoPerf.jpg" />
+    <None Include="Resource\FONDOoTRO.jpg" />
+    <Content Include="Resource\login.jfif" />
+    <Content Include="Resource\otroFondo.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
