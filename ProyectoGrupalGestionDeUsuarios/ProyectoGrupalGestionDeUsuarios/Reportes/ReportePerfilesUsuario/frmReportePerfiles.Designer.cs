@@ -217,7 +217,7 @@
             this.MinimumSize = new System.Drawing.Size(903, 718);
             this.Name = "frmReportePerfiles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Reporte de Perfiles";
             this.Load += new System.EventHandler(this.frmReportePerfiles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

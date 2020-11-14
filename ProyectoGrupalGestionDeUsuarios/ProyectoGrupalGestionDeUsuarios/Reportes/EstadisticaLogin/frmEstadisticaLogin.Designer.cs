@@ -139,7 +139,7 @@
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "frmEstadisticaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEstadisticaLogin";
+            this.Text = "Estadistica Ingresos al Sistema";
             this.Load += new System.EventHandler(this.frmEstadisticaLogin_Load);
             this.grpBoxEstLogins.ResumeLayout(false);
             this.grpBoxEstLogins.PerformLayout();

@@ -52,7 +52,7 @@
             this.MaximumSize = new System.Drawing.Size(816, 489);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "frmEstadisticaPermisos";
-            this.Text = "frmEstadisticaPermisos";
+            this.Text = "Estadistica Permisos";
             this.Load += new System.EventHandler(this.frmEstadisticaPermisos_Load);
             this.ResumeLayout(false);
 

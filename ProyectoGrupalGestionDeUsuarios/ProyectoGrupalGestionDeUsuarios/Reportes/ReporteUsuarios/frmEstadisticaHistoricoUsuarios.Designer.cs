@@ -139,7 +139,7 @@
             this.MinimumSize = new System.Drawing.Size(892, 768);
             this.Name = "frmEstadisticaHistoricoUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEstadisticaHistoricoUsuarios";
+            this.Text = "Estadistica Historico Usuarios";
             this.Load += new System.EventHandler(this.frmEstadisticaHistoricoUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -139,7 +139,7 @@
             this.MinimumSize = new System.Drawing.Size(917, 639);
             this.Name = "frmEstadisticaPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEstadisticaPerfil";
+            this.Text = "Estadistica de Perfil";
             this.Load += new System.EventHandler(this.frmEstadisticaPerfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
