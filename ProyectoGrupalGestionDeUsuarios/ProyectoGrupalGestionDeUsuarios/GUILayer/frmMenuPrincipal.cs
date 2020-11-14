@@ -45,7 +45,7 @@ namespace ProyectoGrupalGestionDeUsuarios
 
             this.Text = this.Text + " - Usuario: " + formularioLogin.UsuarioLogueado;
             nombreLogeado = formularioLogin.UsuarioLogueado;
-            //Lista();
+            Lista();
         }
         private void Lista()
         {
