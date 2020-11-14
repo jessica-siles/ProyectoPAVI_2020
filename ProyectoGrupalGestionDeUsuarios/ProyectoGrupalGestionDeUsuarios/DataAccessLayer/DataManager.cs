@@ -20,10 +20,10 @@ public class DataManager
         //dbConnection.ConnectionString = @"Data Source=DESKTOP-IJEL4J8\SQLEXPRESS;Initial Catalog=Base_Usuarios;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         //base al servidor oficial       
-        //dbConnection.ConnectionString = "workstation id=ProyectoUsuarios.mssql.somee.com;packet size=4096;user id=jessica_ardi_SQLLogin_1;pwd=ssklwm8k3k;data source=ProyectoUsuarios.mssql.somee.com;persist security info=False;initial catalog=ProyectoUsuarios";
+        dbConnection.ConnectionString = "workstation id=ProyectoUsuarios.mssql.somee.com;packet size=4096;user id=jessica_ardi_SQLLogin_1;pwd=ssklwm8k3k;data source=ProyectoUsuarios.mssql.somee.com;persist security info=False;initial catalog=ProyectoUsuarios";
 
         //base al servidor de pruebas
-        dbConnection.ConnectionString = "workstation id=ProyectoUsuariosPruebas.mssql.somee.com;packet size=4096;user id=jessi_siles_SQLLogin_1;pwd=z2mxqfv1vc;data source=ProyectoUsuariosPruebas.mssql.somee.com;persist security info=False;initial catalog=ProyectoUsuariosPruebas";
+        //dbConnection.ConnectionString = "workstation id=ProyectoUsuariosPruebas.mssql.somee.com;packet size=4096;user id=jessi_siles_SQLLogin_1;pwd=z2mxqfv1vc;data source=ProyectoUsuariosPruebas.mssql.somee.com;persist security info=False;initial catalog=ProyectoUsuariosPruebas";
     }
     
     public void BeginTransaction()

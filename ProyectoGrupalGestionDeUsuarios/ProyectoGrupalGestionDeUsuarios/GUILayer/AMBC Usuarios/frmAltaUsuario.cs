@@ -140,14 +140,14 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                 if (UsuarioDao.UsuarioConHistorial(usuarioEntities, historial))
                 {
                   
-                    MessageBox.Show("Usuario " + txtUsuario.Text + " Registrado con Exito!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Usuario: " + txtUsuario.Text + " registrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     this.Close();
                 }
                 
                 else
                 {
-                    MessageBox.Show("Usuario " + txtUsuario.Text + " No pudo ser Registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Usuario: " + txtUsuario.Text + " No pudo ser registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Close();
                 }
                 limpiarCampos();

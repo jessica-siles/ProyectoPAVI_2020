@@ -37,6 +37,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                                     MessageBoxDefaultButton.Button2)
                                     == DialogResult.Yes)
             {
+                lblContrasena.Text = "";
                 Environment.Exit(0);
             }            
             
@@ -149,8 +150,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer
                     e.Cancel = true;
                 }
                 else
-                {
-                    
+                {                    
                     Environment.Exit(0);
                     //Application.ExitThread();
                 }
