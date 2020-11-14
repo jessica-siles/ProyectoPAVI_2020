@@ -98,16 +98,13 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Usuarios
                 int contar = servicioUsuario.ValidarModificaciones(usuarioEntities, var, cboPerfil.Text);
                
                 if (contar != 0)
-                {
-                    
+                {                    
                     string descripcion = "Se Modifico el:" + servicioUsuario.Descripcion();
                     historial.Descripcion = descripcion;
                     //MessageBox.Show(historial.Descripcion, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     if (UsuarioDao.UsuarioModificarConHistorial(var, usuarioEntities, historial))
                     {
-
-                        MessageBox.Show(historial.Descripcion + " Usuario " + txtUsuario.Text + " Modificado !", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                        MessageBox.Show( "Modificado: '" + txtUsuario.Text +"'"+"\n"+historial.Descripcion, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }

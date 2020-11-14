@@ -235,9 +235,7 @@ namespace ProyectoGrupalGestionDeUsuarios.BusinessLayer
             else
             {
                 //nothing
-
             }
-
             return desc;
         }
 

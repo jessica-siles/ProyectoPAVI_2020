@@ -164,7 +164,7 @@ namespace ProyectoGrupalGestionDeUsuarios.GUILayer.AMBC_Permisos
                 {
                     if (PermisoDao.transaccion(list, Quitar, Modificar, Permiso.Id_perfil, 1, 0, desde))
                     {
-                        MessageBox.Show("Permiso asignados!");
+                        MessageBox.Show("Permisos asignados!","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         cboPerfil.SelectedIndex = -1;
                         dgvFormAsignados.Rows.Clear();
                         dgvFormSinAsignar.Rows.Clear();
